@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "_incoming/PBM_indications_part_A_site_patch.zip"
+      - "_incoming/READY"
 
 permissions:
   contents: write
@@ -17,17 +17,15 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Validate and apply patch
+      - name: Reassemble, validate and apply patch
         shell: bash
         run: |
           set -euo pipefail
-          ZIP="_incoming/PBM_indications_part_A_site_patch.zip"
-          test -f "$ZIP"
+          cat _incoming/patch.b64.* | base64 -d > /tmp/patch.zip
           rm -rf /tmp/pbm-patch
           mkdir -p /tmp/pbm-patch
-          unzip -q "$ZIP" -d /tmp/pbm-patch
+          unzip -q /tmp/patch.zip -d /tmp/pbm-patch
 
-          # Only HTML indication pages are allowed in this patch.
           mapfile -t FILES < <(find /tmp/pbm-patch -type f | sort)
           test "${#FILES[@]}" -gt 0
           for f in "${FILES[@]}"; do
@@ -42,7 +40,7 @@ jobs:
           done
 
           cp -a /tmp/pbm-patch/dist/. dist/
-          rm -f "$ZIP"
+          rm -rf _incoming
 
           echo "Applied ${#FILES[@]} indication pages."
 
