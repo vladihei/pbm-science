@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" role="img" aria-labelledby="title description"><title id="title">How might photobiomodulation affect cells?</title><desc id="description">Light exposure, possible targets, early signals and downstream responses, with six factors that shape the response.</desc><defs><linearGradient id="spectrum"><stop offset="0" stop-color="#c35a52"/><stop offset="0.48" stop-color="#d36f79"/><stop offset="1" stop-color="#7a62a9"/></linearGradient></defs><g font-family="Arial, Helvetica, sans-serif">
+<rect x="12" y="12" width="1576" height="1176" rx="28" fill="#fcfbf9" stroke="#e7ddd6" stroke-width="1.5"/>
+<text x="58" y="69" font-size="20" font-weight="700" fill="#c35a52">GRAPHICAL ABSTRACT</text>
+<text x="58" y="128" font-size="44" font-weight="700" fill="#2a2422">How might photobiomodulation affect cells?</text>
+<text x="58" y="172" font-size="24" font-weight="400" fill="#756b67">A working model from light absorption to context-dependent cell responses</text>
+<rect x="1270" y="47" width="270" height="48" rx="24" fill="#f7f0ec" stroke="#e7ddd6" stroke-width="1.5"/>
+<text x="1405" y="77" text-anchor="middle" font-size="17" font-weight="700" fill="#756b67">CONCEPTUAL OVERVIEW</text>
+<rect x="58" y="220" width="300" height="610" rx="18" fill="#fff" stroke="#e7ddd6" stroke-width="1.5"/>
+<rect x="58" y="220" width="300" height="8" rx="4" fill="#c35a52"/><circle cx="96" cy="273" r="25" fill="#c35a52"/>
+<text x="96" y="281" text-anchor="middle" font-size="23" font-weight="700" fill="#fff">01</text>
+<text x="84" y="334" font-size="24" font-weight="700" fill="#c35a52">LIGHT EXPOSURE</text>
+<path d="M370 508H394M386 501L394 508L386 515" fill="none" stroke="#c35a52" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="406" y="220" width="310" height="610" rx="18" fill="#fff" stroke="#e7ddd6" stroke-width="1.5"/>
+<rect x="406" y="220" width="310" height="8" rx="4" fill="#7a62a9"/><circle cx="444" cy="273" r="25" fill="#7a62a9"/>
+<text x="444" y="281" text-anchor="middle" font-size="23" font-weight="700" fill="#fff">02</text>
+<text x="432" y="334" font-size="24" font-weight="700" fill="#7a62a9">POSSIBLE LIGHT</text>
+<text x="432" y="363" font-size="24" font-weight="700" fill="#7a62a9">TARGETS</text>
+<path d="M728 508H752M744 501L752 508L744 515" fill="none" stroke="#c35a52" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="764" y="220" width="310" height="610" rx="18" fill="#fff" stroke="#e7ddd6" stroke-width="1.5"/>
+<rect x="764" y="220" width="310" height="8" rx="4" fill="#b37c22"/><circle cx="802" cy="273" r="25" fill="#b37c22"/>
+<text x="802" y="281" text-anchor="middle" font-size="23" font-weight="700" fill="#fff">03</text>
+<text x="790" y="334" font-size="24" font-weight="700" fill="#b37c22">EARLY CELL</text>
+<text x="790" y="363" font-size="24" font-weight="700" fill="#b37c22">SIGNALS</text>
+<path d="M1086 508H1110M1102 501L1110 508L1102 515" fill="none" stroke="#c35a52" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1122" y="220" width="420" height="610" rx="18" fill="#fff" stroke="#e7ddd6" stroke-width="1.5"/>
+<rect x="1122" y="220" width="420" height="8" rx="4" fill="#289783"/><circle cx="1160" cy="273" r="25" fill="#289783"/>
+<text x="1160" y="281" text-anchor="middle" font-size="23" font-weight="700" fill="#fff">04</text>
+<text x="1148" y="334" font-size="24" font-weight="700" fill="#289783">DOWNSTREAM EFFECTS</text>
+<text x="84" y="412" font-size="22" font-weight="400" fill="#756b67">Red and near-infrared</text>
+<rect x="84" y="438" width="248" height="20" rx="10" fill="url(#spectrum)"/>
+<text x="84" y="489" font-size="18" font-weight="400" fill="#756b67">Visible red</text>
+<text x="216" y="489" font-size="18" font-weight="400" fill="#756b67">Near-infrared</text>
+<path d="M84 515H332" fill="none" stroke="#e7ddd6" stroke-width="1.5"/>
+<text x="84" y="550" font-size="18" font-weight="700" fill="#c35a52">EXPOSURE CONDITIONS</text>
+<circle cx="91" cy="591" r="4" fill="#c35a52" transform="translate(0 0)"/>
+<text x="108" y="598" font-size="23" font-weight="400" fill="#2a2422">Wavelength</text>
+<circle cx="91" cy="591" r="4" fill="#c35a52" transform="translate(0 44)"/>
+<text x="108" y="642" font-size="23" font-weight="400" fill="#2a2422">Irradiance</text>
+<circle cx="91" cy="591" r="4" fill="#c35a52" transform="translate(0 88)"/>
+<text x="108" y="686" font-size="23" font-weight="400" fill="#2a2422">Exposure time</text>
+<text x="84" y="749" font-size="20" font-weight="400" fill="#756b67">Equal radiant exposure</text>
+<text x="84" y="774" font-size="20" font-weight="400" fill="#756b67">may still produce different</text>
+<text x="84" y="799" font-size="20" font-weight="400" fill="#756b67">effects.</text>
+<text x="432" y="412" font-size="19" font-weight="400" fill="#756b67">First absorber is unsettled</text>
+<text x="432" y="461" font-size="22" font-weight="700" fill="#2a2422">CCO / mitochondria</text>
+<text x="432" y="494" font-size="20" font-weight="400" fill="#756b67">Leading proposal; not</text>
+<text x="432" y="519" font-size="20" font-weight="400" fill="#756b67">settled</text>
+<text x="432" y="568" font-size="22" font-weight="700" fill="#2a2422">Nitric oxide (NO)</text>
+<text x="432" y="601" font-size="20" font-weight="400" fill="#756b67">Binding, release or</text>
+<text x="432" y="626" font-size="20" font-weight="400" fill="#756b67">production</text>
+<text x="432" y="675" font-size="22" font-weight="700" fill="#2a2422">Other proposed routes</text>
+<text x="432" y="708" font-size="20" font-weight="400" fill="#756b67">Opsins, ion channels, water</text>
+<text x="432" y="733" font-size="20" font-weight="400" fill="#756b67">interfaces</text>
+<rect x="790" y="402" width="123" height="60" rx="15" fill="#f7f0ec" stroke="#e7ddd6" stroke-width="1.5"/>
+<text x="851.5" y="442" text-anchor="middle" font-size="29" font-weight="700" fill="#c35a52">ATP</text>
+<rect x="925" y="402" width="123" height="60" rx="15" fill="#f4eff9" stroke="#e7ddd6" stroke-width="1.5"/>
+<text x="986.5" y="442" text-anchor="middle" font-size="29" font-weight="700" fill="#7a62a9">ROS</text>
+<rect x="790" y="478" width="123" height="60" rx="15" fill="#edf6f4" stroke="#e7ddd6" stroke-width="1.5"/>
+<text x="851.5" y="518" text-anchor="middle" font-size="29" font-weight="700" fill="#289783">NO</text>
+<rect x="925" y="478" width="123" height="60" rx="15" fill="#fbf4e8" stroke="#e7ddd6" stroke-width="1.5"/>
+<text x="986.5" y="518" text-anchor="middle" font-size="29" font-weight="700" fill="#b37c22">Ca2+</text>
+<text x="790" y="570" font-size="18" font-weight="400" fill="#756b67">ATP reflects production and</text>
+<text x="790" y="593" font-size="18" font-weight="400" fill="#756b67">use</text>
+<text x="790" y="620" font-size="18" font-weight="400" fill="#756b67">ROS can signal; excess can</text>
+<text x="790" y="643" font-size="18" font-weight="400" fill="#756b67">harm</text>
+<text x="790" y="670" font-size="18" font-weight="400" fill="#756b67">NO affects respiration and</text>
+<text x="790" y="693" font-size="18" font-weight="400" fill="#756b67">vessels</text>
+<text x="790" y="720" font-size="18" font-weight="400" fill="#756b67">Ca2+ carries ion-channel</text>
+<text x="790" y="743" font-size="18" font-weight="400" fill="#756b67">signals</text>
+<text x="790" y="775" font-size="18" font-weight="700" fill="#2a2422">Direction and timing vary by</text>
+<text x="790" y="798" font-size="18" font-weight="700" fill="#2a2422">context.</text>
+<text x="1148" y="412" font-size="23" font-weight="700" fill="#2a2422">Energy metabolism</text>
+<text x="1148" y="443" font-size="20" font-weight="400" fill="#756b67">ATP turnover, respiration and redox</text>
+<text x="1148" y="468" font-size="20" font-weight="400" fill="#756b67">balance</text>
+<text x="1148" y="508" font-size="23" font-weight="700" fill="#2a2422">Gene / protein activity</text>
+<text x="1148" y="539" font-size="20" font-weight="400" fill="#756b67">NF-κB, TGF-β1 and antioxidant</text>
+<text x="1148" y="564" font-size="20" font-weight="400" fill="#756b67">responses</text>
+<text x="1148" y="604" font-size="23" font-weight="700" fill="#2a2422">Cell behavior</text>
+<text x="1148" y="635" font-size="20" font-weight="400" fill="#756b67">Proliferation, migration and differentiation</text>
+<text x="1148" y="675" font-size="23" font-weight="700" fill="#2a2422">Tissue response</text>
+<text x="1148" y="706" font-size="20" font-weight="400" fill="#756b67">Inflammation, remodeling and repair</text>
+<text x="1148" y="753" font-size="18" font-weight="400" fill="#756b67">These downstream changes can outlast light</text>
+<text x="1148" y="776" font-size="18" font-weight="400" fill="#756b67">exposure.</text>
+<rect x="58" y="856" width="1484" height="270" rx="20" fill="#f7f0ec" stroke="#e7ddd6" stroke-width="1.5"/>
+<text x="84" y="898" font-size="22" font-weight="700" fill="#c35a52">FACTORS THAT SHAPE THE RESPONSE</text>
+<rect x="84" y="922" width="228" height="184" rx="15" fill="#fff" stroke="#e7ddd6" stroke-width="1.5"/>
+<text x="100" y="957" font-size="21" font-weight="700" fill="#2a2422">Wavelength</text>
+<text x="100" y="992" font-size="18" font-weight="400" fill="#756b67">810 and 980 nm</text>
+<text x="100" y="1015" font-size="18" font-weight="400" fill="#756b67">implicated different</text>
+<text x="100" y="1038" font-size="18" font-weight="400" fill="#756b67">routes in one cell</text>
+<text x="100" y="1061" font-size="18" font-weight="400" fill="#756b67">model.</text>
+<rect x="324" y="922" width="228" height="184" rx="15" fill="#fff" stroke="#e7ddd6" stroke-width="1.5"/>
+<text x="340" y="957" font-size="21" font-weight="700" fill="#2a2422">Dose &amp; duration</text>
+<text x="340" y="992" font-size="18" font-weight="400" fill="#756b67">Intensity and time may</text>
+<text x="340" y="1015" font-size="18" font-weight="400" fill="#756b67">interact; some</text>
+<text x="340" y="1038" font-size="18" font-weight="400" fill="#756b67">responses are biphasic.</text>
+<rect x="564" y="922" width="228" height="184" rx="15" fill="#fff" stroke="#e7ddd6" stroke-width="1.5"/>
+<text x="580" y="957" font-size="21" font-weight="700" fill="#2a2422">Cell state</text>
+<text x="580" y="992" font-size="18" font-weight="400" fill="#756b67">Baseline stress shifted</text>
+<text x="580" y="1015" font-size="18" font-weight="400" fill="#756b67">the direction of ROS</text>
+<text x="580" y="1038" font-size="18" font-weight="400" fill="#756b67">change in cultured</text>
+<text x="580" y="1061" font-size="18" font-weight="400" fill="#756b67">neurons.</text>
+<rect x="804" y="922" width="228" height="184" rx="15" fill="#fff" stroke="#e7ddd6" stroke-width="1.5"/>
+<text x="820" y="957" font-size="21" font-weight="700" fill="#2a2422">Delivery &amp; depth</text>
+<text x="820" y="992" font-size="18" font-weight="400" fill="#756b67">Pulsing, beam area and</text>
+<text x="820" y="1015" font-size="18" font-weight="400" fill="#756b67">tissue depth shape</text>
+<text x="820" y="1038" font-size="18" font-weight="400" fill="#756b67">target exposure.</text>
+<rect x="1044" y="922" width="228" height="184" rx="15" fill="#fff" stroke="#e7ddd6" stroke-width="1.5"/>
+<text x="1060" y="957" font-size="21" font-weight="700" fill="#2a2422">Time &amp; sleep</text>
+<text x="1060" y="992" font-size="18" font-weight="400" fill="#756b67">ATP and tumour</text>
+<text x="1060" y="1015" font-size="18" font-weight="400" fill="#756b67">outcomes differed by</text>
+<text x="1060" y="1038" font-size="18" font-weight="400" fill="#756b67">time or sleep in animal</text>
+<text x="1060" y="1061" font-size="18" font-weight="400" fill="#756b67">studies.</text>
+<rect x="1284" y="922" width="228" height="184" rx="15" fill="#fff" stroke="#e7ddd6" stroke-width="1.5"/>
+<text x="1300" y="957" font-size="21" font-weight="700" fill="#2a2422">Glucose</text>
+<text x="1300" y="992" font-size="18" font-weight="400" fill="#756b67">In mouse fibroblasts,</text>
+<text x="1300" y="1015" font-size="18" font-weight="400" fill="#756b67">ATP/ROS changed only</text>
+<text x="1300" y="1038" font-size="18" font-weight="400" fill="#756b67">with glucose available.</text>
+<text x="58" y="1164" font-size="18" font-weight="400" fill="#756b67">Proposed mechanisms and responses vary across experimental models and biological contexts.</text>
+</g></svg>

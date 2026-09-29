@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Browse PBM research across 293 indication entries in 25 medical specialties." />
+    <title>PBM indications — Photobiomodulation Science</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header"><div class="container header-inner"><a class="brand" href="/" aria-label="Photobiomodulation Science home"><span class="brand-mark" aria-hidden="true"><img src="/assets/pbm-light-icon.svg" alt="" /></span><span class="brand-text">Photobiomodulation <span>Science</span></span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav class="site-nav" id="site-nav" aria-label="Primary navigation"><a href="/devices/">PBM devices</a><a href="/indications/" aria-current="page">PBM indications</a><a href="/statistics/">Research statistics</a><a href="/studies/">Ongoing studies</a><a href="/links/">PBM links</a><a href="/about/">About</a></nav></div></header>
+    <main>
+      <section class="page-hero"><div class="container"><p class="breadcrumbs"><a href="/">Home</a> / PBM indications</p><p class="eyebrow">PBM conditions</p><h1>Conditions studied with PBM</h1><p>The updated working list contains 293 indication entries across 25 specialties. Related labels may overlap; PCOS and its expanded name are combined into one directory listing. Select an indication to view its page.</p><div class="actions"><a class="button" href="/statistics/">View research statistics</a><a class="button secondary" href="https://www.bitly.com/PBM-database" target="_blank" rel="noopener noreferrer">Open PBM Database</a></div></div></section>
+      <section class="section top-indications-section"><div class="container"><div class="section-head"><div><p class="eyebrow">Most represented topics</p><h2>Top 10 most-researched topics</h2></div><p>These indication pages currently show the largest publication counts in the database.</p></div><div class="top-indications-panel"><ol class="top-indication-list">
+        <li><a href="/indications/oncology-cancer-supportive-care/oral-mucositis/"><span>Oral mucositis</span><strong>262</strong></a></li>
+        <li><a href="/indications/orthopedics/bone-repair/"><span>Bone repair</span><strong>212</strong></a></li>
+        <li><a href="/indications/oral-medicine-and-dentistry/tooth-extraction/"><span>Tooth extraction</span><strong>163</strong></a></li>
+        <li><a href="/indications/oral-medicine-and-dentistry/temporomandibular-disorders-tmd/"><span>Temporomandibular disorders (TMD)</span><strong>159</strong></a></li>
+        <li><a href="/indications/ophthalmology/myopia/"><span>Myopia</span><strong>153</strong></a></li>
+        <li><a href="/indications/neurology/alzheimer-s-disease-ad/"><span>Alzheimer’s disease (AD)</span><strong>133</strong></a></li>
+        <li><a href="/indications/oncology-cancer-supportive-care/tumor-cell-growth/"><span>Tumor cell growth</span><strong>111</strong></a></li>
+        <li><a href="/indications/dermatology/androgenetic-alopecia/"><span>Androgenetic alopecia</span><strong>95</strong></a></li>
+        <li><a href="/indications/dermatology/burns/"><span>Burns</span><strong>93</strong></a></li>
+        <li><a href="/indications/rheumatology/achilles-tendinitis/"><span>Achilles tendinitis</span><strong>82</strong></a></li>
+      </ol><p class="top-indications-note">Counts are taken from the linked topic pages; some include mapped records, and topics can overlap. A larger publication count does not by itself mean stronger evidence or greater treatment effectiveness.</p></div></div></section>
+      <section class="section"><div class="container"><div class="indication-tools"><div><p class="eyebrow">Browse the directory</p><h2>Choose an indication.</h2></div><label class="search-field" for="indication-search">Search conditions or specialties<input id="indication-search" type="search" placeholder="For example: osteoporosis" autocomplete="off" /></label></div><div id="indication-directory" class="indication-directory" aria-live="polite"></div><noscript><div class="notice"><div class="notice-mark">i</div><p>Enable JavaScript to search and open the indication directory.</p></div></noscript></div></section>
+      <section class="section"><div class="container"><div class="notice"><div class="notice-mark">i</div><p>Detailed database-based summaries are available for five indications. The first three entries in the updated workbook have been refreshed; the remaining pages will be developed in stages.</p></div></div></section>
+    </main>
+    <footer class="site-footer"><div class="container footer-grid"><p>© <span data-year></span> Photobiomodulation Science. An evolving public resource for photobiomodulation research.</p><nav class="footer-nav" aria-label="Footer navigation"><a href="/">Home</a><a href="https://www.bitly.com/PBM-database" target="_blank" rel="noopener noreferrer">Database</a><a href="/devices/">Devices</a><a href="/statistics/">Statistics</a><a href="/studies/">Studies</a><a href="/links/">PBM links</a><a href="/about/">About</a></nav></div></footer>
+    <script src="/indications/data.js?v=20260928-directory"></script>
+    <script>
+      (function () {
+        const directory = document.getElementById('indication-directory');
+        const search = document.getElementById('indication-search');
+        const all = window.PBM_INDICATIONS || [];
+        function render(query) {
+          const q = query.trim().toLowerCase();
+          const groups = all.map(function (category) {
+            const topics = category.topics.filter(function (topic) {
+              return !q || category.name.toLowerCase().includes(q) || topic.name.toLowerCase().includes(q) || (topic.aliases || []).some(function (alias) { return alias.toLowerCase().includes(q); });
+            });
+            return { category, topics };
+          }).filter(function (group) { return group.topics.length; });
+          directory.innerHTML = groups.length ? groups.map(function (group) {
+            return '<section class="indication-category" id="' + group.category.slug + '"><div class="indication-category-head"><h3>' + group.category.name + '</h3><span>' + group.topics.length + ' topics</span></div><div class="indication-links">' + group.topics.map(function (topic) {
+              return '<a class="indication-link" href="/indications/' + group.category.slug + '/' + topic.slug + '/">' + topic.name + '</a>';
+            }).join('') + '</div></section>';
+          }).join('') : '<div class="empty-result">No matching indication found. Try another word.</div>';
+        }
+        search.addEventListener('input', function () { render(search.value); });
+        function scrollToCategory() {
+          const id = decodeURIComponent(window.location.hash.slice(1));
+          if (!id) return;
+          const category = document.getElementById(id);
+          if (category) category.scrollIntoView({ block: 'start' });
+        }
+        render('');
+        window.addEventListener('hashchange', scrollToCategory);
+        if (window.location.hash) window.requestAnimationFrame(scrollToCategory);
+      }());
+    </script>
+    <script src="/app.js"></script>
+  </body>
+</html>
