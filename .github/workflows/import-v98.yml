@@ -1,0 +1,77 @@
+name: Import PBM Science v98
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/import-v98.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  import-source:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Import Site v98 source
+        shell: bash
+        run: |
+          set -euo pipefail
+          ZIP="Photobiomodulation_Science_source_v98.zip"
+          test -f "$ZIP"
+
+          # Preserve the newer thrombocytopenia patch already added to the repo.
+          PATCH="indications/cardiology-and-hematology/thrombocytopenia/index.html"
+          test -f "$PATCH"
+          cp "$PATCH" /tmp/thrombocytopenia-index.html
+
+          rm -rf /tmp/pbm-v98
+          mkdir -p /tmp/pbm-v98
+          unzip -q "$ZIP" -d /tmp/pbm-v98
+          test -f /tmp/pbm-v98/Photobiomodulation_Science/.openai/hosting.json
+          test -d /tmp/pbm-v98/Photobiomodulation_Science/dist
+
+          # Remove temporary files created during the migration bootstrap.
+          rm -rf app.js styles.css indications
+
+          # Copy the complete authoritative Site v98 source tree into repository root.
+          cp -a /tmp/pbm-v98/Photobiomodulation_Science/. .
+
+          # Apply the user-provided updated thrombocytopenia page on top of v98.
+          mkdir -p dist/indications/cardiology-and-hematology/thrombocytopenia
+          cp /tmp/thrombocytopenia-index.html dist/indications/cardiology-and-hematology/thrombocytopenia/index.html
+
+          # The ZIP is only an import artifact; keep the repository as source, not archive storage.
+          rm -f "$ZIP"
+
+          # Sanity checks before committing.
+          test -f dist/index.html
+          test -f dist/styles.css
+          test -f dist/app.js
+          test -f dist/indications/cardiology-and-hematology/thrombocytopenia/index.html
+          test -f .openai/hosting.json
+
+          FILE_COUNT=$(find . -type f -not -path './.git/*' | wc -l)
+          HTML_COUNT=$(find dist -type f -name 'index.html' | wc -l)
+          echo "Repository files after import: $FILE_COUNT"
+          echo "HTML index routes after import: $HTML_COUNT"
+          test "$HTML_COUNT" -ge 303
+
+      - name: Commit imported source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "PBM Science migration"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Import complete PBM Science Site v98 source"
+          git push
