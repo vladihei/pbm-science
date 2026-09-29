@@ -75,3 +75,5 @@ jobs:
           fi
           git commit -m "Import complete PBM Science Site v98 source"
           git push
+
+# Trigger import after initial workflow registration.
