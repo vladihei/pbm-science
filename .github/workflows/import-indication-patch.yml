@@ -1,0 +1,61 @@
+name: Import indication patch
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "_incoming/PBM_indications_part_A_site_patch.zip"
+
+permissions:
+  contents: write
+
+jobs:
+  import-patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate and apply patch
+        shell: bash
+        run: |
+          set -euo pipefail
+          ZIP="_incoming/PBM_indications_part_A_site_patch.zip"
+          test -f "$ZIP"
+          rm -rf /tmp/pbm-patch
+          mkdir -p /tmp/pbm-patch
+          unzip -q "$ZIP" -d /tmp/pbm-patch
+
+          # Only HTML indication pages are allowed in this patch.
+          mapfile -t FILES < <(find /tmp/pbm-patch -type f | sort)
+          test "${#FILES[@]}" -gt 0
+          for f in "${FILES[@]}"; do
+            rel="${f#/tmp/pbm-patch/}"
+            case "$rel" in
+              dist/indications/*/index.html) ;;
+              *)
+                echo "Unexpected patch file: $rel"
+                exit 1
+                ;;
+            esac
+          done
+
+          cp -a /tmp/pbm-patch/dist/. dist/
+          rm -f "$ZIP"
+
+          echo "Applied ${#FILES[@]} indication pages."
+
+      - name: Commit patch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "PBM Science updater"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Apply PBM indication site patch"
+          git push
