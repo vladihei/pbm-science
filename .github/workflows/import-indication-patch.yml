@@ -17,14 +17,15 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Reassemble, validate and apply patch
+      - name: Validate and apply patch
         shell: bash
         run: |
           set -euo pipefail
-          cat _incoming/patch.b64.* | base64 -d > /tmp/patch.zip
+          ZIP="_incoming/patch.zip"
+          test -f "$ZIP"
           rm -rf /tmp/pbm-patch
           mkdir -p /tmp/pbm-patch
-          unzip -q /tmp/patch.zip -d /tmp/pbm-patch
+          unzip -q "$ZIP" -d /tmp/pbm-patch
 
           mapfile -t FILES < <(find /tmp/pbm-patch -type f | sort)
           test "${#FILES[@]}" -gt 0
