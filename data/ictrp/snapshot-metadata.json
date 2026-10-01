@@ -1,0 +1,29 @@
+{
+  "retrieved_on": "2026-10-01",
+  "data_processed_by_ictrp_on": null,
+  "registry_import_dates": {
+    "Australian New Zealand Clinical Trials Registry": "2026-09-21",
+    "Chinese Clinical Trial Registry": "2026-09-21",
+    "ClinicalTrials.gov": "2026-09-21",
+    "ISRCTN": "2026-09-21",
+    "Overview of Medical Research in the Netherlands (OMON)": "2026-09-21",
+    "Brazilian Clinical Trials Registry (ReBEC)": "2026-09-14",
+    "Clinical Trials Registry - India": "2026-09-14",
+    "Clinical Research Information Service - Republic of Korea": "2026-09-21",
+    "German Clinical Trials Register": "2026-09-14",
+    "Iranian Registry of Clinical Trials": "2026-06-01",
+    "Japan Primary Registries Network (JPRN/jRCT)": "2026-09-14",
+    "Pan African Clinical Trial Registry": "2026-09-14",
+    "Thai Clinical Trials Registry (TCTR)": "2026-08-03",
+    "International Traditional Medicine Clinical Trial Registry (ITMCTR)": "2026-08-03"
+  },
+  "quality_review": {
+    "status": "passed",
+    "checked_records": 50,
+    "relevant_records": 37,
+    "unresolved_records": 9,
+    "out_of_scope_records": 4,
+    "reviewed_on": "2026-10-01",
+    "notes": "Documented systematic stratified audit in processed/quality-sample-2026-10-01.csv: 20 q1, 20 q2-only, 10 q3-only. Decisions: 37 in scope, 9 unresolved (held for individual review), 4 out of scope. Among resolvable q1/q2 sample records, 32/33 were in scope; q3 remains manual-only. This ID-sorted systematic audit is a quality check, not a statistical precision estimate. Scope rules were tightened for excimer laser and implausible 10 nm wavelength."
+  }
+}
