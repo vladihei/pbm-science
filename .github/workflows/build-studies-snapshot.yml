@@ -1,6 +1,11 @@
 name: Build password-protected studies snapshot
 
 on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "dist/studies/ongoing-studies.json"
   schedule:
     - cron: "17 12 * * *"
   workflow_dispatch:
