@@ -13,8 +13,8 @@ An AI-assisted field-level review compared each source title, intervention, cond
 - Status groups in the sample: 15 records had an ongoing source status, 20 had a historical status, and 15 reported `UNKNOWN`. The 35 known source statuses mapped consistently; all 15 unknown-status records remain out of the ongoing view until checked.
 - Seventeen distinct sample rows had at least one hold for scope or status; one record was both scope-unresolved and `UNKNOWN`.
 
-The status shown on a registry can lag behind the actual study. The review preserves what the source reported; it does not treat a monthly snapshot as a real-time status check. “Recruitment completed” is mapped to review rather than historical because completion of recruitment alone does not establish completion of the study.
+The status shown on a registry can lag behind the actual study. The review preserves what the source reported; it does not treat a daily registry snapshot as a real-time status check. “Recruitment completed” is mapped to review rather than historical because completion of recruitment alone does not establish completion of the study.
 
 ## Publication state
 
-The 50-record screening audit is complete, but the public snapshot remains empty. ClinicalTrials.gov reuse review is still pending because source processing-date and freshness requirements have not been resolved for this monthly workflow; other registry reuse terms also remain pending. This quality review does not grant redistribution permission.
+The 50-record screening audit is complete. The first website pilot is limited to the selected ClinicalTrials.gov structured fields; its source timestamp, retrieval date, source attribution, and query/transformation note are shown. A daily workflow is configured to keep the snapshot close to the current source dataset. This sample review does not independently verify every study status, grant rights in third-party content, or establish a legal opinion. Other registries remain excluded pending separate review.
