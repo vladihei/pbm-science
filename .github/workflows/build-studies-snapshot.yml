@@ -1,0 +1,104 @@
+name: Build password-protected studies snapshot
+
+on:
+  schedule:
+    - cron: "17 12 * * *"
+  workflow_dispatch:
+    inputs:
+      retrieved_on:
+        description: "Local retrieval date (YYYY-MM-DD); leave blank to use Europe/Helsinki today"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-studies-snapshot
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+
+      - name: Run source-processing tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Choose retrieval date
+        env:
+          INPUT_RETRIEVED_ON: ${{ inputs.retrieved_on }}
+        run: |
+          if [ -n "$INPUT_RETRIEVED_ON" ]; then
+            retrieved_on="$INPUT_RETRIEVED_ON"
+          else
+            retrieved_on="$(python -c 'from datetime import datetime; from zoneinfo import ZoneInfo; print(datetime.now(ZoneInfo("Europe/Helsinki")).date().isoformat())')"
+          fi
+          RETRIEVED_ON="$retrieved_on" python -c 'from datetime import date; import os; date.fromisoformat(os.environ["RETRIEVED_ON"])'
+          echo "RETRIEVED_ON=$retrieved_on" >> "$GITHUB_ENV"
+
+      - name: Fetch all ClinicalTrials.gov query pages and source timestamp
+        run: python scripts/fetch_clinicaltrials_gov.py --retrieved-on "$RETRIEVED_ON"
+
+      - name: Prepare the dated metadata and process the source snapshot
+        run: |
+          python - "$RETRIEVED_ON" <<'PY'
+          import json, sys
+          from pathlib import Path
+          retrieved_on = sys.argv[1]
+          manifest_path = Path("data/direct-sources/raw/clinicaltrials-gov") / f"{retrieved_on}-manifest.json"
+          manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+          metadata_path = Path("data/direct-sources/snapshot-metadata.json")
+          metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+          metadata["retrieved_on"] = retrieved_on
+          metadata["source_data_timestamp"] = manifest["source_data_timestamp"]
+          metadata_path.write_text(json.dumps(metadata, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          PY
+          python scripts/process_direct_sources.py --manifest "data/direct-sources/raw/clinicaltrials-gov/$RETRIEVED_ON-manifest.json"
+
+      - name: Verify the snapshot is ready and contains only cleared source fields
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          snapshot = json.loads(Path("data/direct-sources/private/ongoing-studies.json").read_text(encoding="utf-8"))
+          registries = {record["registry"] for record in snapshot["records"]}
+          if snapshot["snapshot_status"] != "ready" or not snapshot["records"]:
+              raise SystemExit(f"Snapshot is not ready: {snapshot['publication_blockers']}")
+          if registries != {"ClinicalTrials.gov"}:
+              raise SystemExit(f"Unexpected source set: {sorted(registries)}")
+          if not snapshot.get("source_data_timestamp"):
+              raise SystemExit("Missing source data timestamp")
+          print(f"Ready: {len(snapshot['records'])} records; timestamp {snapshot['source_data_timestamp']}")
+          PY
+
+      - name: Encrypt the snapshot
+        env:
+          PBM_STUDIES_DATA_KEY: ${{ secrets.PBM_STUDIES_DATA_KEY }}
+        run: node scripts/encrypt_studies_snapshot.mjs
+
+      - name: Commit only the encrypted website snapshot
+        run: |
+          git restore -- data/direct-sources/snapshot-metadata.json
+          git add -- dist/studies/ongoing-studies.json
+          if git diff --cached --quiet; then
+            echo "Encrypted snapshot is unchanged."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Refresh encrypted ongoing studies snapshot"
+            git push
+          fi
