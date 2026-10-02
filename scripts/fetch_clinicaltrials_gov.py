@@ -22,6 +22,7 @@ from typing import Any, Callable
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = ROOT / "data" / "direct-sources" / "raw" / "clinicaltrials-gov"
 API_URL = "https://clinicaltrials.gov/api/v2/studies"
+API_VERSION_URL = "https://clinicaltrials.gov/api/v2/version"
 SEARCH_EXPRESSIONS = (
     "photobiomodulation OR photobiostimulation",
     '"low level laser therapy" OR "low level light therapy" OR LLLT OR "laser phototherapy"',
@@ -72,6 +73,27 @@ def request_page(
     raise RuntimeError("ClinicalTrials.gov API retry loop ended unexpectedly")
 
 
+def request_data_timestamp(
+    timeout: int,
+    opener: Callable[..., Any] = urllib.request.urlopen,
+) -> str:
+    req = urllib.request.Request(
+        API_VERSION_URL,
+        headers={
+            "Accept": "application/json",
+            "User-Agent": "PBM-science-ongoing-studies/1.0 (research index; contact: pbm.science)",
+        },
+    )
+    with opener(req, timeout=timeout) as response:
+        if response.status != 200:
+            raise RuntimeError(f"ClinicalTrials.gov version endpoint returned HTTP {response.status}")
+        body = json.loads(response.read())
+    timestamp = body.get("dataTimestamp") if isinstance(body, dict) else None
+    if not isinstance(timestamp, str) or not timestamp.strip():
+        raise ValueError("ClinicalTrials.gov version endpoint lacks dataTimestamp")
+    return timestamp.strip()
+
+
 def fetch_snapshot(
     output_dir: Path,
     retrieved_on: str,
@@ -84,6 +106,7 @@ def fetch_snapshot(
     if not (1 <= page_size <= 1000):
         raise ValueError("page_size must be from 1 through 1000")
     output_dir.mkdir(parents=True, exist_ok=True)
+    source_timestamp_before = request_data_timestamp(timeout, opener=opener)
     query_manifest = []
     for query_number, query in enumerate(queries, start=1):
         query_entry: dict[str, Any] = {
@@ -130,11 +153,19 @@ def fetch_snapshot(
             "saved": query_entry["returned_count"],
         }, sort_keys=True))
 
+    source_timestamp_after = request_data_timestamp(timeout, opener=opener)
+    if source_timestamp_before != source_timestamp_after:
+        raise RuntimeError(
+            "ClinicalTrials.gov data changed during collection; rerun to obtain a consistent snapshot"
+        )
+
     manifest = {
-        "schema_version": 1,
+        "schema_version": 2,
         "source": "ClinicalTrials.gov API v2",
         "source_url": "https://clinicaltrials.gov/data-api/about-api",
         "api_url": API_URL,
+        "version_url": API_VERSION_URL,
+        "source_data_timestamp": source_timestamp_before,
         "retrieved_on": retrieved_on,
         "retrieved_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "query_field": "query.term",
@@ -162,6 +193,7 @@ def main() -> int:
         manifest = fetch_snapshot(args.output_dir, retrieved_on, page_size=args.page_size, timeout=args.timeout)
         print(json.dumps({
             "retrieved_on": retrieved_on,
+            "source_data_timestamp": manifest["source_data_timestamp"],
             "query_count": len(manifest["queries"]),
             "returned_rows_with_duplicates": manifest["returned_rows_with_duplicates"],
             "manifest": str(args.output_dir / f"{retrieved_on}-manifest.json"),
