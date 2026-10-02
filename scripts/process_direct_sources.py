@@ -211,7 +211,7 @@ def normalize_ctg(study: dict[str, Any], query: str, retrieved_on: str) -> dict[
         "sponsor": clean((sponsor.get("leadSponsor") or {}).get("name")) or None,
         "source_url": REGISTRY_URLS["ClinicalTrials.gov"] + primary_id,
         "source_retrieved_on": retrieved_on,
-        "source_updated_on": ctg_date(status.get("studyLastUpdatePostDateStruct")),
+        "source_updated_on": ctg_date(status.get("lastUpdatePostDateStruct")),
         "matched_queries": [query],
         "summary_for_review": brief_summary,
         "registry_record_identifier": clean(primary_id_info.get("id")),
