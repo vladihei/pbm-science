@@ -34,8 +34,8 @@
 <div data-resource-controls hidden>
 <div class="trial-toolbar"><label class="search-field" for="resource-search">Search resources<input id="resource-search" type="search" data-resource-search placeholder="e.g. Parkinson’s, books, WALT…" autocomplete="off" /></label><button class="button secondary small" type="button" data-resource-reset>Clear filters</button></div>
 <div class="study-filters">
-<div class="study-filter-row study-filter-row-primary"><span class="study-filter-heading">Category</span><div class="study-filter-chips" role="group" aria-label="Filter resources by category"><button class="study-chip" type="button" data-resource-category="all" aria-pressed="true">All categories</button><button class="study-chip" type="button" data-resource-category="category-0" aria-pressed="false">General blogs</button><button class="study-chip" type="button" data-resource-category="category-1" aria-pressed="false">Research blogs</button><button class="study-chip" type="button" data-resource-category="category-2" aria-pressed="false">General books</button><button class="study-chip" type="button" data-resource-category="category-3" aria-pressed="false">Academic books</button><button class="study-chip" type="button" data-resource-category="category-4" aria-pressed="false">Facebook groups</button><button class="study-chip" type="button" data-resource-category="category-5" aria-pressed="false">News stories</button><button class="study-chip" type="button" data-resource-category="category-6" aria-pressed="false">Startups</button><button class="study-chip" type="button" data-resource-category="category-7" aria-pressed="false">Manufacturers</button><button class="study-chip" type="button" data-resource-category="category-8" aria-pressed="false">Organizations</button><button class="study-chip" type="button" data-resource-category="category-9" aria-pressed="false">Webstores</button><button class="study-chip" type="button" data-resource-category="category-10" aria-pressed="false">Interviews</button><button class="study-chip" type="button" data-resource-category="category-11" aria-pressed="false">Presentations</button><button class="study-chip" type="button" data-resource-category="category-12" aria-pressed="false">Theses</button></div></div>
-<div class="study-filter-row study-filter-row-primary"><span class="study-filter-heading">Sort by</span><div class="study-filter-chips" role="group" aria-label="Sort resources"><button class="study-chip" type="button" data-resource-sort="category" aria-pressed="true">Category</button><button class="study-chip" type="button" data-resource-sort="name-asc" aria-pressed="false">Name A–Z</button><button class="study-chip" type="button" data-resource-sort="name-desc" aria-pressed="false">Name Z–A</button></div></div>
+<div class="study-filter-row study-filter-row-primary"><span class="study-filter-heading">Category</span><div class="study-filter-chips" role="group" aria-label="Filter resources by category"><button class="study-chip" type="button" data-resource-category="category-0" aria-pressed="false">General blogs</button><button class="study-chip" type="button" data-resource-category="category-1" aria-pressed="false">Research blogs</button><button class="study-chip" type="button" data-resource-category="category-2" aria-pressed="false">General books</button><button class="study-chip" type="button" data-resource-category="category-3" aria-pressed="false">Academic books</button><button class="study-chip" type="button" data-resource-category="category-4" aria-pressed="false">Facebook groups</button><button class="study-chip" type="button" data-resource-category="category-5" aria-pressed="false">News stories</button><button class="study-chip" type="button" data-resource-category="category-6" aria-pressed="false">Startups</button><button class="study-chip" type="button" data-resource-category="category-7" aria-pressed="false">Manufacturers</button><button class="study-chip" type="button" data-resource-category="category-8" aria-pressed="true">Organizations</button><button class="study-chip" type="button" data-resource-category="category-9" aria-pressed="false">Webstores</button><button class="study-chip" type="button" data-resource-category="category-10" aria-pressed="false">Interviews</button><button class="study-chip" type="button" data-resource-category="category-11" aria-pressed="false">Presentations</button><button class="study-chip" type="button" data-resource-category="category-12" aria-pressed="false">Theses</button></div></div>
+<div class="study-filter-row study-filter-row-primary"><span class="study-filter-heading">Sort by</span><div class="study-filter-chips" role="group" aria-label="Sort resources"><button class="study-chip" type="button" data-resource-sort="original" aria-pressed="true">Recommended</button><button class="study-chip" type="button" data-resource-sort="newest" aria-pressed="false">Newest first</button><button class="study-chip" type="button" data-resource-sort="oldest" aria-pressed="false">Oldest first</button></div></div>
 </div></div>
 <p class="trial-results-status" data-resource-status role="status" aria-live="polite">Showing all 86 resources.</p>
 <div class="resource-table-wrap" role="region" aria-label="PBM resources table" tabindex="0">
@@ -145,31 +145,37 @@
  const rows = Array.from(body.querySelectorAll('[data-resource-row]')).map(row => ({
    node: row, category: row.dataset.category,
    order: Number(row.dataset.originalOrder),
+   year: Number((row.querySelector('a').textContent.match(/\b(?:19|20)\d{2}\b/) || [])[0]) || 0,
    name: row.querySelector('a').textContent.trim(),
    text: normalize(row.textContent + ' ' + row.querySelector('a').href)
  }));
- let category = 'all';
- let sort = 'category';
+ let category = 'category-8';
+ let sort = 'original';
  function render() {
    const terms = normalize(search.value.trim()).split(/\s+/).filter(Boolean);
    let count = 0;
-   const ordered = rows.slice().sort((a, b) => sort === 'category' ? a.order - b.order :
-     (sort === 'name-desc' ? -1 : 1) * a.name.localeCompare(b.name, 'en', {sensitivity: 'base'}));
+   const ordered = rows.slice().sort((a, b) => {
+     if (sort === 'newest' || sort === 'oldest') {
+       const direction = sort === 'newest' ? -1 : 1;
+       return direction * ((a.year || -Infinity) - (b.year || -Infinity)) || a.order - b.order;
+     }
+     return a.order - b.order;
+   });
    ordered.forEach(row => {
-     row.node.hidden = (category !== 'all' && category !== row.category) || !terms.every(term => row.text.includes(term));
+     row.node.hidden = (category !== row.category) || !terms.every(term => row.text.includes(term));
      if (!row.node.hidden) count++;
      body.appendChild(row.node);
    });
    categoryButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.resourceCategory === category)));
    sortButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.resourceSort === sort)));
-   status.textContent = category === 'all' && !terms.length ? 'Showing all ' + rows.length + ' resources.' :
+   status.textContent = !terms.length ? 'Showing ' + count + ' of ' + rows.length + ' resources.' :
      'Showing ' + count + ' of ' + rows.length + ' resources.';
    empty.hidden = count !== 0;
  }
  search.addEventListener('input', render);
  categoryButtons.forEach(button => button.addEventListener('click', () => { category = button.dataset.resourceCategory; render(); }));
  sortButtons.forEach(button => button.addEventListener('click', () => { sort = button.dataset.resourceSort; render(); }));
- reset.addEventListener('click', () => { search.value = ''; category = 'all'; sort = 'category'; render(); search.focus(); });
+ reset.addEventListener('click', () => { search.value = ''; category = 'category-8'; sort = 'original'; render(); search.focus(); });
  document.querySelector('[data-resource-controls]').hidden = false;
  render();
 }());
