@@ -1,130 +1,53 @@
 import assert from "node:assert/strict";
-import { access, readFile } from "node:fs/promises";
-import { webcrypto } from "node:crypto";
+import { readFile } from "node:fs/promises";
 
-globalThis.crypto ??= webcrypto;
 const source = await readFile(new URL("../worker.js", import.meta.url), "utf8");
 const worker = await import(`data:text/javascript;base64,${Buffer.from(source).toString("base64")}`);
-const { encryptSnapshot } = await import("../scripts/encrypt_studies_snapshot.mjs");
-const password = "test-only-password-123";
-const dataKey = "0123456789abcdef".repeat(4);
-const plaintextSnapshot = JSON.stringify({ snapshot_status: "ready", records: [{ primary_id: "TEST-1" }] });
-const encryptedSnapshot = await encryptSnapshot(plaintextSnapshot, dataKey);
+const snapshot = JSON.stringify({ snapshot_status: "ready", records: [{ primary_id: "TEST-1" }] });
 
-function context(url, { method = "GET", headers = {}, body, secret = password, key = dataKey, assetBody, assetStatus = 200 } = {}) {
-  const request = new Request(url, { method, headers, body, redirect: "manual" });
+function context(url, { method = "GET", assetBody = "PUBLIC STUDY PAGE", assetStatus = 200 } = {}) {
+  const request = new Request(url, { method });
   return {
     request,
-    env: secret === null ? {} : { PBM_STUDIES_PASSWORD: secret, PBM_STUDIES_DATA_KEY: key },
-    next: async () => new Response(assetBody || (url.endsWith("ongoing-studies.json") ? encryptedSnapshot : "PRIVATE STUDY DATA"), {
+    env: {},
+    next: async () => new Response(assetBody, {
       status: assetStatus,
-      headers: { "Content-Type": "application/json", "Cache-Control": "public, max-age=3600" },
+      headers: { "Content-Type": url.endsWith(".json") ? "application/json" : "text/html" },
     }),
   };
 }
 
 let result = await worker.handleStudiesRequest(context("https://example.test/studies/"));
-assert.equal(result.status, 401);
-const unauthenticatedPage = await result.text();
-assert.match(unauthenticatedPage, /Private study database/);
-assert.doesNotMatch(unauthenticatedPage, new RegExp(password));
-
-result = await worker.handleStudiesRequest(context("https://example.test/studies/ongoing-studies.json"));
-assert.equal(result.status, 401);
-assert.doesNotMatch(await result.text(), /PRIVATE STUDY DATA/);
-
-const wrongForm = new FormData();
-wrongForm.set("action", "login");
-wrongForm.set("password", "incorrect");
-result = await worker.handleStudiesRequest(context("https://example.test/studies/", { method: "POST", body: wrongForm }));
-assert.equal(result.status, 401);
-assert.match(await result.text(), /not accepted/);
-
-const loginForm = new FormData();
-loginForm.set("action", "login");
-loginForm.set("password", password);
-result = await worker.handleStudiesRequest(context("https://example.test/studies/", { method: "POST", body: loginForm }));
-assert.equal(result.status, 303);
-const setCookie = result.headers.get("Set-Cookie");
-assert.match(setCookie, /HttpOnly/);
-assert.match(setCookie, /Secure/);
-assert.match(setCookie, /SameSite=Lax/);
-assert.doesNotMatch(setCookie, new RegExp(password));
-const cookie = setCookie.split(";")[0];
+assert.equal(result.status, 200);
+assert.equal(await result.text(), "PUBLIC STUDY PAGE");
+assert.equal(result.headers.get("Set-Cookie"), null);
 
 result = await worker.handleStudiesRequest(context("https://example.test/studies/ongoing-studies.json", {
-  headers: { Cookie: cookie },
+  assetBody: snapshot,
 }));
 assert.equal(result.status, 200);
-assert.equal(await result.text(), plaintextSnapshot);
-assert.equal(result.headers.get("Cache-Control"), "private, no-store");
+assert.equal(await result.text(), snapshot);
+assert.equal(result.headers.get("Cache-Control"), "public, max-age=300");
+assert.equal(result.headers.get("Content-Type"), "application/json");
 assert.equal(result.headers.get("X-Robots-Tag"), "noindex, nofollow, noarchive");
 
-const [cookieName, token] = cookie.split("=");
-const tampered = `${cookieName}=${token.slice(0, -1)}${token.endsWith("0") ? "1" : "0"}`;
-result = await worker.handleStudiesRequest(context("https://example.test/studies/", {
-  headers: { Cookie: tampered },
-}));
-assert.equal(result.status, 401);
-
-const logoutForm = new FormData();
-logoutForm.set("action", "logout");
-result = await worker.handleStudiesRequest(context("https://example.test/studies/", {
-  method: "POST",
-  headers: { Cookie: cookie },
-  body: logoutForm,
-}));
-assert.equal(result.status, 303);
-assert.match(result.headers.get("Set-Cookie"), /Max-Age=0/);
-
-result = await worker.handleStudiesRequest(context("https://example.test/studies/", { secret: null }));
-assert.equal(result.status, 503);
-assert.doesNotMatch(await result.text(), /PRIVATE STUDY DATA/);
-
-result = await worker.handleStudiesRequest(context("https://example.test/studies/ongoing-studies.json", {
-  headers: { Cookie: cookie },
-  assetBody: "not encrypted study data",
-}));
-assert.equal(result.status, 503);
-assert.doesNotMatch(await result.text(), /not encrypted study data/);
-
-result = await worker.handleStudiesRequest(context("https://example.test/studies/ongoing-studies.json", {
-  headers: { Cookie: cookie },
-  key: "",
-}));
-assert.equal(result.status, 503);
-assert.doesNotMatch(await result.text(), /PRIVATE STUDY DATA/);
-
-assert.doesNotMatch(encryptedSnapshot, /TEST-1|test-only-password-123/);
-await assert.rejects(access(new URL("../dist/studies/ongoing-studies.json", import.meta.url)), { code: "ENOENT" });
+result = await worker.handleStudiesRequest(context("https://example.test/studies/", { method: "POST" }));
+assert.equal(result.status, 405);
+assert.equal(result.headers.get("Set-Cookie"), null);
 
 result = await worker.handleStudiesRequest(context("https://example.test/about/"));
 assert.equal(result.status, 200);
-assert.equal(await result.text(), "PRIVATE STUDY DATA");
+assert.equal(await result.text(), "PUBLIC STUDY PAGE");
+
+result = await worker.default.fetch(new Request("https://example.test/studies/"), {
+  ASSETS: { fetch: async () => new Response("PUBLIC STUDY PAGE") },
+});
+assert.equal(result.status, 200);
+assert.equal(await result.text(), "PUBLIC STUDY PAGE");
 
 const config = JSON.parse(await readFile(new URL("../wrangler.jsonc", import.meta.url), "utf8"));
 assert.equal(config.main, "./worker.js");
 assert.equal(config.assets.binding, "ASSETS");
 assert.deepEqual(config.assets.run_worker_first, ["/studies", "/studies/*"]);
 
-const workerRequest = new Request("https://example.test/studies/ongoing-studies.json", {
-  headers: { Cookie: cookie },
-});
-const deployedShape = await worker.default.fetch(workerRequest, {
-  PBM_STUDIES_PASSWORD: password,
-  PBM_STUDIES_DATA_KEY: dataKey,
-  ASSETS: { fetch: async () => new Response(encryptedSnapshot) },
-});
-assert.equal(deployedShape.status, 200);
-assert.equal(await deployedShape.text(), plaintextSnapshot);
-
-result = await worker.handleStudiesRequest(context("https://example.test/studies/ongoing-studies.json", {
-  headers: { Cookie: cookie },
-  assetStatus: 404,
-  assetBody: "Not Found",
-}));
-assert.equal(result.status, 404);
-assert.equal(await result.text(), "Not Found");
-assert.equal(result.headers.get("Cache-Control"), "private, no-store");
-
-console.log("Password and encrypted-snapshot middleware checks passed.");
+console.log("Public studies middleware checks passed.");
