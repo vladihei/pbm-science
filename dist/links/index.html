@@ -13,6 +13,10 @@
 .resource-name-col{width:35%;}.resource-year-col{width:80px;}.resource-category-col{width:20%;}
 .resource-table th,.resource-table td{padding:15px 18px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere;}
 .resource-table th{color:var(--navy);background:var(--surface-soft);font-size:.88rem;}
+.resource-sort-button{display:inline-flex;align-items:center;gap:6px;padding:0;border:0;background:none;color:inherit;font:inherit;font-weight:700;text-align:left;cursor:pointer;}
+.resource-sort-button:hover,.resource-sort-button:focus-visible{text-decoration:underline;text-decoration-color:var(--blue);text-underline-offset:3px;}
+.resource-sort-button:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:2px;}
+.resource-sort-indicator{width:1em;color:var(--blue);font-size:.8em;text-align:center;}
 .resource-table td.resource-year{color:var(--muted);font-size:.875rem;text-align:center;white-space:nowrap;font-variant-numeric:tabular-nums;}
 .resource-table td:nth-child(3){color:var(--muted);font-size:.875rem;}
 .resource-table td:nth-child(4){color:var(--muted);}
@@ -40,7 +44,7 @@
 </div></div>
 <p class="trial-results-status" data-resource-status role="status" aria-live="polite">Showing all 86 resources.</p>
 <div class="resource-table-wrap" role="region" aria-label="PBM resources table" tabindex="0">
-<table class="resource-table"><caption class="visually-hidden">PBM links and resources</caption><colgroup><col class="resource-name-col" /><col class="resource-year-col" /><col class="resource-category-col" /><col /></colgroup><thead><tr><th scope="col">Resource</th><th scope="col">Year</th><th scope="col">Category</th><th scope="col">Description</th></tr></thead><tbody data-resource-results>
+<table class="resource-table"><caption class="visually-hidden">PBM links and resources</caption><colgroup><col class="resource-name-col" /><col class="resource-year-col" /><col class="resource-category-col" /><col /></colgroup><thead><tr><th scope="col" aria-sort="none"><button class="resource-sort-button" type="button" data-resource-column="resource" aria-label="Sort by resource name">Resource <span class="resource-sort-indicator" aria-hidden="true">↕</span></button></th><th scope="col" aria-sort="none"><button class="resource-sort-button" type="button" data-resource-column="year" aria-label="Sort by year">Year <span class="resource-sort-indicator" aria-hidden="true">↕</span></button></th><th scope="col">Category</th><th scope="col">Description</th></tr></thead><tbody data-resource-results>
 <tr data-resource-row data-category="category-0" data-original-order="0"><td><a href="https://www.theenergyblueprint.com/red-light-therapy-ultimate-guide/" target="_blank" rel="noopener noreferrer">The Ultimate Guide To Red Light Therapy And Near-Infrared Light Therapy</a></td><td class="resource-year"><time datetime="2018">2018</time></td><td>Blog articles for general readers</td><td>An extensive blog article about photobiomodulation science, and the practical use of LED arrays for personal health. Written by Ari Whitten.</td></tr>
 <tr data-resource-row data-category="category-0" data-original-order="1"><td><a href="https://www.naturebuildshealth.com/blog/red_light_therapy" target="_blank" rel="noopener noreferrer">Red Light Therapy: A Fountain Of Eternal Youth And Health?</a></td><td class="resource-year"><time datetime="2018">2018</time></td><td>Blog articles for general readers</td><td>An extensive blog article about photobiomodulation science, and the practical use of LED arrays for personal health. Written by Bart Wolbers.</td></tr>
 <tr data-resource-row data-category="category-0" data-original-order="2"><td><a href="https://endalldisease.com/red-light-therapy/" target="_blank" rel="noopener noreferrer">Your Complete Guide to Infrared &amp; Red Light Therapy</a></td><td class="resource-year"><time datetime="2018">2018</time></td><td>Blog articles for general readers</td><td>An extensive blog article about photobiomodulation science, and the practical use of LED arrays for personal health. Written by Mark Sloan.</td></tr>
@@ -162,23 +166,36 @@
  const search = document.querySelector('[data-resource-search]');
  const categoryButtons = Array.from(document.querySelectorAll('[data-resource-category]'));
  const sortButtons = Array.from(document.querySelectorAll('[data-resource-sort]'));
+ const columnSortButtons = Array.from(document.querySelectorAll('[data-resource-column]'));
  const status = document.querySelector('[data-resource-status]');
  const empty = document.querySelector('[data-resource-empty]');
  const reset = document.querySelector('[data-resource-reset]');
  const normalize = value => value.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase();
+ const compareText = (a, b) => a.localeCompare(b, undefined, { sensitivity: 'base', numeric: true });
  const rows = Array.from(body.querySelectorAll('[data-resource-row]')).map(row => ({
    node: row, category: row.dataset.category,
    order: Number(row.dataset.originalOrder),
    year: Number(row.querySelector('.resource-year').textContent.trim()) || 0,
-   name: row.querySelector('a').textContent.trim(),
+   name: normalize(row.querySelector('a').textContent.trim()),
    text: normalize(row.textContent + ' ' + row.querySelector('a').href)
  }));
  let category = 'category-8';
  let sort = 'original';
+ let columnSort = null;
+ let columnDirection = 1;
  function render() {
    const terms = normalize(search.value.trim()).split(/\s+/).filter(Boolean);
    let count = 0;
    const ordered = rows.slice().sort((a, b) => {
+     if (columnSort === 'resource') {
+       return columnDirection * compareText(a.name, b.name) || a.order - b.order;
+     }
+     if (columnSort === 'year') {
+       if (!a.year && !b.year) return a.order - b.order;
+       if (!a.year) return 1;
+       if (!b.year) return -1;
+       return columnDirection * (a.year - b.year) || a.order - b.order;
+     }
      if (sort === 'newest' || sort === 'oldest') {
        const direction = sort === 'newest' ? -1 : 1;
        if (!a.year && !b.year) return a.order - b.order;
@@ -195,14 +212,36 @@
    });
    categoryButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.resourceCategory === category)));
    sortButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.resourceSort === sort)));
-   status.textContent = !terms.length ? 'Showing ' + count + ' of ' + rows.length + ' resources.' :
-     'Showing ' + count + ' of ' + rows.length + ' resources.';
+   columnSortButtons.forEach(button => {
+     const active = button.dataset.resourceColumn === columnSort;
+     const heading = button.closest('th');
+     const indicator = button.querySelector('.resource-sort-indicator');
+     heading.setAttribute('aria-sort', active ? (columnDirection === 1 ? 'ascending' : 'descending') : 'none');
+     indicator.textContent = active ? (columnDirection === 1 ? '↑' : '↓') : '↕';
+     const label = button.dataset.resourceColumn === 'resource' ? 'resource name' : 'year';
+     button.setAttribute('aria-label', active
+       ? 'Sort by ' + label + ' in ' + (columnDirection === 1 ? 'ascending' : 'descending') + ' order'
+       : 'Sort by ' + label);
+   });
+   status.textContent = 'Showing ' + count + ' of ' + rows.length + ' resources.';
    empty.hidden = count !== 0;
  }
  search.addEventListener('input', render);
  categoryButtons.forEach(button => button.addEventListener('click', () => { category = button.dataset.resourceCategory; render(); }));
- sortButtons.forEach(button => button.addEventListener('click', () => { sort = button.dataset.resourceSort; render(); }));
- reset.addEventListener('click', () => { search.value = ''; category = 'category-8'; sort = 'original'; render(); search.focus(); });
+ sortButtons.forEach(button => button.addEventListener('click', () => {
+   sort = button.dataset.resourceSort;
+   columnSort = sort === 'newest' || sort === 'oldest' ? 'year' : null;
+   columnDirection = sort === 'newest' ? -1 : 1;
+   render();
+ }));
+ columnSortButtons.forEach(button => button.addEventListener('click', () => {
+   const column = button.dataset.resourceColumn;
+   if (columnSort === column) columnDirection *= -1;
+   else { columnSort = column; columnDirection = 1; }
+   sort = column === 'year' ? (columnDirection === 1 ? 'oldest' : 'newest') : 'column';
+   render();
+ }));
+ reset.addEventListener('click', () => { search.value = ''; category = 'category-8'; sort = 'original'; columnSort = null; columnDirection = 1; render(); search.focus(); });
  document.querySelector('[data-resource-controls]').hidden = false;
  render();
 }());
