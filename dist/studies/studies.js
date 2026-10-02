@@ -12,6 +12,7 @@
   var emptyTitle = document.querySelector('[data-empty-title]');
   var emptyCopy = document.querySelector('[data-empty-copy]');
   var retrieved = document.querySelector('[data-retrieved]');
+  var sourceDataTimestamp = document.querySelector('[data-source-data-timestamp]');
   var qualityReview = document.querySelector('[data-quality-review]');
   var reuseStatus = document.querySelector('[data-reuse-status]');
   var sourcesDetails = document.querySelector('[data-sources]');
@@ -177,7 +178,8 @@
     entries.sort(function (a, b) { return a.registry.localeCompare(b.registry); }).forEach(function (source) {
       var item = document.createElement('li');
       item.textContent = source.registry + ': ' + source.search_hit_count + ' unique query hits; ' +
-        source.ongoing_status_count + ' report an ongoing registry status. Checked ' + dateLabel(source.retrieved_on);
+        source.ongoing_status_count + ' report an ongoing registry status. Snapshot checked ' +
+        dateLabel(source.retrieved_on) + (source.data_timestamp ? '; source data timestamp ' + source.data_timestamp : '');
       sourcesList.appendChild(item);
     });
     sourcesDetails.hidden = false;
@@ -203,6 +205,10 @@
     })
     .then(function (data) {
       showDate(retrieved, 'Snapshot collected', data.retrieved_on);
+      if (sourceDataTimestamp) {
+        sourceDataTimestamp.textContent = 'ClinicalTrials.gov data timestamp: ' +
+          (data.source_data_timestamp || 'not recorded (records will not be published)');
+      }
       if (qualityReview && data.quality_review) {
         var audit = data.quality_review;
         qualityReview.textContent = 'Source-specific audit (' + (audit.reviewed_on || 'date not recorded') + '): ' +
