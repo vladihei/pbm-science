@@ -1,4 +1,6 @@
-# Direct-source feasibility test — 1 October 2026
+# Historical direct-source feasibility notes — 1 October 2026
+
+This preliminary note is superseded by the hands-on direct-source checks in [`../direct-sources/source-feasibility-2026-10-02.md`](../direct-sources/source-feasibility-2026-10-02.md). It was written before the direct-source plan was accepted and is retained as historical context only.
 
 This is a partial workflow test, not a complete census. It checks whether original registries can add records or clarify statuses beyond the supplied WHO ICTRP exports. Search-engine indexing was used to locate official pages; an indexed hit is not treated as an included record until the source record is checked.
 

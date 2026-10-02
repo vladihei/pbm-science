@@ -1,0 +1,22 @@
+{
+  "retrieved_on": "2026-10-02",
+  "quality_review": {
+    "status": "passed",
+    "checked_records": 50,
+    "relevant_records": 39,
+    "unresolved_records": 17,
+    "out_of_scope_records": 8,
+    "scope_unresolved_records": 3,
+    "status_mapping_checked_records": 50,
+    "status_mapping_unresolved_records": 15,
+    "reviewed_on": "2026-10-02",
+    "review_method": "Deterministic query-stratified sample (20 first-query, 20 second-query-only, 10 third-query-only records). AI-assisted review of original ClinicalTrials.gov API fields; source status values were preserved and mapping was checked separately.",
+    "notes": "Audit completed; unresolved scope and UNKNOWN-status records remain held. The stratified sample is not a prevalence estimate and does not independently verify that a registry status is still current today. See quality-review-2026-10-02.md."
+  },
+  "reuse_review": {
+    "status": "pending",
+    "distribution_permitted": false,
+    "cleared_registries": [],
+    "notes": "Being publicly searchable or downloadable does not by itself establish permission to republish registry metadata."
+  }
+}

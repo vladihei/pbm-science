@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const DEFAULT_INPUT = path.join(ROOT, "data/ictrp/private/ongoing-studies.json");
+const DEFAULT_INPUT = path.join(ROOT, "data/direct-sources/private/ongoing-studies.json");
 const DEFAULT_OUTPUT = path.join(ROOT, "dist/studies/ongoing-studies.json");
 export const ENVELOPE_FORMAT = "pbm-studies-encrypted-v1";
 
@@ -36,8 +36,11 @@ async function main() {
   const output = process.argv[3] ? path.resolve(process.argv[3]) : DEFAULT_OUTPUT;
   const plaintext = await readFile(input, "utf8");
   const snapshot = JSON.parse(plaintext);
-  if (snapshot.snapshot_status !== "ready" || !Array.isArray(snapshot.records)) {
-    throw new Error("Refusing to encrypt a snapshot that has not passed the publication gate");
+  if (!Array.isArray(snapshot.records)) {
+    throw new Error("Refusing to encrypt a snapshot without a records array");
+  }
+  if (snapshot.snapshot_status !== "ready" && snapshot.records.length !== 0) {
+    throw new Error("Refusing to encrypt unreviewed records; only an empty preview placeholder is allowed");
   }
   await writeFile(output, await encryptSnapshot(plaintext, dataKeyHex), { encoding: "utf8", mode: 0o600 });
   console.log(JSON.stringify({ encrypted: true, records: snapshot.records.length, output: path.relative(ROOT, output) }));

@@ -1,7 +1,5 @@
-# Generated files
+# Historical ICTRP processing files
 
-The processor writes `qa-report.json`, a local `review-queue.csv`, a sample-audit record, and the plaintext site snapshot under the ignored `data/ictrp/private/` directory. Run `scripts/encrypt_studies_snapshot.mjs` with `PBM_STUDIES_DATA_KEY` set to create the encrypted asset at `dist/studies/ongoing-studies.json`.
+Any reports in this directory belong to the 1 October 2026 ICTRP search exercise. They do not validate the revised direct-source dataset and are not used to generate the site snapshot. The former record-level sample, decisions file and pilot QA output are not retained in the current review branch.
 
-The review queue and raw exports are for curation only. They contain records that did not pass the current inclusion rules, including uncertain status and broad-search hits. Do not copy the queue or raw CSV files into the public site.
-
-The website snapshot has passed the documented dataset-level quality gate. This does not mean every published record was manually verified. The site labels it as a pilot, displays the source dates, and links to the original registry or ICTRP record.
+The review queue and sample can contain registry metadata. Do not reuse their inclusion decisions for direct-source records or copy the queue into the public site.

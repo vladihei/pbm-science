@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import { webcrypto } from "node:crypto";
 
 globalThis.crypto ??= webcrypto;
@@ -11,13 +11,13 @@ const dataKey = "0123456789abcdef".repeat(4);
 const plaintextSnapshot = JSON.stringify({ snapshot_status: "ready", records: [{ primary_id: "TEST-1" }] });
 const encryptedSnapshot = await encryptSnapshot(plaintextSnapshot, dataKey);
 
-function context(url, { method = "GET", headers = {}, body, secret = password, key = dataKey, assetBody } = {}) {
+function context(url, { method = "GET", headers = {}, body, secret = password, key = dataKey, assetBody, assetStatus = 200 } = {}) {
   const request = new Request(url, { method, headers, body, redirect: "manual" });
   return {
     request,
     env: secret === null ? {} : { PBM_STUDIES_PASSWORD: secret, PBM_STUDIES_DATA_KEY: key },
     next: async () => new Response(assetBody || (url.endsWith("ongoing-studies.json") ? encryptedSnapshot : "PRIVATE STUDY DATA"), {
-      status: 200,
+      status: assetStatus,
       headers: { "Content-Type": "application/json", "Cache-Control": "public, max-age=3600" },
     }),
   };
@@ -61,7 +61,7 @@ assert.equal(result.headers.get("Cache-Control"), "private, no-store");
 assert.equal(result.headers.get("X-Robots-Tag"), "noindex, nofollow, noarchive");
 
 const [cookieName, token] = cookie.split("=");
-const tampered = `${cookieName}=${token.slice(0, -1)}0`;
+const tampered = `${cookieName}=${token.slice(0, -1)}${token.endsWith("0") ? "1" : "0"}`;
 result = await worker.handleStudiesRequest(context("https://example.test/studies/", {
   headers: { Cookie: tampered },
 }));
@@ -96,10 +96,7 @@ assert.equal(result.status, 503);
 assert.doesNotMatch(await result.text(), /PRIVATE STUDY DATA/);
 
 assert.doesNotMatch(encryptedSnapshot, /TEST-1|test-only-password-123/);
-const publicEnvelope = JSON.parse(await readFile(new URL("../dist/studies/ongoing-studies.json", import.meta.url), "utf8"));
-assert.equal(publicEnvelope.format, "pbm-studies-encrypted-v1");
-assert.equal(Object.hasOwn(publicEnvelope, "records"), false);
-assert.doesNotMatch(JSON.stringify(publicEnvelope), /photobiomodulation|ongoing PBM/i);
+await assert.rejects(access(new URL("../dist/studies/ongoing-studies.json", import.meta.url)), { code: "ENOENT" });
 
 result = await worker.handleStudiesRequest(context("https://example.test/about/"));
 assert.equal(result.status, 200);
@@ -120,5 +117,14 @@ const deployedShape = await worker.default.fetch(workerRequest, {
 });
 assert.equal(deployedShape.status, 200);
 assert.equal(await deployedShape.text(), plaintextSnapshot);
+
+result = await worker.handleStudiesRequest(context("https://example.test/studies/ongoing-studies.json", {
+  headers: { Cookie: cookie },
+  assetStatus: 404,
+  assetBody: "Not Found",
+}));
+assert.equal(result.status, 404);
+assert.equal(await result.text(), "Not Found");
+assert.equal(result.headers.get("Cache-Control"), "private, no-store");
 
 console.log("Password and encrypted-snapshot middleware checks passed.");

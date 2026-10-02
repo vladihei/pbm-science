@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow, noarchive" />
-    <meta name="description" content="Password-protected searchable pilot database of PBM studies found in clinical trial registries." />
+    <meta name="description" content="Password-protected searchable index of PBM studies registered in clinical trial registries." />
     <title>Ongoing studies — Photobiomodulation Science</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/styles.css" />
@@ -33,37 +33,37 @@
         <div class="container">
           <p class="breadcrumbs"><a href="/">Home</a> / Ongoing studies</p>
           <h1>Ongoing PBM studies</h1>
-          <p>A searchable, password-protected pilot assembled from clinical-trial registry searches.</p>
+          <p>A searchable, password-protected index built from direct searches of clinical-trial registries.</p>
         </div>
       </section>
       <section class="section ictrp-section">
         <div class="container">
           <div class="notice ictrp-pilot-notice">
             <div class="notice-mark" aria-hidden="true">i</div>
-            <p><strong>Initial pilot snapshot.</strong> The 489 displayed records were returned by three broad WHO ICTRP searches and selected by keyword rules. A separate 50-record stratified audit found 37 in scope, 9 unresolved and 4 out of scope; it did not review every displayed record. In the imported export, these records were reported as recruiting, so that is the only status currently available in the filter. Another 1,651 candidates are labeled only “Not Recruiting”; that does not show whether a trial is still active, completed or terminated, so they are held until the original registry can clarify. Status and PBM relevance may have changed or be misclassified; check the linked registry before relying on a record. Direct searches in original registries are being tested and are not yet fully incorporated.</p>
+            <p><strong>Direct-source pilot under review.</strong> The intended records are collected from each original registry and link back to that source. Search status, update date and retrieval date are shown separately because registry records can be outdated or inconsistent. Check the linked registry before relying on an entry. A record is shown in the ongoing view only when it passes the PBM relevance, status, source-rights and quality-review checks.</p>
           </div>
           <div class="ictrp-snapshot-meta">
-            <span>Source: <a href="https://trialsearch.who.int/" target="_blank" rel="noopener noreferrer">WHO ICTRP Search Portal</a></span>
-            <span data-retrieved>Snapshot retrieval date: not yet available</span>
-            <span data-processed>ICTRP processing date: not stated in export</span>
-            <span data-quality-review>Initial sample audit: not available</span>
+            <span>Collection method: direct original-registry records</span>
+            <span data-retrieved>Snapshot collected: not yet available</span>
+            <span data-quality-review>Source-specific audit: not available</span>
+            <span data-reuse-status>Source reuse review: not checked</span>
             <form class="ictrp-logout" method="post" action="/studies/">
               <input type="hidden" name="action" value="logout" />
               <button type="submit">Log out</button>
             </form>
-            <details class="ictrp-import-dates" data-imports hidden>
-              <summary>Registry file import dates</summary>
-              <ul data-import-list></ul>
+            <details class="ictrp-import-dates" data-sources hidden>
+              <summary>Registry coverage in this snapshot</summary>
+              <ul data-source-list></ul>
             </details>
           </div>
-          <div class="ictrp-toolbar" role="search" aria-label="Search pilot registry records">
+          <div class="ictrp-toolbar" role="search" aria-label="Search direct registry records">
             <label class="ictrp-search">Search records
               <input type="search" data-search placeholder="Title, condition, intervention, registry or ID" autocomplete="off" />
             </label>
             <label>View
               <select data-view>
-                <option value="ongoing">Reported as recruiting or ongoing</option>
-                <option value="all">All pilot records</option>
+                <option value="ongoing">Reported as ongoing</option>
+                <option value="all">All records</option>
               </select>
             </label>
             <label>Registry
@@ -79,13 +79,13 @@
           <p class="ictrp-result-count" data-result-count role="status" aria-live="polite">Preparing the registry snapshot…</p>
           <div class="ictrp-records" data-records></div>
           <div class="ictrp-empty" data-empty hidden>
-            <h2 data-empty-title>ICTRP data are being prepared</h2>
+            <h2 data-empty-title>Direct-registry data are being prepared</h2>
             <p data-empty-copy>The registry snapshot is not available yet.</p>
           </div>
           <noscript><p class="ictrp-empty">Enable JavaScript to search this local snapshot.</p></noscript>
           <div class="notice ictrp-source-note">
             <div class="notice-mark" aria-hidden="true">i</div>
-            <p>This pilot reproduces selected registry metadata from WHO ICTRP for non-commercial research use. Source-reported status and record-update dates can lag behind reality; confirm every study in its linked registry. The date of this search, the ICTRP processing date when supplied, and provider import dates are distinct. The ICTRP processing date was not included in this export, so this snapshot is for private testing and is not cleared for wider distribution yet. PBM.science is independent and is not endorsed by WHO. The page is password-protected and excluded from search indexing.</p>
+            <p>This index uses selected fields from direct searches of the linked registries; it does not reproduce their contact details or full descriptions. Each registry's status may lag behind actual recruitment, so confirm details at the source. Rights to republish are checked source by source, and no record is displayed before that review and a separate quality audit pass. WHO ICTRP is used only to find possible missed source records and compare search coverage, not as the publication source. PBM.science is independent; links do not imply endorsement by any registry or the World Health Organization. This page is password-protected and excluded from search indexing.</p>
           </div>
         </div>
       </section>

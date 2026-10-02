@@ -1,7 +1,5 @@
-# Raw ICTRP exports
+# Historical ICTRP exports
 
-Save one CSV export per documented query here. Keep the original download unchanged and name it with the retrieval date and query ID, for example 2026-10-01_q1-core.csv.
+The user-supplied exports from 1 October 2026 are retained locally for the search-coverage comparison only. Do not use this directory for monthly publication updates.
 
-Download only the constrained search results from the WHO ICTRP Search Portal. Do not call a live API or scrape the portal. Record the retrieval date and the portal's data-processing date in the snapshot metadata file.
-
-Raw exports may contain candidate records that are not PBM. They are inputs for local processing, not approved public records.
+The exports can contain personal contact fields. Keep them private and out of GitHub and the website. Use direct source exports under the ignored `data/direct-sources/raw/` directory for current collection, with each registry's terms checked first.

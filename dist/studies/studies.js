@@ -12,10 +12,10 @@
   var emptyTitle = document.querySelector('[data-empty-title]');
   var emptyCopy = document.querySelector('[data-empty-copy]');
   var retrieved = document.querySelector('[data-retrieved]');
-  var processed = document.querySelector('[data-processed]');
   var qualityReview = document.querySelector('[data-quality-review]');
-  var importsDetails = document.querySelector('[data-imports]');
-  var importsList = document.querySelector('[data-import-list]');
+  var reuseStatus = document.querySelector('[data-reuse-status]');
+  var sourcesDetails = document.querySelector('[data-sources]');
+  var sourcesList = document.querySelector('[data-source-list]');
   var records = [];
 
   var ongoingGroups = new Set(['ongoing']);
@@ -26,8 +26,11 @@
     active_not_recruiting: 'Active, not recruiting',
     suspended: 'Suspended',
     completed: 'Completed',
+    recruitment_completed: 'Recruitment completed',
     terminated: 'Terminated',
-    withdrawn: 'Withdrawn'
+    withdrawn: 'Withdrawn',
+    status_unknown: 'Status unknown',
+    status_unclear: 'Status unclear'
   };
 
   function text(parent, tag, className, value) {
@@ -90,7 +93,7 @@
     var main = document.createElement('div');
     var heading = document.createElement('h2');
     var titleLink = document.createElement('a');
-    titleLink.href = record.source_url || record.ictrp_url;
+    titleLink.href = record.source_url;
     titleLink.target = '_blank';
     titleLink.rel = 'noopener noreferrer';
     titleLink.textContent = record.title;
@@ -110,13 +113,11 @@
       ['Target sample', record.target_sample_size == null ? null : String(record.target_sample_size)],
       ['Sponsor', record.sponsor],
       ['Registration date', record.registration_date ? dateLabel(record.registration_date) : null],
-      ['Last enrollment', record.last_enrollment_date ? dateLabel(record.last_enrollment_date) : null],
+      ['Study start', record.start_date ? dateLabel(record.start_date) : null],
       ['Primary completion', record.primary_completion_date ? dateLabel(record.primary_completion_date) : null],
       ['Study completion', record.study_completion_date ? dateLabel(record.study_completion_date) : null],
-      ['Estimated completion', record.estimated_completion_date ? dateLabel(record.estimated_completion_date) : null],
-      ['Results completed', record.results_completed_date ? dateLabel(record.results_completed_date) : null],
-      ['Record last refreshed', record.last_refreshed_on ? dateLabel(record.last_refreshed_on) : null],
-      ['ICTRP record date', record.data_processed_by_ictrp_on ? dateLabel(record.data_processed_by_ictrp_on) : null]
+      ['Registry last updated', record.source_updated_on ? dateLabel(record.source_updated_on) : null],
+      ['Snapshot checked', record.source_retrieved_on ? dateLabel(record.source_retrieved_on) : null]
     ].forEach(function (pair) {
       if (pair[1] == null || pair[1] === '') return;
       var item = document.createElement('div');
@@ -140,12 +141,10 @@
     side.appendChild(identifiers);
     var sourceLink = document.createElement('a');
     sourceLink.className = 'ictrp-source-link';
-    sourceLink.href = record.source_url || record.ictrp_url;
+    sourceLink.href = record.source_url;
     sourceLink.target = '_blank';
     sourceLink.rel = 'noopener noreferrer';
-    sourceLink.textContent = record.source_link_kind === 'original_registry'
-      ? 'Open original registry record'
-      : 'Open ICTRP record';
+    sourceLink.textContent = 'Open original registry record';
     side.appendChild(sourceLink);
     article.appendChild(side);
     return article;
@@ -153,47 +152,48 @@
 
   function render() {
     container.replaceChildren();
-    statusSelect.options[0].textContent = viewSelect.value === 'ongoing' ? 'All current statuses' : 'All statuses';
+    statusSelect.options[0].textContent = viewSelect.value === 'ongoing' ? 'All ongoing statuses' : 'All statuses';
     var visible = records.filter(recordMatches);
     visible.forEach(function (record) { container.appendChild(renderCard(record)); });
-    count.textContent = visible.length + (visible.length === 1 ? ' pilot record shown' : ' pilot records shown');
+    count.textContent = visible.length + (visible.length === 1 ? ' registry record shown' : ' registry records shown');
     empty.hidden = visible.length > 0;
     if (records.length && visible.length === 0) {
       emptyTitle.textContent = 'No matching studies';
-      emptyCopy.textContent = 'Change or clear the filters to see other pilot records.';
+      emptyCopy.textContent = 'Change or clear the filters to see other records.';
     }
   }
 
   function showDate(node, prefix, value) {
-    node.textContent = prefix + ': ' + (value ? dateLabel(value) : 'not stated in export');
+    node.textContent = prefix + ': ' + (value ? dateLabel(value) : 'not recorded');
   }
 
-  function showImportDates(importDates) {
-    var entries = Object.entries(importDates || {}).filter(function (entry) { return entry[1]; });
-    importsList.replaceChildren();
+  function showSources(sources) {
+    var entries = Array.isArray(sources) ? sources : [];
+    sourcesList.replaceChildren();
     if (!entries.length) {
-      importsDetails.hidden = true;
+      sourcesDetails.hidden = true;
       return;
     }
-    entries.sort(function (a, b) { return a[0].localeCompare(b[0]); }).forEach(function (entry) {
+    entries.sort(function (a, b) { return a.registry.localeCompare(b.registry); }).forEach(function (source) {
       var item = document.createElement('li');
-      item.textContent = entry[0] + ': ' + dateLabel(entry[1]);
-      importsList.appendChild(item);
+      item.textContent = source.registry + ': ' + source.search_hit_count + ' unique query hits; ' +
+        source.ongoing_status_count + ' report an ongoing registry status. Checked ' + dateLabel(source.retrieved_on);
+      sourcesList.appendChild(item);
     });
-    importsDetails.hidden = false;
+    sourcesDetails.hidden = false;
   }
 
   function showUnavailable(data) {
     records = [];
     render();
     empty.hidden = false;
-    emptyTitle.textContent = data.snapshot_status === 'awaiting_validation'
-      ? 'The ICTRP search is still being validated'
-      : 'ICTRP data are being prepared';
-    emptyCopy.textContent = data.snapshot_status === 'awaiting_validation'
-      ? 'Search results are not shown until the sample review is complete.'
-      : 'The registry export and its quality review have not been added yet.';
-    count.textContent = 'No ICTRP pilot records are available in this snapshot.';
+    emptyTitle.textContent = data.snapshot_status === 'awaiting_source_review'
+      ? 'Direct-source records are awaiting review'
+      : 'Direct-registry data are being prepared';
+    emptyCopy.textContent = data.snapshot_status === 'awaiting_source_review'
+      ? 'The database will show records after the source reuse review and the 50-record quality check are complete.'
+      : 'A direct-registry snapshot is not available yet.';
+    count.textContent = 'No reviewed direct-registry records are available in this snapshot.';
   }
 
   fetch('/studies/ongoing-studies.json', { cache: 'no-store' })
@@ -202,15 +202,19 @@
       return response.json();
     })
     .then(function (data) {
-      showDate(retrieved, 'PBM.science retrieval date', data.retrieved_on);
-      showDate(processed, 'ICTRP processing date', data.data_processed_by_ictrp_on);
+      showDate(retrieved, 'Snapshot collected', data.retrieved_on);
       if (qualityReview && data.quality_review) {
         var audit = data.quality_review;
-        qualityReview.textContent = 'Initial sample audit: ' + (audit.checked_records || 0) + ' checked; ' +
-          (audit.relevant_records || 0) + ' in scope; ' + (audit.unresolved_records || 0) +
-          ' unresolved; ' + (audit.out_of_scope_records || 0) + ' out of scope';
+        qualityReview.textContent = 'Source-specific audit (' + (audit.reviewed_on || 'date not recorded') + '): ' +
+          (audit.checked_records || 0) + ' checked; ' + (audit.relevant_records || 0) + ' in scope; ' +
+          (audit.scope_unresolved_records || 0) + ' scope unresolved; ' +
+          (audit.out_of_scope_records || 0) + ' out of scope; ' +
+          (audit.status_mapping_unresolved_records || 0) + ' statuses unknown';
       }
-      showImportDates(data.registry_import_dates);
+      if (reuseStatus && data.reuse_review) {
+        reuseStatus.textContent = 'Source reuse review: ' + (data.reuse_review.status || 'not checked');
+      }
+      showSources(data.sources);
       if (data.snapshot_status !== 'ready') {
         showUnavailable(data);
         return;
@@ -219,21 +223,21 @@
       setOptions(registrySelect, Array.from(new Set(records.map(function (r) { return r.registry; }).filter(Boolean))).sort(), 'All registries');
       setOptions(countrySelect, Array.from(new Set(records.flatMap(function (r) { return r.countries || []; }))).sort(), 'All countries');
       var statuses = Array.from(new Set(records.map(function (r) { return r.status; }).filter(Boolean))).sort();
-      setOptions(statusSelect, statuses, 'All current statuses');
+      setOptions(statusSelect, statuses, 'All ongoing statuses');
       Array.from(statusSelect.options).forEach(function (option) {
         if (statusLabels[option.value]) option.textContent = statusLabels[option.value];
       });
       if (!records.length) {
         empty.hidden = false;
         emptyTitle.textContent = 'No studies have passed review yet';
-        emptyCopy.textContent = 'The pilot database will display records after the review gate has been met.';
+        emptyCopy.textContent = 'The database will display records after the direct-source review gate is met.';
       }
       render();
     })
     .catch(function () {
       showUnavailable({ snapshot_status: 'awaiting_export' });
-      emptyTitle.textContent = 'The local ICTRP snapshot could not be loaded';
-      emptyCopy.textContent = 'The registry pilot is temporarily unavailable while the snapshot is repaired.';
+      emptyTitle.textContent = 'No approved direct-registry snapshot is available';
+      emptyCopy.textContent = 'Records will appear after the source reuse and quality checks pass.';
     });
 
   [search, viewSelect, registrySelect, countrySelect, statusSelect].forEach(function (control) {

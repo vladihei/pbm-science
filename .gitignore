@@ -1,6 +1,9 @@
 /data/ictrp/private/
 /data/ictrp/raw/*.csv
 /data/ictrp/processed/review-queue.csv
+/data/direct-sources/raw/
+/data/direct-sources/private/
+/data/direct-sources/processed/
 __pycache__/
 *.py[cod]
 .env
