@@ -14,6 +14,8 @@ This is now the canonical source workflow for the password-protected `/studies/`
 
 ClinicalTrials.gov returned 2,943 rows over the three searches before deduplication. The fetch completed through all API pages. ReBEC's advanced-search page loaded and exposed CSV/Excel export controls, but the search API called by that page returned an error and showed no results in this environment. ChiCTR's individual record page loaded, while its search page blocked this browser at its WAF. Neither result proves that a human using an ordinary browser cannot complete the search. Exact next steps and the evidence are in `source-feasibility-2026-10-02.md`.
 
+The broader source check found that ANZCTR requires continuously current data, its own processing date and change notes, and restricts unauthorised software collection. ISRCTN offers CSV/XML access but its terms need clarification before building a database from records. DRKS has a dated multi-record export, with download terms still to review. CTIS needs a separate search because the old ICTRP files contain no CTIS records. These are coverage priorities, not completed searches.
+
 No source's reuse rights are marked cleared yet. The site snapshot remains empty until the direct-source audit and per-source reuse review are completed. Password protection does not itself grant permission to redistribute registry metadata.
 
 ## Important monthly files
