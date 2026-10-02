@@ -29,6 +29,8 @@ jobs:
     steps:
       - name: Check out main
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v7
@@ -105,5 +107,14 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git commit -m "Refresh encrypted ongoing studies snapshot"
-            git push
+            for attempt in 1 2 3; do
+              git fetch origin main
+              git rebase origin/main
+              if git push origin HEAD:main; then
+                exit 0
+              fi
+              echo "Main moved during the push; retrying on its latest commit (attempt $attempt)."
+            done
+            echo "Could not push the encrypted snapshot after three attempts."
+            exit 1
           fi
