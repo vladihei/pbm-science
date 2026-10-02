@@ -58,6 +58,7 @@ class DirectSourceTests(unittest.TestCase):
         record = processor.normalize_ctg(ctg_record(), fetcher.SEARCH_EXPRESSIONS[0], "2026-10-02")
         metadata = {
             "retrieved_on": "2026-10-02",
+            "source_data_timestamp": "2026-10-01T09:00:05",
             "quality_review": {"status": "passed", "checked_records": 50, "reviewed_on": "2026-10-02"},
             "reuse_review": {"status": "pending", "distribution_permitted": False, "cleared_registries": []},
         }
@@ -73,6 +74,7 @@ class DirectSourceTests(unittest.TestCase):
         record["contact_email"] = "private@example.test"
         metadata = {
             "retrieved_on": "2026-10-02",
+            "source_data_timestamp": "2026-10-01T09:00:05",
             "quality_review": {"status": "passed", "checked_records": 50, "reviewed_on": "2026-10-02"},
             "reuse_review": {
                 "status": "cleared", "distribution_permitted": True,
@@ -136,6 +138,8 @@ class DirectSourceTests(unittest.TestCase):
 
         def opener(_request, timeout):
             self.assertEqual(timeout, 60)
+            if _request.full_url == fetcher.API_VERSION_URL:
+                return FakeResponse({"apiVersion": "2.0.5", "dataTimestamp": "2026-10-01T09:00:05"})
             return FakeResponse(responses.pop(0))
 
         with tempfile.TemporaryDirectory() as temp:
@@ -148,6 +152,49 @@ class DirectSourceTests(unittest.TestCase):
         self.assertEqual(query["total_counts_observed"], [1])
         self.assertFalse(query["count_changed_during_fetch"])
         self.assertEqual(query["returned_count"], 2)
+        self.assertEqual(manifest["source_data_timestamp"], "2026-10-01T09:00:05")
+
+    def test_ctg_publication_gate_requires_source_processing_timestamp(self):
+        record = processor.normalize_ctg(ctg_record(), fetcher.SEARCH_EXPRESSIONS[0], "2026-10-02")
+        metadata = {
+            "retrieved_on": "2026-10-02",
+            "quality_review": {"status": "passed", "checked_records": 50, "reviewed_on": "2026-10-02"},
+            "reuse_review": {
+                "status": "cleared", "distribution_permitted": True,
+                "cleared_registries": ["ClinicalTrials.gov"],
+            },
+        }
+        payload, _ = processor.process([record], metadata, {})
+        self.assertEqual(payload["snapshot_status"], "awaiting_source_review")
+        self.assertIn("the ClinicalTrials.gov API data timestamp", payload["publication_blockers"])
+
+    def test_fetch_stops_if_source_data_changes_during_collection(self):
+        class FakeResponse:
+            status = 200
+
+            def __init__(self, payload):
+                self.payload = json.dumps(payload).encode()
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *_args):
+                return False
+
+            def read(self):
+                return self.payload
+
+        versions = iter(["2026-10-01T09:00:05", "2026-10-02T09:00:05"])
+
+        def opener(request, timeout):
+            self.assertEqual(timeout, 60)
+            if request.full_url == fetcher.API_VERSION_URL:
+                return FakeResponse({"dataTimestamp": next(versions)})
+            return FakeResponse({"studies": [{"one": 1}], "totalCount": 1})
+
+        with tempfile.TemporaryDirectory() as temp:
+            with self.assertRaisesRegex(RuntimeError, "data changed during collection"):
+                fetcher.fetch_snapshot(Path(temp), "2026-10-02", queries=("test",), opener=opener, pause_seconds=0)
 
     def test_status_conflicts_across_query_snapshots_are_held_for_review(self):
         with tempfile.TemporaryDirectory() as temp:
