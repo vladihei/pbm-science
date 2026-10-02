@@ -392,6 +392,8 @@ def publication_gate(metadata: dict[str, Any], registry_names: list[str]) -> tup
         blockers.append("reuse review for: " + ", ".join(missing))
     if not valid_date(metadata.get("retrieved_on")):
         blockers.append("a valid retrieval date")
+    if "ClinicalTrials.gov" in set(registry_names) and not clean(metadata.get("source_data_timestamp")):
+        blockers.append("the ClinicalTrials.gov API data timestamp")
     return not blockers, blockers
 
 
@@ -473,6 +475,7 @@ def process(records: list[dict[str, Any]], metadata: dict[str, Any], decisions: 
             "search_hit_count": len(subset),
             "ongoing_status_count": sum(r["status_group"] == "ongoing" for r in subset),
             "retrieved_on": metadata.get("retrieved_on"),
+            "data_timestamp": metadata.get("source_data_timestamp"),
             "rights_status": (metadata.get("reuse_review") or {}).get("status", "not_checked"),
         })
     counts["source_records"] = len(records)
@@ -482,6 +485,7 @@ def process(records: list[dict[str, Any]], metadata: dict[str, Any], decisions: 
         "source_strategy": "direct_original_registries",
         "snapshot_status": "ready" if passed else "awaiting_source_review",
         "retrieved_on": metadata.get("retrieved_on"),
+        "source_data_timestamp": metadata.get("source_data_timestamp"),
         "sources": source_summaries,
         "quality_review": metadata.get("quality_review") or {},
         "reuse_review": metadata.get("reuse_review") or {"status": "not_checked"},
@@ -537,6 +541,9 @@ def main() -> int:
             if manifests:
                 manifest_path = manifests[-1]
         records = parse_ctg_snapshot(manifest_path) if manifest_path else []
+        if manifest_path:
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            metadata["source_data_timestamp"] = manifest.get("source_data_timestamp")
         records.extend(read_manual_records(args.manual_records))
         decisions = load_decisions(args.decisions)
         payload, queue = process(records, metadata, decisions)
