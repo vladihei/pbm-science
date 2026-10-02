@@ -6,6 +6,7 @@
   var viewButtons = document.querySelector('[data-view-buttons]');
   var registrySelect = document.querySelector('[data-registry]');
   var countrySelect = document.querySelector('[data-country]');
+  var conditionSelect = document.querySelector('[data-condition]');
   var statusButtons = document.querySelector('[data-status-buttons]');
   var count = document.querySelector('[data-result-count]');
   var empty = document.querySelector('[data-empty]');
@@ -136,6 +137,7 @@
     if (viewMode === 'ongoing' && !ongoingGroups.has(record.status_group)) return false;
     if (registrySelect.value && record.registry !== registrySelect.value) return false;
     if (countrySelect.value && (record.countries || []).indexOf(countrySelect.value) < 0) return false;
+    if (conditionSelect.value && (record.conditions || []).indexOf(conditionSelect.value) < 0) return false;
     if (selectedStatuses.size && !selectedStatuses.has(record.status)) return false;
     return true;
   }
@@ -297,6 +299,7 @@
       records = Array.isArray(data.records) ? data.records : [];
       setOptions(registrySelect, Array.from(new Set(records.map(function (r) { return r.registry; }).filter(Boolean))).sort(), 'All registries');
       setOptions(countrySelect, Array.from(new Set(records.flatMap(function (r) { return r.countries || []; }))).sort(), 'All countries');
+      setOptions(conditionSelect, Array.from(new Set(records.flatMap(function (r) { return r.conditions || []; }).filter(Boolean))).sort(function (a, b) { return a.localeCompare(b); }), 'All conditions / indications');
       renderStatusButtons();
       if (!records.length) {
         empty.hidden = false;
@@ -334,7 +337,7 @@
     render();
   });
 
-  [search, registrySelect, countrySelect].forEach(function (control) {
+  [search, registrySelect, countrySelect, conditionSelect].forEach(function (control) {
     control.addEventListener('input', render);
     control.addEventListener('change', render);
   });

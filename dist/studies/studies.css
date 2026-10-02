@@ -15,7 +15,7 @@
 .ictrp-import-dates ul { margin: 8px 0 0; padding-left: 19px; }
 .ictrp-toolbar {
   display: grid;
-  grid-template-columns: minmax(250px, 1.7fr) minmax(230px, 1.35fr) repeat(2, minmax(145px, 1fr));
+  grid-template-columns: minmax(250px, 1.7fr) minmax(230px, 1.35fr) repeat(3, minmax(145px, 1fr));
   gap: 12px;
   align-items: end;
   padding: 18px;
