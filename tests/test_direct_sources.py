@@ -23,7 +23,7 @@ def ctg_record(primary_id="NCT00000001", title="Photobiomodulation study", statu
             "statusModule": {
                 "overallStatus": status,
                 "studyFirstPostDateStruct": {"date": "2024-01-01"},
-                "studyLastUpdatePostDateStruct": {"date": "2026-09-01"},
+                "lastUpdatePostDateStruct": {"date": "2026-09-01"},
             },
             "designModule": {"studyType": "Interventional"},
             "conditionsModule": {"conditions": ["Pain"]},
@@ -47,6 +47,7 @@ class DirectSourceTests(unittest.TestCase):
 
     def test_public_record_is_a_whitelist_and_omits_contact_and_summary_fields(self):
         record = processor.normalize_ctg(ctg_record(), fetcher.SEARCH_EXPRESSIONS[0], "2026-10-02")
+        self.assertEqual(record["source_updated_on"], "2026-09-01")
         record["contact_email"] = "private@example.test"
         public = processor.public_record(record)
         self.assertEqual(public["primary_id"], "NCT00000001")
