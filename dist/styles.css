@@ -462,6 +462,11 @@ details[open] summary::after { content: '–'; }
 .indication-country-panel h3 { margin: 0 0 13px; font-size: 1rem; letter-spacing: -.02em; }
 .indication-country-list { display: flex; flex-wrap: wrap; gap: 7px; margin: 0; padding: 0; list-style: none; }
 .indication-country-list li { padding: 4px 8px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); background: var(--surface); font-size: .875rem; }
+.indication-device-panel { padding: 20px; border-radius: 14px; background: var(--surface-soft); }
+.indication-device-panel h3 { margin: 0 0 13px; font-size: 1rem; letter-spacing: -.02em; }
+.indication-device-list { margin: 0; padding-left: 18px; color: var(--ink); font-size: .875rem; line-height: 1.5; }
+.indication-device-list li { padding-left: 2px; overflow-wrap: anywhere; }
+.indication-device-list li + li { margin-top: 7px; }
 .indication-source-note { margin: 18px 0 0; color: var(--muted); font-size: .76rem; }
 
 /* Publications card follows the approved stacked version-3 layout. */
