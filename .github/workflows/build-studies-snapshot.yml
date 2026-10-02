@@ -1,4 +1,4 @@
-name: Build password-protected studies snapshot
+name: Build public ongoing studies snapshot
 
 on:
   push:
@@ -45,6 +45,9 @@ jobs:
       - name: Run source-processing tests
         run: python -m unittest discover -s tests -v
 
+      - name: Test public studies Worker
+        run: node tests/test_studies_auth.mjs
+
       - name: Choose retrieval date
         env:
           INPUT_RETRIEVED_ON: ${{ inputs.retrieved_on }}
@@ -82,9 +85,15 @@ jobs:
           import json
           from pathlib import Path
           snapshot = json.loads(Path("data/direct-sources/private/ongoing-studies.json").read_text(encoding="utf-8"))
+          metadata = json.loads(Path("data/direct-sources/snapshot-metadata.json").read_text(encoding="utf-8"))
           registries = {record["registry"] for record in snapshot["records"]}
           if snapshot["snapshot_status"] != "ready" or not snapshot["records"]:
               raise SystemExit(f"Snapshot is not ready: {snapshot['publication_blockers']}")
+          if metadata.get("quality_review", {}).get("status") != "passed":
+              raise SystemExit("The source-specific quality review has not passed")
+          reuse = metadata.get("reuse_review", {})
+          if reuse.get("status") != "cleared" or reuse.get("distribution_permitted") is not True:
+              raise SystemExit("Public distribution has not been cleared for this source")
           if registries != {"ClinicalTrials.gov"}:
               raise SystemExit(f"Unexpected source set: {sorted(registries)}")
           if not snapshot.get("source_data_timestamp"):
@@ -92,21 +101,32 @@ jobs:
           print(f"Ready: {len(snapshot['records'])} records; timestamp {snapshot['source_data_timestamp']}")
           PY
 
-      - name: Encrypt the snapshot
-        env:
-          PBM_STUDIES_DATA_KEY: ${{ secrets.PBM_STUDIES_DATA_KEY }}
-        run: node scripts/encrypt_studies_snapshot.mjs
+      - name: Publish the cleared snapshot as public website data
+        run: |
+          python - <<'PY'
+          import json, shutil
+          from pathlib import Path
+          source = Path("data/direct-sources/private/ongoing-studies.json")
+          destination = Path("dist/studies/ongoing-studies.json")
+          snapshot = json.loads(source.read_text(encoding="utf-8"))
+          metadata = json.loads(Path("data/direct-sources/snapshot-metadata.json").read_text(encoding="utf-8"))
+          if snapshot.get("source_data_timestamp") != metadata.get("source_data_timestamp"):
+              raise SystemExit("Snapshot source timestamp does not match the cleared metadata")
+          destination.parent.mkdir(parents=True, exist_ok=True)
+          shutil.copyfile(source, destination)
+          print(f"Published public snapshot: {len(snapshot['records'])} records")
+          PY
 
-      - name: Commit only the encrypted website snapshot
+      - name: Commit only the cleared public website snapshot
         run: |
           git restore -- data/direct-sources/snapshot-metadata.json
           git add -- dist/studies/ongoing-studies.json
           if git diff --cached --quiet; then
-            echo "Encrypted snapshot is unchanged."
+            echo "Public snapshot is unchanged."
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git commit -m "Refresh encrypted ongoing studies snapshot"
+            git commit -m "Refresh public ongoing studies snapshot"
             for attempt in 1 2 3; do
               git fetch origin main
               git rebase origin/main
@@ -115,6 +135,6 @@ jobs:
               fi
               echo "Main moved during the push; retrying on its latest commit (attempt $attempt)."
             done
-            echo "Could not push the encrypted snapshot after three attempts."
+            echo "Could not push the public snapshot after three attempts."
             exit 1
           fi
