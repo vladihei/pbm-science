@@ -1,0 +1,21 @@
+provider,priority,search_mode,test_status,ictpr_unique_ids,share_of_export_ids_percent,official_search_url,public_export_or_api,reuse_status,notes
+ClinicalTrials.gov,1,direct,partial,983,44.0,https://clinicaltrials.gov/search,API v2 and search CSV documented,review source terms,Most records in current snapshot
+Brazilian Clinical Trials Registry (ReBEC),1,direct,partial,343,15.3,https://ensaiosclinicos.gov.br/api2/,Per-record ICTRP-format download found; bulk not verified,review source terms,343 registry IDs in current snapshot; direct status can be more detailed
+Clinical Trials Registry - India (CTRI),1,direct,partial,407,18.2,https://ctri.nic.in/Clinicaltrials/advancesearchmain.php,Public search; bulk export not verified,review source terms,407 registry IDs; human browser may be needed
+Iranian Registry of Clinical Trials (IRCT),1,direct,partial,198,8.9,,Public search and per-record XML/PDF found; bulk not verified,review source terms,198 registry IDs
+Chinese Clinical Trial Registry (ChiCTR),1,direct,partial,95,4.3,https://www.chictr.org.cn/searchprojEN.html,Public search and per-record download found; bulk not verified,review source terms,95 registry IDs; page retrieval may need browser
+Australian New Zealand Clinical Trials Registry (ANZCTR),2,direct,not tested this cycle,66,3.0,,Search-result Excel export,terms restrict unauthorized software mining; verify reuse,
+Clinical Research Information Service (CRiS),2,direct,not tested this cycle,19,0.9,,unknown,review source terms,19 registry IDs
+German Clinical Trials Register (DRKS),2,direct,not tested this cycle,7,0.3,,CSV/JSON/WHO XML export reported,review terms checkbox,
+ISRCTN,2,direct,not tested this cycle,22,1.0,,CSV and XML API,CC BY for contributions and CC0 for metadata per FAQ,
+International Traditional Medicine Clinical Trial Registry (ITMCTR),2,direct,not tested this cycle,4,0.2,,unknown,review source terms,4 registry IDs
+Japan Primary Registries Network (JPRN/jRCT),2,direct,not tested this cycle,34,1.5,,unknown,review source terms,34 IDs currently grouped under JPRN provider
+Overview of Medical Research in the Netherlands (OMON),2,direct,not tested this cycle,15,0.7,,unknown,review source terms,15 registry IDs
+Pan African Clinical Trial Registry (PACTR),2,direct,not tested this cycle,16,0.7,,unknown,review source terms,16 registry IDs
+Thai Clinical Trials Register (TCTR),2,direct,not tested this cycle,23,1.0,,unknown,review source terms,23 registry IDs
+Cuban Public Registry of Clinical Trials (RPCEC),3,direct,not tested this cycle,0,0.0,,unknown,review source terms,No current hits in supplied exports
+Clinical Trials Information System (CTIS),3,direct,not tested this cycle,0,0.0,,Public search; bulk/API not verified,review source terms,No current hits in supplied exports
+EU Clinical Trials Register (EU-CTR),3,direct,not tested this cycle,0,0.0,,Legacy search/download; current trials transition to CTIS,review source terms,No current hits in supplied exports
+Lebanese Clinical Trials Registry (LBCTR),3,direct,not tested this cycle,0,0.0,,unknown,review source terms,No current hits in supplied exports
+Peruvian Clinical Trials Registry (REPEC),3,direct,not tested this cycle,0,0.0,,unknown,review source terms,No current hits in supplied exports
+Sri Lanka Clinical Trials Registry (SLCTR),3,direct,not tested this cycle,0,0.0,,unknown,review source terms,No current hits in supplied exports

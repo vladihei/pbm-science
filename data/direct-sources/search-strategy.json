@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "retrieved_on": "2026-10-02",
+  "scope": "Human clinical studies of therapeutic photobiomodulation, with red and near-infrared light as the main target; mixed and uncertain interventions are held for review.",
+  "clinicaltrials_gov": {
+    "endpoint": "https://clinicaltrials.gov/api/v2/studies",
+    "field": "query.term",
+    "statuses": "All statuses; no recruitment-status filter is applied during collection.",
+    "expressions": [
+      "photobiomodulation OR photobiostimulation",
+      "\"low level laser therapy\" OR \"low level light therapy\" OR LLLT OR \"laser phototherapy\"",
+      "\"red light therapy\" OR \"near infrared light\" OR \"LED therapy\""
+    ]
+  },
+  "screening_terms": [
+    "photobiomodulation",
+    "photobiostimulation",
+    "low level laser therapy",
+    "low level light therapy",
+    "LLLT",
+    "laser phototherapy",
+    "low-intensity laser",
+    "low-power laser",
+    "LILT",
+    "cold laser",
+    "red light therapy",
+    "near-infrared light",
+    "LED therapy"
+  ],
+  "exclude_or_review_terms": [
+    "photodynamic",
+    "ablative",
+    "surgical laser",
+    "diagnostic laser",
+    "thermal laser",
+    "blue or ultraviolet light",
+    "unclear wavelength or mechanism"
+  ],
+  "other_registries": {
+    "method": "Search each registry directly using its own interface or export. Preserve exact queries and original status labels. Do not infer a registry's direct coverage from ICTRP membership or an ICTRP hit.",
+    "language_variants": ["photobiomodulation", "photobiostimulation", "terapia de fotobiomodulação", "fotobiomodulação", "light therapy", "low-level laser therapy"]
+  }
+}

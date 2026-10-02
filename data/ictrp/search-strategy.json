@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "portal": "https://trialsearch.who.int/",
+  "method": "Manual CSV exports from the WHO ICTRP Search Portal. The site does not call registry APIs or scrape the portal.",
+  "queries": [
+    {
+      "id": "q1-core",
+      "purpose": "High-specificity PBM terms",
+      "expression": "photobiomodulation OR photobiostimulation",
+      "triage": "Candidate records still require the initial precision sample."
+    },
+    {
+      "id": "q2-therapy",
+      "purpose": "Historical therapeutic terminology",
+      "expression": "\"low level laser therapy\" OR \"low level light therapy\" OR LLLT OR \"laser phototherapy\"",
+      "triage": "Candidate records still require the initial precision sample; inspect laser surgery and photodynamic therapy matches."
+    },
+    {
+      "id": "q3-descriptors",
+      "purpose": "Broader light-device terminology to assess recall",
+      "expression": "\"red light therapy\" OR \"near infrared light\" OR \"LED therapy\"",
+      "triage": "Route all records to manual review unless the record itself clearly describes therapeutic PBM."
+    }
+  ],
+  "include": [
+    "Clinical intervention using non-thermal red or near-infrared light, including low-level laser or LED therapy, consistent with photobiomodulation."
+  ],
+  "exclude_or_review": [
+    "Photodynamic therapy where the intended effect depends on a photosensitizer",
+    "Ablative, cutting, coagulation, surgical or other high-power thermal laser procedures",
+    "Diagnostic or imaging use of light",
+    "Cosmetic thermal procedures",
+    "Records where the title or intervention is too vague to establish therapeutic PBM"
+  ],
+  "notes": [
+    "Do not search red light, infrared, laser, or LED as standalone terms.",
+    "WHO ICTRP search applies automatic synonyms; keep query-result rows whose mapped export text has no matching PBM phrase in manual review.",
+    "Keep the three query exports separate in the raw directory so recall and false-positive patterns can be audited.",
+    "The portal groups some records for the same trial; preserve registry identifiers and deduplicate only on explicit identifiers or portal grouping fields, never on title similarity alone."
+  ]
+}

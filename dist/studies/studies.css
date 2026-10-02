@@ -1,0 +1,129 @@
+.ictrp-section { padding-top: 36px; }
+.ictrp-pilot-notice { margin-bottom: 20px; }
+.ictrp-pilot-notice strong { color: var(--navy); }
+.ictrp-snapshot-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: .85rem;
+}
+.ictrp-logout { margin-left: auto; }
+.ictrp-logout button {
+  min-height: 34px;
+  padding: 5px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--navy);
+  background: var(--surface);
+  font: inherit;
+  font-size: .82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.ictrp-logout button:hover { border-color: var(--navy); }
+.ictrp-snapshot-meta a { color: var(--navy); font-weight: 700; }
+.ictrp-import-dates { color: var(--muted); font-size: .84rem; }
+.ictrp-import-dates summary { color: var(--navy); font-weight: 700; cursor: pointer; }
+.ictrp-import-dates ul { margin: 8px 0 0; padding-left: 19px; }
+.ictrp-toolbar {
+  display: grid;
+  grid-template-columns: minmax(240px, 2fr) repeat(4, minmax(145px, 1fr));
+  gap: 12px;
+  align-items: end;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.ictrp-toolbar label {
+  display: grid;
+  gap: 6px;
+  color: var(--navy);
+  font-size: .82rem;
+  font-weight: 750;
+}
+.ictrp-toolbar input,
+.ictrp-toolbar select {
+  width: 100%;
+  min-height: 44px;
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+  font-size: .92rem;
+}
+.ictrp-result-count { margin: 17px 0; color: var(--muted); font-size: .88rem; }
+.ictrp-records { display: grid; gap: 13px; }
+.ictrp-record {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(190px, .36fr);
+  gap: 24px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 9px 28px rgba(32, 44, 58, .035);
+}
+.ictrp-record h2 { margin: 0; font-size: 1.12rem; line-height: 1.38; }
+.ictrp-record h2 a { color: var(--navy); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.ictrp-record h2 a:hover { color: var(--blue); }
+.ictrp-condition { margin: 9px 0 0; color: var(--muted); }
+.ictrp-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px 20px;
+  margin: 18px 0 0;
+}
+.ictrp-fields div { min-width: 0; }
+.ictrp-fields dt {
+  color: var(--muted);
+  font-size: .72rem;
+  font-weight: 780;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+}
+.ictrp-fields dd { margin: 4px 0 0; overflow-wrap: anywhere; font-size: .9rem; }
+.ictrp-record-side { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.ictrp-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 4px 10px;
+  border: 1px solid #c9e2d6;
+  border-radius: 99px;
+  color: #205b44;
+  background: #edf7f1;
+  font-size: .79rem;
+  font-weight: 780;
+}
+.ictrp-status[data-status="suspended"] { border-color: #e8d6a8; color: #76571b; background: #fbf5e6; }
+.ictrp-identifiers { display: grid; gap: 5px; color: var(--muted); font-size: .82rem; }
+.ictrp-identifiers strong { color: var(--ink); font-weight: 740; }
+.ictrp-source-link { margin-top: auto; color: var(--navy); font-size: .86rem; font-weight: 780; }
+.ictrp-empty {
+  margin: 0 0 22px;
+  padding: 30px;
+  border: 1px dashed #cdd4dc;
+  border-radius: var(--radius);
+  text-align: center;
+  background: rgba(255,255,255,.56);
+}
+.ictrp-empty h2 { margin: 0; font-size: 1.2rem; }
+.ictrp-empty p { max-width: 690px; margin: 9px auto 0; color: var(--muted); }
+.ictrp-source-note { margin-top: 28px; }
+@media (max-width: 980px) {
+  .ictrp-toolbar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ictrp-search { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  .ictrp-toolbar { grid-template-columns: 1fr; padding: 14px; }
+  .ictrp-search { grid-column: auto; }
+  .ictrp-record { grid-template-columns: 1fr; padding: 18px; gap: 17px; }
+  .ictrp-fields { grid-template-columns: 1fr; gap: 11px; }
+  .ictrp-source-link { margin-top: 0; }
+  .ictrp-logout { margin-left: 0; }
+}

@@ -3,46 +3,108 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="An automatically refreshed view of current photobiomodulation study records, with links to major international trial registries." />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta name="description" content="Password-protected searchable index of PBM studies registered in clinical trial registries." />
     <title>Ongoing studies — Photobiomodulation Science</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/studies/studies.css" />
   </head>
   <body>
-    <header class="site-header"><div class="container header-inner"><a class="brand" href="/" aria-label="Photobiomodulation Science home"><span class="brand-mark" aria-hidden="true"><img src="/assets/pbm-light-icon.svg" alt="" /></span><span class="brand-text">Photobiomodulation <span>Science</span></span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav class="site-nav" id="site-nav" aria-label="Primary navigation"><a href="/devices/">PBM devices</a><a href="/indications/">PBM indications</a><a href="/statistics/">Research statistics</a><a href="/studies/" aria-current="page">Ongoing studies</a><a href="/links/">PBM links</a><a href="/about/">About</a></nav></div></header>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="Photobiomodulation Science home">
+          <span class="brand-mark" aria-hidden="true"><img src="/assets/pbm-light-icon.svg" alt="" /></span>
+          <span class="brand-text">Photobiomodulation <span>Science</span></span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+          <a href="/devices/">PBM devices</a>
+          <a href="/indications/">PBM indications</a>
+          <a href="/statistics/">Research statistics</a>
+          <a href="/studies/">Ongoing studies</a>
+          <a href="/links/">PBM links</a>
+          <a href="/about/">About</a>
+        </nav>
+      </div>
+    </header>
     <main>
-      <section class="page-hero studies-hero"><div class="container"><p class="breadcrumbs"><a href="/">Home</a> / Ongoing studies</p><h1>Ongoing PBM studies</h1></div></section>
-      <section class="section studies-list-section" id="live-studies"><div class="container">
-        <div class="trial-toolbar"><label class="search-field">Search ClinicalTrials.gov<input type="search" data-study-search placeholder="e.g. wound healing, Sweden, NCT…" autocomplete="off" /></label><button class="button secondary small" type="button" data-study-refresh>Refresh list</button></div>
-        <div class="study-filters">
-          <div class="study-filter-row study-filter-row-primary"><span class="study-filter-heading">Topic</span><div class="study-filter-chips" role="group" aria-label="Filter studies by topic"><button class="study-chip" type="button" data-study-topic="all" aria-pressed="true">All topics</button><button class="study-chip" type="button" data-study-topic="pain" aria-pressed="false">Pain</button><button class="study-chip" type="button" data-study-topic="dental" aria-pressed="false">Dental &amp; oral</button><button class="study-chip" type="button" data-study-topic="wound" aria-pressed="false">Skin &amp; wounds</button><button class="study-chip" type="button" data-study-topic="neurology" aria-pressed="false">Neurology</button><button class="study-chip" type="button" data-study-topic="musculoskeletal" aria-pressed="false">Musculoskeletal</button><button class="study-chip" type="button" data-study-topic="eye" aria-pressed="false">Eye conditions</button><button class="study-chip" type="button" data-study-topic="cardiovascular" aria-pressed="false">Cardiovascular</button><button class="study-chip" type="button" data-study-topic="other" aria-pressed="false">Other topics</button></div></div>
-          <div class="study-filter-row study-filter-row-primary"><span class="study-filter-heading">Design</span><div class="study-filter-chips" role="group" aria-label="Filter studies by design"><button class="study-chip" type="button" data-study-design="all" aria-pressed="true">All designs</button><button class="study-chip" type="button" data-study-design="randomized" aria-pressed="false">Randomized</button><button class="study-chip" type="button" data-study-design="other" aria-pressed="false">Other</button></div></div>
-          <div class="study-filter-row study-filter-row-secondary study-filter-row-secondary-start"><span class="study-filter-heading">Registry status</span><div class="study-filter-chips" role="group" aria-label="Filter studies by registry status"><button class="study-chip" type="button" data-study-status-filter="all" aria-pressed="true">All current statuses</button><button class="study-chip" type="button" data-study-status-filter="RECRUITING" aria-pressed="false">Recruiting</button><button class="study-chip" type="button" data-study-status-filter="NOT_YET_RECRUITING" aria-pressed="false">Not yet recruiting</button><button class="study-chip" type="button" data-study-status-filter="ENROLLING_BY_INVITATION" aria-pressed="false">Enrolling by invitation</button><button class="study-chip" type="button" data-study-status-filter="ACTIVE_NOT_RECRUITING" aria-pressed="false">Active, not recruiting</button><button class="study-chip" type="button" data-study-status-filter="SUSPENDED" aria-pressed="false">Suspended</button></div></div>
-          <div class="study-filter-row study-filter-row-secondary"><span class="study-filter-heading">Sort by</span><div class="study-filter-chips" role="group" aria-label="Sort studies"><button class="study-chip" type="button" data-study-sort="priority" aria-pressed="true">Recruiting first</button><button class="study-chip" type="button" data-study-sort="updated" aria-pressed="false">Recently updated</button><button class="study-chip" type="button" data-study-sort="participants-desc" aria-pressed="false">Participants: high to low</button><button class="study-chip" type="button" data-study-sort="participants-asc" aria-pressed="false">Participants: low to high</button><button class="study-chip" type="button" data-study-sort="completion-asc" aria-pressed="false">Completion soonest</button></div></div>
+      <section class="page-hero studies-hero">
+        <div class="container">
+          <p class="breadcrumbs"><a href="/">Home</a> / Ongoing studies</p>
+          <h1>Ongoing PBM studies</h1>
+          <p>A searchable, password-protected index built from direct searches of clinical-trial registries.</p>
         </div>
-        <p class="study-filter-note">Topic filters are approximate and may overlap. “Other topics” includes records outside the listed topic groups; “Other” design includes non-randomized studies and records with no reported allocation.</p>
-        <p class="trial-results-status" data-study-status role="status" aria-live="polite">Loading current registry records…</p>
-        <div class="trial-grid" data-study-results></div>
-        <div class="trial-error" data-study-error role="alert" hidden><strong>The live list could not be loaded just now.</strong><span>Open the official ClinicalTrials.gov search, or try refreshing this page.</span><a href="https://clinicaltrials.gov/search?term=photobiomodulation&amp;aggFilters=status:rec%20act%20not" target="_blank" rel="noopener noreferrer">Search ClinicalTrials.gov ↗</a></div>
-        <p class="source-note">Source: <a href="https://clinicaltrials.gov/" target="_blank" rel="noopener noreferrer">ClinicalTrials.gov</a> via its <a href="https://www.nlm.nih.gov/pubs/techbull/ma24/ma24_clinicaltrials_api.html" target="_blank" rel="noopener noreferrer">public API</a>; accessed <time data-study-retrieved>when the page loads</time>. Automated search for “photobiomodulation”; includes recruiting, not-yet-recruiting, enrolling-by-invitation, active-not-recruiting and suspended records. Some matches may be indirect, and studies using other terms may be missed. Open each registry record to verify current details.</p>
-      </div></section>
-      <section class="section registry-section"><div class="container"><div class="section-head"><div><p class="eyebrow">A worldwide search</p><h2>Explore other trial registries</h2></div><p>ClinicalTrials.gov is only one source. The WHO International Clinical Trials Registry Platform (ICTRP) brings together data from participating registries and links to the original records.</p></div>
-        <div class="notice registry-notice"><div class="notice-mark">i</div><p>The live list above is currently sourced from ClinicalTrials.gov only. These links open separate registry searches; they are not combined into the table, so check the source record for the current status. ReBEC’s link is prefilled with both search terms. ChiCTR’s prefilled link searches Google-indexed English ChiCTR records, which may not include every current record.</p></div>
-        <div class="registry-grid">
-          <a class="registry-card" href="https://trialsearch.who.int/" target="_blank" rel="noopener noreferrer"><span class="registry-region">Global · WHO</span><strong>ICTRP Search Portal</strong><span>Search trial data shared by participating registries worldwide and follow links to original records.</span><b class="arrow">↗</b></a>
-          <a class="registry-card" href="https://www.isrctn.com/search?q=photobiomodulation" target="_blank" rel="noopener noreferrer"><span class="registry-region">International</span><strong>ISRCTN Registry</strong><span>Search registered health studies using “photobiomodulation” and related terms.</span><b class="arrow">↗</b></a>
-          <a class="registry-card" href="https://euclinicaltrials.eu/search-for-clinical-trials/" target="_blank" rel="noopener noreferrer"><span class="registry-region">European Union / EEA</span><strong>Clinical Trials Information System (CTIS)</strong><span>Search clinical trials authorised in the EU and European Economic Area.</span><b class="arrow">↗</b></a>
-          <a class="registry-card" href="https://www.clinicaltrialsregister.eu/ctr-search/search" target="_blank" rel="noopener noreferrer"><span class="registry-region">European Union · legacy records</span><strong>EU Clinical Trials Register</strong><span>Search the earlier European register, including records from before CTIS.</span><b class="arrow">↗</b></a>
-          <a class="registry-card" href="https://www.anzctr.org.au/TrialSearch.aspx?searchTxt=photobiomodulation" target="_blank" rel="noopener noreferrer"><span class="registry-region">Australia · New Zealand</span><strong>ANZCTR</strong><span>Search the Australian New Zealand Clinical Trials Registry.</span><b class="arrow">↗</b></a>
-          <article class="registry-card registry-card-multi"><span class="registry-region">China</span><strong>Chinese Clinical Trial Registry (ChiCTR)</strong><span>Search indexed English-language ChiCTR records for both terms. This is a Google search, not a live query of the registry.</span><div class="registry-card-actions"><a href="https://www.google.com/search?q=site%3Achictr.org.cn%2FshowprojEN.html+%28photobiomodulation+OR+LLLT%29" target="_blank" rel="noopener noreferrer">Search photobiomodulation OR LLLT ↗</a><a href="https://www.chictr.org.cn/" target="_blank" rel="noopener noreferrer">Open official registry</a></div></article>
-          <a class="registry-card" href="https://ctri.nic.in/Clinicaltrials/advancesearchmain.php" target="_blank" rel="noopener noreferrer"><span class="registry-region">India</span><strong>Clinical Trials Registry – India (CTRI)</strong><span>Search by keyword in the national clinical study registry.</span><b class="arrow">↗</b></a>
-          <a class="registry-card" href="https://jrct.niph.go.jp/" target="_blank" rel="noopener noreferrer"><span class="registry-region">Japan</span><strong>Japan Registry of Clinical Trials (jRCT)</strong><span>Search the Japanese national registry of clinical trials.</span><b class="arrow">↗</b></a>
-          <a class="registry-card" href="https://ensaiosclinicos.gov.br/busca?q=photobiomodulation+OR+LLLT#gsc.tab=0&amp;gsc.q=photobiomodulation%20OR%20LLLT&amp;gsc.page=1" target="_blank" rel="noopener noreferrer"><span class="registry-region">Brazil</span><strong>Brazilian Clinical Trials Registry (ReBEC)</strong><span>Open a prefilled free-text search for “photobiomodulation OR LLLT”.</span><b class="arrow">↗</b></a>
+      </section>
+      <section class="section ictrp-section">
+        <div class="container">
+          <div class="notice ictrp-pilot-notice">
+            <div class="notice-mark" aria-hidden="true">i</div>
+            <p><strong>ClinicalTrials.gov-only pilot.</strong> This first snapshot uses selected fields from direct searches of ClinicalTrials.gov; other registries are excluded until their search routes and reuse conditions are cleared. It is not a complete worldwide census. The source data timestamp, our retrieval date and each record's reported status are shown separately. Confirm details in the linked original record.</p>
+          </div>
+          <div class="ictrp-snapshot-meta">
+            <span>Collection method: direct original-registry records</span>
+            <span data-retrieved>Snapshot collected: not yet available</span>
+            <span data-source-data-timestamp>ClinicalTrials.gov data timestamp: not recorded</span>
+            <span data-quality-review>Source-specific audit: not available</span>
+            <span data-reuse-status>Source reuse review: not checked</span>
+            <form class="ictrp-logout" method="post" action="/studies/">
+              <input type="hidden" name="action" value="logout" />
+              <button type="submit">Log out</button>
+            </form>
+            <details class="ictrp-import-dates" data-sources hidden>
+              <summary>Registry coverage in this snapshot</summary>
+              <ul data-source-list></ul>
+            </details>
+          </div>
+          <div class="ictrp-toolbar" role="search" aria-label="Search direct registry records">
+            <label class="ictrp-search">Search records
+              <input type="search" data-search placeholder="Title, condition, intervention, registry or ID" autocomplete="off" />
+            </label>
+            <label>View
+              <select data-view>
+                <option value="ongoing">Reported as ongoing</option>
+                <option value="all">All records</option>
+              </select>
+            </label>
+            <label>Registry
+              <select data-registry><option value="">All registries</option></select>
+            </label>
+            <label>Country
+              <select data-country><option value="">All countries</option></select>
+            </label>
+            <label>Registry-reported status
+              <select data-status><option value="">All current statuses</option></select>
+            </label>
+          </div>
+          <p class="ictrp-result-count" data-result-count role="status" aria-live="polite">Preparing the registry snapshot…</p>
+          <div class="ictrp-records" data-records></div>
+          <div class="ictrp-empty" data-empty hidden>
+            <h2 data-empty-title>Direct-registry data are being prepared</h2>
+            <p data-empty-copy>The registry snapshot is not available yet.</p>
+          </div>
+          <noscript><p class="ictrp-empty">Enable JavaScript to search this local snapshot.</p></noscript>
+          <div class="notice ictrp-source-note">
+            <div class="notice-mark" aria-hidden="true">i</div>
+            <p>Source: <a href="https://clinicaltrials.gov/" target="_blank" rel="noopener noreferrer">ClinicalTrials.gov</a>, operated by the U.S. National Library of Medicine at NIH. PBM.science filters three search expressions, removes duplicate NCT identifiers, maps source status labels for filtering and displays selected structured fields; contact details and full descriptions are omitted. The API data timestamp and this snapshot's retrieval date are shown separately. Registry statuses can lag behind actual recruitment, so verify each entry at its source. PBM.science is independent and is not endorsed by ClinicalTrials.gov, NLM or NIH. This password-protected page is excluded from search indexing.</p>
+          </div>
         </div>
-      </div></section>
-      <section class="section"><div class="container"><div class="notice"><div class="notice-mark">i</div><p>A registered study is not the same as a published result. Recruitment plans and status can change, and information is supplied by the people responsible for each study. This page highlights the continuing research activity while keeping registered plans distinct from published evidence.</p></div></div></section>
+      </section>
     </main>
-    <footer class="site-footer"><div class="container footer-grid"><p>© <span data-year></span> Photobiomodulation Science. An evolving public resource for photobiomodulation research.</p><nav class="footer-nav" aria-label="Footer navigation"><a href="/">Home</a><a href="https://www.bitly.com/PBM-database" target="_blank" rel="noopener noreferrer">Database</a><a href="/devices/">Devices</a><a href="/statistics/">Statistics</a><a href="/links/">PBM links</a><a href="/about/">About</a></nav></div></footer>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>© <span data-year></span> Photobiomodulation Science. An evolving public resource for photobiomodulation research.</p>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="/">Home</a>
+          <a href="https://www.bitly.com/PBM-database" target="_blank" rel="noopener noreferrer">Database</a>
+          <a href="/devices/">Devices</a>
+          <a href="/statistics/">Statistics</a>
+          <a href="/links/">PBM links</a>
+          <a href="/about/">About</a>
+        </nav>
+      </div>
+    </footer>
     <script src="/app.js"></script>
+    <script src="/studies/studies.js" defer></script>
   </body>
 </html>
