@@ -299,7 +299,7 @@
       records = Array.isArray(data.records) ? data.records : [];
       setOptions(registrySelect, Array.from(new Set(records.map(function (r) { return r.registry; }).filter(Boolean))).sort(), 'All registries');
       setOptions(countrySelect, Array.from(new Set(records.flatMap(function (r) { return r.countries || []; }))).sort(), 'All countries');
-      setOptions(conditionSelect, Array.from(new Set(records.flatMap(function (r) { return r.conditions || []; }).filter(Boolean))).sort(function (a, b) { return a.localeCompare(b); }), 'All conditions / indications');
+      setOptions(conditionSelect, Array.from(new Set(records.flatMap(function (r) { return r.conditions || []; }).filter(Boolean))).sort(function (a, b) { return a.localeCompare(b); }), 'All conditions');
       renderStatusButtons();
       if (!records.length) {
         empty.hidden = false;
