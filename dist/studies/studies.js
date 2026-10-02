@@ -3,10 +3,10 @@
   if (!container) return;
 
   var search = document.querySelector('[data-search]');
-  var viewSelect = document.querySelector('[data-view]');
+  var viewButtons = document.querySelector('[data-view-buttons]');
   var registrySelect = document.querySelector('[data-registry]');
   var countrySelect = document.querySelector('[data-country]');
-  var statusSelect = document.querySelector('[data-status]');
+  var statusButtons = document.querySelector('[data-status-buttons]');
   var count = document.querySelector('[data-result-count]');
   var empty = document.querySelector('[data-empty]');
   var emptyTitle = document.querySelector('[data-empty-title]');
@@ -18,8 +18,16 @@
   var sourcesDetails = document.querySelector('[data-sources]');
   var sourcesList = document.querySelector('[data-source-list]');
   var records = [];
+  var viewMode = 'ongoing';
+  var selectedStatuses = new Set();
 
   var ongoingGroups = new Set(['ongoing']);
+  var statusOrder = [
+    'recruiting', 'not_yet_recruiting', 'active_not_recruiting',
+    'enrolling_by_invitation', 'suspended', 'completed',
+    'recruitment_completed', 'terminated', 'withdrawn',
+    'status_unknown', 'status_unclear'
+  ];
   var statusLabels = {
     recruiting: 'Recruiting',
     not_yet_recruiting: 'Not yet recruiting',
@@ -66,6 +74,47 @@
     return new Intl.DateTimeFormat('en', options).format(date);
   }
 
+  function yearLabel(value) {
+    if (!value) return 'Not reported';
+    var match = /^(\d{4})/.exec(value);
+    return match ? match[1] : value;
+  }
+
+  function renderStatusButtons() {
+    if (!statusButtons) return;
+    var statusFilter = statusButtons.closest('fieldset');
+    if (statusFilter) statusFilter.hidden = false;
+    statusButtons.replaceChildren();
+    var available = records.filter(function (record) {
+      return viewMode === 'all' || ongoingGroups.has(record.status_group);
+    });
+    var counts = {};
+    available.forEach(function (record) {
+      if (record.status) counts[record.status] = (counts[record.status] || 0) + 1;
+    });
+    var statuses = Object.keys(counts).sort(function (a, b) {
+      var ai = statusOrder.indexOf(a);
+      var bi = statusOrder.indexOf(b);
+      if (ai < 0) ai = statusOrder.length;
+      if (bi < 0) bi = statusOrder.length;
+      return ai === bi ? a.localeCompare(b) : ai - bi;
+    });
+
+    function addButton(value, label, amount) {
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.dataset.statusFilter = value;
+      button.setAttribute('aria-pressed', value === 'all' ? String(selectedStatuses.size === 0) : String(selectedStatuses.has(value)));
+      button.textContent = label + (amount == null ? '' : ' (' + amount + ')');
+      statusButtons.appendChild(button);
+    }
+
+    addButton('all', 'All statuses');
+    statuses.forEach(function (status) {
+      addButton(status, statusLabels[status] || status, counts[status]);
+    });
+  }
+
   function recordMatches(record) {
     var query = (search.value || '').trim().toLowerCase();
     var haystack = [
@@ -78,13 +127,16 @@
       (record.interventions || []).join(' '),
       (record.countries || []).join(' '),
       record.study_type,
-      record.phase
+      record.phase,
+      record.target_sample_size,
+      record.study_completion_date,
+      statusLabels[record.status] || record.status_raw
     ].join(' ').toLowerCase();
     if (query && haystack.indexOf(query) < 0) return false;
-    if (viewSelect.value === 'ongoing' && !ongoingGroups.has(record.status_group)) return false;
+    if (viewMode === 'ongoing' && !ongoingGroups.has(record.status_group)) return false;
     if (registrySelect.value && record.registry !== registrySelect.value) return false;
     if (countrySelect.value && (record.countries || []).indexOf(countrySelect.value) < 0) return false;
-    if (statusSelect.value && record.status !== statusSelect.value) return false;
+    if (selectedStatuses.size && !selectedStatuses.has(record.status)) return false;
     return true;
   }
 
@@ -92,6 +144,9 @@
     var article = document.createElement('article');
     article.className = 'ictrp-record';
     var main = document.createElement('div');
+    main.className = 'ictrp-record-main';
+    var titleRow = document.createElement('div');
+    titleRow.className = 'ictrp-title-row';
     var heading = document.createElement('h2');
     var titleLink = document.createElement('a');
     titleLink.href = record.source_url;
@@ -99,26 +154,46 @@
     titleLink.rel = 'noopener noreferrer';
     titleLink.textContent = record.title;
     heading.appendChild(titleLink);
-    main.appendChild(heading);
+    titleRow.appendChild(heading);
+    var reportedStatus = statusLabels[record.status] || record.status_raw || 'Status not reported';
+    var badge = text(titleRow, 'span', 'ictrp-status', 'Registry reports: ' + reportedStatus);
+    badge.dataset.status = record.status || '';
+    main.appendChild(titleRow);
     if ((record.conditions || []).length) {
       text(main, 'p', 'ictrp-condition', record.conditions.join(' · '));
     }
 
+    var summaryFields = document.createElement('dl');
+    summaryFields.className = 'ictrp-quick-fields';
+    [
+      ['Country', (record.countries || []).join(', ') || 'Not reported'],
+      ['Target sample', record.target_sample_size == null ? 'Not reported' : String(record.target_sample_size)],
+      ['Study completion', yearLabel(record.study_completion_date)]
+    ].forEach(function (pair) {
+      var item = document.createElement('div');
+      text(item, 'dt', '', pair[0]);
+      text(item, 'dd', '', pair[1]);
+      summaryFields.appendChild(item);
+    });
+    main.appendChild(summaryFields);
+
+    var more = document.createElement('details');
+    more.className = 'ictrp-more';
+    text(more, 'summary', '', 'See more');
     var fields = document.createElement('dl');
     fields.className = 'ictrp-fields';
     [
       ['Intervention', (record.interventions || []).join(' · ')],
-      ['Country', (record.countries || []).join(', ')],
       ['Study type', record.study_type],
       ['Phase', record.phase],
-      ['Target sample', record.target_sample_size == null ? null : String(record.target_sample_size)],
       ['Sponsor', record.sponsor],
       ['Registration date', record.registration_date ? dateLabel(record.registration_date) : null],
       ['Study start', record.start_date ? dateLabel(record.start_date) : null],
       ['Primary completion', record.primary_completion_date ? dateLabel(record.primary_completion_date) : null],
-      ['Study completion', record.study_completion_date ? dateLabel(record.study_completion_date) : null],
+      ['Study completion date', record.study_completion_date ? dateLabel(record.study_completion_date) : null],
       ['Registry last updated', record.source_updated_on ? dateLabel(record.source_updated_on) : null],
-      ['Snapshot checked', record.source_retrieved_on ? dateLabel(record.source_retrieved_on) : null]
+      ['Snapshot checked', record.source_retrieved_on ? dateLabel(record.source_retrieved_on) : null],
+      ['Additional registry IDs', (record.secondary_ids || []).join(', ')]
     ].forEach(function (pair) {
       if (pair[1] == null || pair[1] === '') return;
       var item = document.createElement('div');
@@ -126,34 +201,28 @@
       text(item, 'dd', '', pair[1]);
       fields.appendChild(item);
     });
-    main.appendChild(fields);
-    article.appendChild(main);
-
-    var side = document.createElement('div');
-    side.className = 'ictrp-record-side';
-    var reportedStatus = statusLabels[record.status] || record.status_raw || 'Status not reported';
-    var badge = text(side, 'span', 'ictrp-status', 'Registry reports: ' + reportedStatus);
-    badge.dataset.status = record.status || '';
-    var identifiers = document.createElement('div');
-    identifiers.className = 'ictrp-identifiers';
-    text(identifiers, 'strong', '', record.registry);
-    text(identifiers, 'span', '', record.primary_id);
-    if ((record.secondary_ids || []).length) text(identifiers, 'span', '', 'Also: ' + record.secondary_ids.join(', '));
-    side.appendChild(identifiers);
+    more.appendChild(fields);
     var sourceLink = document.createElement('a');
     sourceLink.className = 'ictrp-source-link';
     sourceLink.href = record.source_url;
     sourceLink.target = '_blank';
     sourceLink.rel = 'noopener noreferrer';
     sourceLink.textContent = 'Open original registry record';
-    side.appendChild(sourceLink);
-    article.appendChild(side);
+    more.appendChild(sourceLink);
+    main.appendChild(more);
+    article.appendChild(main);
     return article;
   }
 
   function render() {
     container.replaceChildren();
-    statusSelect.options[0].textContent = viewSelect.value === 'ongoing' ? 'All ongoing statuses' : 'All statuses';
+    Array.from(viewButtons.querySelectorAll('[data-view]')).forEach(function (button) {
+      button.setAttribute('aria-pressed', String(button.dataset.view === viewMode));
+    });
+    Array.from(statusButtons.querySelectorAll('[data-status-filter]')).forEach(function (button) {
+      var value = button.dataset.statusFilter;
+      button.setAttribute('aria-pressed', value === 'all' ? String(selectedStatuses.size === 0) : String(selectedStatuses.has(value)));
+    });
     var visible = records.filter(recordMatches);
     visible.forEach(function (record) { container.appendChild(renderCard(record)); });
     count.textContent = visible.length + (visible.length === 1 ? ' registry record shown' : ' registry records shown');
@@ -228,11 +297,7 @@
       records = Array.isArray(data.records) ? data.records : [];
       setOptions(registrySelect, Array.from(new Set(records.map(function (r) { return r.registry; }).filter(Boolean))).sort(), 'All registries');
       setOptions(countrySelect, Array.from(new Set(records.flatMap(function (r) { return r.countries || []; }))).sort(), 'All countries');
-      var statuses = Array.from(new Set(records.map(function (r) { return r.status; }).filter(Boolean))).sort();
-      setOptions(statusSelect, statuses, 'All ongoing statuses');
-      Array.from(statusSelect.options).forEach(function (option) {
-        if (statusLabels[option.value]) option.textContent = statusLabels[option.value];
-      });
+      renderStatusButtons();
       if (!records.length) {
         empty.hidden = false;
         emptyTitle.textContent = 'No studies have passed review yet';
@@ -246,7 +311,30 @@
       emptyCopy.textContent = 'Records will appear after the source reuse and quality checks pass.';
     });
 
-  [search, viewSelect, registrySelect, countrySelect, statusSelect].forEach(function (control) {
+  viewButtons.addEventListener('click', function (event) {
+    var button = event.target.closest('[data-view]');
+    if (!button) return;
+    viewMode = button.dataset.view;
+    selectedStatuses.clear();
+    renderStatusButtons();
+    render();
+  });
+
+  statusButtons.addEventListener('click', function (event) {
+    var button = event.target.closest('[data-status-filter]');
+    if (!button) return;
+    var status = button.dataset.statusFilter;
+    if (status === 'all') {
+      selectedStatuses.clear();
+    } else if (selectedStatuses.has(status)) {
+      selectedStatuses.delete(status);
+    } else {
+      selectedStatuses.add(status);
+    }
+    render();
+  });
+
+  [search, registrySelect, countrySelect].forEach(function (control) {
     control.addEventListener('input', render);
     control.addEventListener('change', render);
   });
