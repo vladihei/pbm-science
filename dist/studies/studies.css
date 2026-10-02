@@ -164,3 +164,31 @@
   .ictrp-status-filter { padding: 10px 11px 12px; }
   .ictrp-status-buttons button { min-height: 36px; padding: 6px 9px; font-size: .78rem; }
 }
+
+/* Keep the native disclosure compact; global details styling is for large panels. */
+.ictrp-more,
+.ictrp-more[open] {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.ictrp-more summary {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 9px;
+  padding: 5px 0;
+}
+.ictrp-more .ictrp-fields {
+  max-width: 960px;
+  margin-top: 8px;
+  padding: 8px 12px 2px;
+  gap: 9px 24px;
+}
+.ictrp-more .ictrp-source-link { margin: 10px 12px 0; }
+@media (max-width: 640px) {
+  .ictrp-more .ictrp-fields { padding: 8px 6px 2px; }
+  .ictrp-more .ictrp-source-link { margin-left: 6px; }
+}
