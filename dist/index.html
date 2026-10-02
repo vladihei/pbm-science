@@ -7,6 +7,48 @@
     <title>Photobiomodulation Science — Research made easier to explore</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/styles.css" />
+  <style>
+/* Approved homepage curation design. */
+.curation-design { --curation-green:#317766; --curation-red:#b25560; }
+.curation-design .section-head { display:grid; grid-template-columns:minmax(0,1.6fr) minmax(0,1fr); gap:36px; align-items:center; }
+.curation-design .section-head h2 { font-size:clamp(1.9rem,3.4vw,2.8rem); }
+.curation-design .terminology-flow { grid-template-columns:minmax(0,1.62fr) 20px minmax(0,.94fr) 20px minmax(0,1fr); gap:14px; }
+.curation-design .terminology-cloud,.curation-design .terminology-method,.curation-design .terminology-record { padding:22px; border:1px solid var(--line); border-radius:var(--radius); }
+.curation-design .terminology-cloud,.curation-design .terminology-record { background:#fff; }
+.curation-design .terminology-method { background:#f7f0ec; }
+.curation-design .flow-label { color:var(--muted); letter-spacing:.04em; }
+.curation-design .flow-step { letter-spacing:.04em; }
+.curation-design .term-group-title { margin:23px 0 12px; font-size:.8rem; color:var(--curation-green); }
+.curation-design .term-chip-grid { gap:7px; }
+.curation-design .term-chip-grid span { border-color:#9fb9ae; background:#f2f6f1; color:var(--curation-green); font-size:.72rem; padding:6px 9px; max-width:100%; overflow-wrap:anywhere; }
+.curation-design .term-chip-grid span::before { background:var(--curation-green); width:5px; height:5px; flex-basis:5px; }
+.curation-design .excluded-title { margin-top:27px; color:var(--curation-red); }
+.curation-design .excluded-terms span { color:var(--curation-red); border-color:#d8a4ad; background:#fcf0f1; }
+.curation-design .excluded-terms span::before { background:var(--curation-red); }
+.curation-design .terminology-method h3 { font-size:1.08rem; line-height:1.45; margin:22px 0 24px; }
+.curation-design .terminology-method > p { line-height:1.7; }
+.curation-design .curation-decisions { display:grid; gap:15px; margin-top:30px; }
+.curation-design .curation-decisions p { color:var(--curation-green); font-weight:750; }
+.curation-design .curation-decisions p+p { color:var(--curation-red); }
+.curation-design .terminology-record { display:flex; flex-direction:column; box-shadow:2px 4px 0 #eeede8; }
+.curation-design .terminology-record .flow-step { color:var(--curation-green); }
+.curation-design .record-heading { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:7px 0 22px; margin-bottom:24px; border-bottom:1px solid #d8e0d7; }
+.curation-design .record-heading h3 { font-size:1.22rem; margin:0; }
+.curation-design .record-database-icon { display:grid; place-items:center; width:52px; height:52px; flex:0 0 52px; border-radius:50%; background:#f0f2ed; color:var(--curation-green); }
+.curation-design .record-database-icon svg { width:28px; height:28px; }
+.curation-design .terminology-record ul { list-style:none; padding:0; margin:0; gap:12px; }
+.curation-design .terminology-record li { display:flex; align-items:center; gap:11px; padding:12px 10px; min-height:59px; background:#f8f6f3; border-radius:10px; color:var(--ink); line-height:1.5; }
+.curation-design .record-feature-icon { display:grid; place-items:center; width:25px; height:25px; flex:0 0 25px; border-radius:50%; background:#edf0e9; color:var(--curation-green); }
+.curation-design .record-feature-icon svg { width:18px; height:18px; }
+.curation-design .record-footer { margin-top:auto; padding-top:26px; }
+.curation-design .record-footer p { margin:0 0 24px; font-size:.78rem; line-height:1.5; color:var(--muted); }
+.curation-design .record-open { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:12px 14px; border-radius:9px; background:var(--curation-green); color:#fff; font-size:.8rem; }
+.curation-design .record-open:hover,.curation-design .record-open:focus-visible { background:#286353; text-decoration:none; }
+.curation-design .record-open:focus-visible { outline:3px solid #9fb9ae; outline-offset:3px; }
+.curation-design .record-open > span:last-child { font-size:1.2rem; line-height:1; }
+@media(max-width:1100px) { .curation-design .terminology-flow { grid-template-columns:1fr; } .curation-design .terminology-arrow { min-height:24px; transform:rotate(90deg); } .curation-design .section-head { display:block; } .curation-design .section-head > p { margin-top:18px; } }
+@media(max-width:420px) { .curation-design .terminology-cloud,.curation-design .terminology-method,.curation-design .terminology-record { padding:18px; } }
+</style>
   </head>
   <body>
     <header class="site-header">
@@ -55,19 +97,17 @@
         </div>
       </section>
 
-      <section class="section terminology-section" aria-labelledby="terminology-heading">
-        <div class="container">
-          <div class="section-head"><div><p class="eyebrow">Why the PBM Database</p><h2 id="terminology-heading">One therapy, many names in the literature.</h2></div><p>Published studies do not always use the same name for photobiomodulation. The database brings this varied literature together.</p></div>
-          <div class="terminology-flow">
-            <div class="terminology-cloud"><p class="flow-label">Examples of terms and descriptions in papers</p><div class="term-chip-grid"><span>Low-level light therapy</span><span>Low-level laser therapy</span><span>Low-power laser therapy</span><span>Low-intensity laser therapy</span><span>Cold laser therapy (CLT)</span><span>Laser acupuncture</span><span>Laser treatment</span><span>Laser light irradiation</span><span>LED phototherapy</span><span>Light-emitting diode irradiation</span><span>Red-light photostimulation</span><span>Photobiomodulation</span><span>Photobiostimulation</span><span>Photostimulation</span><span>Near-infrared light treatment</span><span>Far-red light</span><span>Helium–neon laser irradiation</span><span>Transcranial laser stimulation</span><span>660 nm LED light source</span><span>904 nm laser</span></div><p class="term-cloud-note">Some phrases describe the light source or wavelength rather than a standardized synonym.</p></div>
-            <div class="terminology-arrow" aria-hidden="true">→</div>
-            <div class="terminology-method"><span class="flow-step">How the database was built</span><h3>Search terms, citation checks and manual review</h3><p>The database was compiled by searching for PBM research under a range of terms and reviewing candidate records. Forward citation searches—checking papers that cite relevant studies already found—help identify additional papers.</p><p style="margin-top: 12px;">Manual review excludes unrelated keyword matches, such as “red light” papers about traffic signals.</p></div>
-            <div class="terminology-arrow" aria-hidden="true">→</div>
-            <div class="terminology-record"><span class="flow-step">Organized records</span><h3>PBM Database</h3><ul><li>Study models, methods and publication details</li><li>Wavelengths, light delivery and treatment parameters</li><li>Annotations flag comparisons, cautions and notable findings</li><li>Direct links to original research papers</li></ul><p>Structured markings can make key details quicker to locate than screening PubMed records one by one.</p><a href="https://www.bitly.com/PBM-database" target="_blank" rel="noopener noreferrer">Open the database&nbsp; →</a></div>
-          </div>
-          <p class="terminology-note">The PBM Database is a manually curated resource that continues to be updated; it is not a formal systematic review.</p>
-        </div>
-      </section>
+      <section class="section terminology-section curation-design" aria-labelledby="terminology-heading">
+<div class="container">
+<div class="section-head"><div><p class="eyebrow">Why the PBM Database</p><h2 id="terminology-heading">One therapy, many names in the literature.</h2></div><p>Published studies use many terms for PBM.<br>Manual review helps identify relevant records.</p></div>
+<div class="terminology-flow">
+<div class="terminology-cloud"><p class="flow-label">Terms and possible search matches</p><h3 class="term-group-title">PBM-related terms</h3><div class="term-chip-grid"><span>Low-level light therapy</span><span>Low-level laser therapy</span><span>Low-power laser therapy</span><span>Low-intensity laser therapy</span><span>Cold laser therapy (CLT)</span><span>Laser acupuncture</span><span>Laser treatment</span><span>Laser light irradiation</span><span>LED phototherapy</span><span>Light-emitting diode irradiation</span><span>Red-light photostimulation</span><span>Photobiomodulation</span><span>Photobiostimulation</span><span>Photostimulation</span><span>Near-infrared light treatment</span><span>Far-red light</span><span>Helium–neon laser irradiation</span><span>Transcranial laser stimulation</span><span>660 nm LED light source</span><span>904 nm laser</span></div><h3 class="term-group-title excluded-title">Outside PBM scope - excluded</h3><div class="term-chip-grid excluded-terms"><span>Red light running survey</span><span>“Red light for cameras?”</span><span>Acne-scar resurfacing lasers</span><span>Pigment-targeting QS/picosecond lasers</span></div></div>
+<div class="terminology-arrow" aria-hidden="true">→</div>
+<div class="terminology-method"><span class="flow-step">How the database was built</span><h3>Search terms, citation checks and manual review</h3><p>Candidate papers are checked for PBM relevance. Citation searches help find more studies.</p><div class="curation-decisions"><p>Relevant records included</p><p>Non-PBM matches excluded</p></div></div>
+<div class="terminology-arrow" aria-hidden="true">→</div>
+<div class="terminology-record"><span class="flow-step">Organized records</span><div class="record-heading"><h3>PBM Database</h3><span class="record-database-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/></svg></span></div><ul><li><span class="record-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20c0-9 14-9 14 0"/></svg></span><span>Study models and publication details</span></li><li><span class="record-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12c4-12 6 12 10 0s6 12 10 0"/></svg></span><span>Wavelengths and treatment parameters</span></li><li><span class="record-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 9h6M9 15h6"/></svg></span><span>Annotations and study findings</span></li><li><span class="record-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 19 14-14M10 5h9v9"/></svg></span><span>Links to original research papers</span></li></ul><div class="record-footer"><p>Relevant research, organized for easier exploration.</p><a class="record-open" href="https://www.bitly.com/PBM-database" target="_blank" rel="noopener noreferrer"><span>Open the database</span><span aria-hidden="true">→</span></a></div></div>
+</div><p class="terminology-note">The PBM Database is a manually curated resource; it is not a formal systematic review.</p>
+</div></section>
 
       <section class="section database-annotations"><div class="container"><div class="section-head"><div><p class="eyebrow">Database annotations</p><h2>What the database symbols mean</h2></div></div><p class="annotation-intro">The symbols make key details—study models and methods, light delivery and findings—easier to scan. The number beside each marking shows how many database records carry it; records can have several markings, so counts overlap. Curator highlights and interpretive notes reflect the curator’s reading, not an independent rating of study quality.</p><div class="annotation-grid">
         <article class="annotation-card annotation-card-study"><h3>Study &amp; method</h3><ul class="annotation-items annotation-items-study">
@@ -169,7 +209,7 @@
 
       <section class="section">
         <div class="container">
-          <div class="notice"><div class="notice-mark">i</div><p>Photobiomodulation Science presents the growing published literature and keeps study type, protocol and outcome context visible as the field develops.</p></div>
+          <div class="notice"><div class="notice-mark">i</div><p>A non-commercial personal project helping researchers and non-specialist readers explore photobiomodulation research and its development.</p></div>
         </div>
       </section>
     </main>
@@ -183,3 +223,4 @@
     <script src="/app.js"></script>
   </body>
 </html>
+
