@@ -77,6 +77,18 @@
         <tr><td>Rose</td><td>2025</td><td>Commentary</td><td>Supportive Care in Cancer</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39891783/" target="_blank" rel="noopener noreferrer">Red light therapy for patients with chemotherapy-induced alopecia</a></td><td><button class="reference-toggle" type="button" aria-expanded="false" aria-controls="reference-detail-rose">+ See more</button></td></tr><tr class="reference-detail-row" id="reference-detail-rose" hidden><td colspan="6"><div class="reference-detail-content"><div class="reference-detail-grid"><div class="reference-detail-item"><strong>Study details</strong><p>Commentary on the limited clinical literature for red light in chemotherapy-induced hair loss; it is not a clinical trial.</p></div><div class="reference-detail-item"><strong>Light information</strong><p>No independent treatment protocol is evaluated.</p></div><div class="reference-detail-item"><strong>Database result</strong><p>The commentary contributes context but no original participant outcomes.</p></div></div></div></td></tr>
         <tr><td>Perez</td><td>2024</td><td>Related systematic review</td><td>Dermatologic Surgery</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39404126/" target="_blank" rel="noopener noreferrer">Low-Level Laser and LED Therapy in Alopecia: A Systematic Review and Meta-Analysis</a></td><td><button class="reference-toggle" type="button" aria-expanded="false" aria-controls="reference-detail-perez">+ See more</button></td></tr><tr class="reference-detail-row" id="reference-detail-perez" hidden><td colspan="6"><div class="reference-detail-content"><div class="reference-detail-grid"><div class="reference-detail-item"><strong>Study details</strong><p>Broad review of alopecia types; 32 participants with chemotherapy-induced alopecia were included among 3,098 participants.</p></div><div class="reference-detail-item"><strong>Light information</strong><p>The review includes several alopecia subtypes and PBM protocols; its pooled hair-density estimates are not CIA-specific.</p></div><div class="reference-detail-item"><strong>Database result</strong><p>Subtype-specific statistical information for chemotherapy-induced alopecia was insufficient for meta-analysis.</p></div></div></div></td></tr>
       </tbody></table></div></div></section>
+    <script>
+      document.querySelectorAll('.reference-toggle').forEach(function (button) {
+        button.addEventListener('click', function () {
+          var row = document.getElementById(button.getAttribute('aria-controls'));
+          if (!row) return;
+          var expanded = button.getAttribute('aria-expanded') === 'true';
+          button.setAttribute('aria-expanded', String(!expanded));
+          row.hidden = expanded;
+          button.textContent = expanded ? '+ See more' : '− See less';
+        });
+      });
+    </script>
     </main>
     <footer class="site-footer"><div class="container footer-grid"><p>© <span data-year></span> Photobiomodulation Science. An evolving public resource for photobiomodulation research.</p><nav class="footer-nav" aria-label="Footer navigation"><a href="/">Home</a><a href="/indications/">Indications</a><a href="/statistics/">Statistics</a><a href="/about/">About</a></nav></div></footer>
     <script src="/app.js"></script>

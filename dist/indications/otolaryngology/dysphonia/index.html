@@ -74,6 +74,18 @@
         <tr><td>Plec</td><td>2026</td><td>Randomized sham-controlled report</td><td>Journal of Voice</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42191538/" target="_blank" rel="noopener noreferrer">Digital Kymography Evaluation of Women With Behavioral Dysphonia Undergoing Low-Level Laser Photobiomodulation</a></td><td><button class="reference-toggle" type="button" aria-expanded="false" aria-controls="reference-detail-plec">+ See more</button></td></tr><tr class="reference-detail-row" id="reference-detail-plec" hidden><td colspan="6"><div class="reference-detail-content"><div class="reference-detail-grid"><div class="reference-detail-item"><strong>Study details</strong><p>Companion report of the same 30-woman protocol; immediate laryngeal movement was assessed using digital kymography.</p></div><div class="reference-detail-item"><strong>Light information</strong><p>808 nm laser, 9 J per point at seven points, paired with the voiced tongue-trill exercise.</p></div><div class="reference-detail-item"><strong>Database result</strong><p>Mean opening increased in the anterior third of the vocal folds immediately after treatment.</p></div></div></div></td></tr>
         <tr><td>Pecorari</td><td>2026</td><td>Randomized pilot</td><td>Journal of Voice</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42309953/" target="_blank" rel="noopener noreferrer">Photobiomodulation in Muscle Tension Dysphonia: A Pilot Study</a></td><td><button class="reference-toggle" type="button" aria-expanded="false" aria-controls="reference-detail-pecorari">+ See more</button></td></tr><tr class="reference-detail-row" id="reference-detail-pecorari" hidden><td colspan="6"><div class="reference-detail-content"><div class="reference-detail-grid"><div class="reference-detail-item"><strong>Study details</strong><p>Fifteen professional voice users with primary muscle tension dysphonia were randomized to PBM alone or sham.</p></div><div class="reference-detail-item"><strong>Light information</strong><p>The abstract does not provide enough dosimetry detail for comparison with the combined laser-plus-exercise trial.</p></div><div class="reference-detail-item"><strong>Database result</strong><p>PBM alone did not produce immediate or short-term effects on the studied voice outcomes.</p></div></div></div></td></tr>
       </tbody></table></div></div></section>
+    <script>
+      document.querySelectorAll('.reference-toggle').forEach(function (button) {
+        button.addEventListener('click', function () {
+          var row = document.getElementById(button.getAttribute('aria-controls'));
+          if (!row) return;
+          var expanded = button.getAttribute('aria-expanded') === 'true';
+          button.setAttribute('aria-expanded', String(!expanded));
+          row.hidden = expanded;
+          button.textContent = expanded ? '+ See more' : '− See less';
+        });
+      });
+    </script>
     </main>
     <footer class="site-footer"><div class="container footer-grid"><p>© <span data-year></span> Photobiomodulation Science. An evolving public resource for photobiomodulation research.</p><nav class="footer-nav" aria-label="Footer navigation"><a href="/">Home</a><a href="/indications/">Indications</a><a href="/statistics/">Statistics</a><a href="/about/">About</a></nav></div></footer>
     <script src="/app.js"></script>

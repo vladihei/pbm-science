@@ -74,6 +74,18 @@
         <tr><td>Xu</td><td>2015</td><td>Randomized comparison with parallel rabbit model</td><td>Experimental and Therapeutic Medicine</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/26622442/" target="_blank" rel="noopener noreferrer">Helium-neon laser therapy in the treatment of hydroxyapatite orbital implant exposure: A superior option</a></td><td><button class="reference-toggle" type="button" aria-expanded="false" aria-controls="reference-detail-xu">+ See more</button></td></tr><tr class="reference-detail-row" id="reference-detail-xu" hidden><td colspan="6"><div class="reference-detail-content"><div class="reference-detail-grid"><div class="reference-detail-item"><strong>Study details</strong><p>Seventy patients randomized 35 per group; the article also reports a parallel study in 24 New Zealand white rabbits.</p></div><div class="reference-detail-item"><strong>Light information</strong><p>632.8-nm continuous-wave He-Ne laser, 15 min daily for ten days.</p></div><div class="reference-detail-item"><strong>Database result</strong><p>Patient healing was 97.14% with laser versus 74.29% with drugs plus surgery; this was a single clinical report.</p></div></div></div></td></tr>
         <tr><td>Wu</td><td>2025</td><td>Mechanistic animal and in-vitro study</td><td>Gene</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39490651/" target="_blank" rel="noopener noreferrer">Integrated miRNA sequencing and experimental validation Unveil that low-level laser enhances vascular endothelial cell proliferation, migration, and lumen formation via miR-90/VEGFA</a></td><td><button class="reference-toggle" type="button" aria-expanded="false" aria-controls="reference-detail-wu">+ See more</button></td></tr><tr class="reference-detail-row" id="reference-detail-wu" hidden><td colspan="6"><div class="reference-detail-content"><div class="reference-detail-grid"><div class="reference-detail-item"><strong>Study details</strong><p>The abstract describes an LLLT-treated hydroxyapatite implant model with vascular-tissue sequencing, plus separate rabbit microvascular endothelial-cell assays.</p></div><div class="reference-detail-item"><strong>Light information</strong><p>The reported mechanism centers on vascular-tissue signaling through miR-90 and VEGFA.</p></div><div class="reference-detail-item"><strong>Database result</strong><p>Cell assays link miR-90/VEGFA to endothelial-cell proliferation, migration, and tube formation; no patient treatment outcomes are reported.</p></div></div></div></td></tr>
       </tbody></table></div></div></section>
+    <script>
+      document.querySelectorAll('.reference-toggle').forEach(function (button) {
+        button.addEventListener('click', function () {
+          var row = document.getElementById(button.getAttribute('aria-controls'));
+          if (!row) return;
+          var expanded = button.getAttribute('aria-expanded') === 'true';
+          button.setAttribute('aria-expanded', String(!expanded));
+          row.hidden = expanded;
+          button.textContent = expanded ? '+ See more' : '− See less';
+        });
+      });
+    </script>
     </main>
     <footer class="site-footer"><div class="container footer-grid"><p>© <span data-year></span> Photobiomodulation Science. An evolving public resource for photobiomodulation research.</p><nav class="footer-nav" aria-label="Footer navigation"><a href="/">Home</a><a href="/indications/">Indications</a><a href="/statistics/">Statistics</a><a href="/about/">About</a></nav></div></footer>
     <script src="/app.js"></script>
