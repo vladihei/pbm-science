@@ -2,14 +2,14 @@
   "schema_version": 2,
   "source_strategy": "direct_original_registries",
   "snapshot_status": "ready",
-  "retrieved_on": "2026-10-02",
+  "retrieved_on": "2026-10-03",
   "source_data_timestamp": "2026-10-02T09:00:04",
   "sources": [
     {
       "registry": "ClinicalTrials.gov",
       "search_hit_count": 2356,
       "ongoing_status_count": 525,
-      "retrieved_on": "2026-10-02",
+      "retrieved_on": "2026-10-03",
       "data_timestamp": "2026-10-02T09:00:04",
       "rights_status": "cleared"
     }
@@ -75,7 +75,7 @@
       "study_completion_date": "2017-06",
       "source_updated_on": "2015-12-03",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Nove de Julho",
       "source_url": "https://clinicaltrials.gov/study/NCT01925443"
     },
@@ -108,7 +108,7 @@
       "study_completion_date": "2023-05",
       "source_updated_on": "2023-01-25",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Vielight Inc.",
       "source_url": "https://clinicaltrials.gov/study/NCT03484143"
     },
@@ -140,7 +140,7 @@
       "study_completion_date": "2026-10-01",
       "source_updated_on": "2024-10-22",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Scarborough Rouge Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT03687580"
     },
@@ -171,7 +171,7 @@
       "study_completion_date": "2027-02-01",
       "source_updated_on": "2022-04-05",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "McMaster University",
       "source_url": "https://clinicaltrials.gov/study/NCT03819062"
     },
@@ -202,7 +202,7 @@
       "study_completion_date": "2027-02-01",
       "source_updated_on": "2022-04-05",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "McMaster University",
       "source_url": "https://clinicaltrials.gov/study/NCT03825575"
     },
@@ -236,7 +236,7 @@
       "study_completion_date": "2026-09",
       "source_updated_on": "2026-02-06",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Gustave Roussy, Cancer Campus, Grand Paris",
       "source_url": "https://clinicaltrials.gov/study/NCT03983369"
     },
@@ -268,7 +268,7 @@
       "study_completion_date": "2022-06-01",
       "source_updated_on": "2021-02-05",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "LumiThera, Inc.",
       "source_url": "https://clinicaltrials.gov/study/NCT04065490"
     },
@@ -304,7 +304,7 @@
       "study_completion_date": "2028-02",
       "source_updated_on": "2023-02-28",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Jessa Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT04690439"
     },
@@ -338,7 +338,7 @@
       "study_completion_date": "2026-01-31",
       "source_updated_on": "2025-12-09",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "NYU Langone Health",
       "source_url": "https://clinicaltrials.gov/study/NCT04784416"
     },
@@ -370,7 +370,7 @@
       "study_completion_date": "2029-08",
       "source_updated_on": "2023-06-18",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Jessa Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT04979078"
     },
@@ -401,7 +401,7 @@
       "study_completion_date": "2023-09",
       "source_updated_on": "2022-06-30",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Sandwell & West Birmingham Hospitals NHS Trust",
       "source_url": "https://clinicaltrials.gov/study/NCT05069363"
     },
@@ -438,7 +438,7 @@
       "study_completion_date": "2028-07",
       "source_updated_on": "2026-09-17",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Universidad de Granada",
       "source_url": "https://clinicaltrials.gov/study/NCT05106608"
     },
@@ -470,7 +470,7 @@
       "study_completion_date": "2030-01",
       "source_updated_on": "2023-09-29",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Jessa Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT05165056"
     },
@@ -502,7 +502,7 @@
       "study_completion_date": "2030-01",
       "source_updated_on": "2023-09-29",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Jessa Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT05177289"
     },
@@ -533,7 +533,7 @@
       "study_completion_date": "2028-11-10",
       "source_updated_on": "2024-03-06",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Jessa Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT05199389"
     },
@@ -567,7 +567,7 @@
       "study_completion_date": "2026-07-19",
       "source_updated_on": "2025-12-15",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Dana-Farber Cancer Institute",
       "source_url": "https://clinicaltrials.gov/study/NCT05335434"
     },
@@ -601,7 +601,7 @@
       "study_completion_date": "2030-12-06",
       "source_updated_on": "2026-09-15",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Alberta",
       "source_url": "https://clinicaltrials.gov/study/NCT05459935"
     },
@@ -631,7 +631,7 @@
       "study_completion_date": "2027-12-01",
       "source_updated_on": "2022-10-12",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Oslo University Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT05507840"
     },
@@ -666,7 +666,7 @@
       "study_completion_date": "2024-08-31",
       "source_updated_on": "2024-03-20",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Wake Forest University",
       "source_url": "https://clinicaltrials.gov/study/NCT05596474"
     },
@@ -698,7 +698,7 @@
       "study_completion_date": "2028-05-15",
       "source_updated_on": "2024-08-07",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Biolux Technology GmbH",
       "source_url": "https://clinicaltrials.gov/study/NCT05650359"
     },
@@ -732,7 +732,7 @@
       "study_completion_date": "2026-12-22",
       "source_updated_on": "2026-05-22",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Memorial Sloan Kettering Cancer Center",
       "source_url": "https://clinicaltrials.gov/study/NCT05675930"
     },
@@ -764,7 +764,7 @@
       "study_completion_date": "2025-10-31",
       "source_updated_on": "2024-10-18",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "National Taiwan University Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT05725265"
     },
@@ -795,7 +795,7 @@
       "study_completion_date": "2030-03-15",
       "source_updated_on": "2023-03-30",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Jessa Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT05763706"
     },
@@ -831,7 +831,7 @@
       "study_completion_date": "2027-02-01",
       "source_updated_on": "2026-06-22",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Francisco Gonzalez-Lima, PhD",
       "source_url": "https://clinicaltrials.gov/study/NCT05802680"
     },
@@ -865,7 +865,7 @@
       "study_completion_date": "2026-02",
       "source_updated_on": "2025-06-06",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Nove de Julho",
       "source_url": "https://clinicaltrials.gov/study/NCT05816798"
     },
@@ -897,7 +897,7 @@
       "study_completion_date": "2026-05-15",
       "source_updated_on": "2024-12-16",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University Hospital, Grenoble",
       "source_url": "https://clinicaltrials.gov/study/NCT05845216"
     },
@@ -929,7 +929,7 @@
       "study_completion_date": "2029-10",
       "source_updated_on": "2026-08-10",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Arash Asher, MD",
       "source_url": "https://clinicaltrials.gov/study/NCT05855694"
     },
@@ -963,7 +963,7 @@
       "study_completion_date": "2028-10",
       "source_updated_on": "2025-10-24",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Florida",
       "source_url": "https://clinicaltrials.gov/study/NCT05916235"
     },
@@ -994,7 +994,7 @@
       "study_completion_date": "2026-12",
       "source_updated_on": "2026-03-19",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Mayo Clinic",
       "source_url": "https://clinicaltrials.gov/study/NCT06007976"
     },
@@ -1030,7 +1030,7 @@
       "study_completion_date": "2028-01",
       "source_updated_on": "2026-02-24",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Shmuel Kivity, MD",
       "source_url": "https://clinicaltrials.gov/study/NCT06146816"
     },
@@ -1063,7 +1063,7 @@
       "study_completion_date": "2027-12-01",
       "source_updated_on": "2026-06-24",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "The University of Hong Kong",
       "source_url": "https://clinicaltrials.gov/study/NCT06199674"
     },
@@ -1095,7 +1095,7 @@
       "study_completion_date": "2027-12",
       "source_updated_on": "2026-06-22",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Francisco Gonzalez-Lima, PhD",
       "source_url": "https://clinicaltrials.gov/study/NCT06203938"
     },
@@ -1127,7 +1127,7 @@
       "study_completion_date": "2026-04-01",
       "source_updated_on": "2025-07-20",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "The University of Texas Health Science Center, Houston",
       "source_url": "https://clinicaltrials.gov/study/NCT06239818"
     },
@@ -1160,7 +1160,7 @@
       "study_completion_date": "2026-07-01",
       "source_updated_on": "2026-01-13",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of California, Los Angeles",
       "source_url": "https://clinicaltrials.gov/study/NCT06282770"
     },
@@ -1191,7 +1191,7 @@
       "study_completion_date": "2027-12",
       "source_updated_on": "2025-11-18",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Institut du Cancer de Montpellier - Val d'Aurelle",
       "source_url": "https://clinicaltrials.gov/study/NCT06347926"
     },
@@ -1223,7 +1223,7 @@
       "study_completion_date": "2028-11",
       "source_updated_on": "2026-09-22",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "LumiThera, Inc.",
       "source_url": "https://clinicaltrials.gov/study/NCT06351605"
     },
@@ -1256,7 +1256,7 @@
       "study_completion_date": "2025-12-30",
       "source_updated_on": "2024-10-08",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Nove de Julho",
       "source_url": "https://clinicaltrials.gov/study/NCT06353568"
     },
@@ -1293,7 +1293,7 @@
       "study_completion_date": "2026-12-30",
       "source_updated_on": "2026-01-21",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Aston University",
       "source_url": "https://clinicaltrials.gov/study/NCT06371300"
     },
@@ -1325,7 +1325,7 @@
       "study_completion_date": "2028-09-01",
       "source_updated_on": "2026-05-04",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "United States Air Force Research Laboratory",
       "source_url": "https://clinicaltrials.gov/study/NCT06403644"
     },
@@ -1358,7 +1358,7 @@
       "study_completion_date": "2027-12-31",
       "source_updated_on": "2024-05-29",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "National Taiwan University Hospital Hsin-Chu Branch",
       "source_url": "https://clinicaltrials.gov/study/NCT06426251"
     },
@@ -1390,7 +1390,7 @@
       "study_completion_date": "2027-06",
       "source_updated_on": "2026-04-23",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Nove de Julho",
       "source_url": "https://clinicaltrials.gov/study/NCT06454006"
     },
@@ -1422,7 +1422,7 @@
       "study_completion_date": "2029-11-15",
       "source_updated_on": "2026-06-05",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Centre Paul Strauss",
       "source_url": "https://clinicaltrials.gov/study/NCT06458517"
     },
@@ -1456,7 +1456,7 @@
       "study_completion_date": "2027-08",
       "source_updated_on": "2024-06-14",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Federal University of Health Science of Porto Alegre",
       "source_url": "https://clinicaltrials.gov/study/NCT06460415"
     },
@@ -1488,7 +1488,7 @@
       "study_completion_date": "2026-09-01",
       "source_updated_on": "2025-01-22",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Nove de Julho",
       "source_url": "https://clinicaltrials.gov/study/NCT06538142"
     },
@@ -1527,7 +1527,7 @@
       "study_completion_date": "2028-05-04",
       "source_updated_on": "2026-08-17",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "The University of Texas Health Science Center, Houston",
       "source_url": "https://clinicaltrials.gov/study/NCT06574152"
     },
@@ -1559,7 +1559,7 @@
       "study_completion_date": "2027-09",
       "source_updated_on": "2026-06-22",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Medical College of Wisconsin",
       "source_url": "https://clinicaltrials.gov/study/NCT06623305"
     },
@@ -1595,7 +1595,7 @@
       "study_completion_date": "2026-11-24",
       "source_updated_on": "2026-01-28",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "City of Hope Medical Center",
       "source_url": "https://clinicaltrials.gov/study/NCT06625619"
     },
@@ -1629,7 +1629,7 @@
       "study_completion_date": "2027-12-31",
       "source_updated_on": "2024-10-15",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Dr. Shalini Gupta",
       "source_url": "https://clinicaltrials.gov/study/NCT06639009"
     },
@@ -1666,7 +1666,7 @@
       "study_completion_date": "2025-04-14",
       "source_updated_on": "2024-10-15",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Huashan Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT06640439"
     },
@@ -1696,7 +1696,7 @@
       "study_completion_date": "2025-02-05",
       "source_updated_on": "2024-10-15",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Assiut University",
       "source_url": "https://clinicaltrials.gov/study/NCT06641739"
     },
@@ -1731,7 +1731,7 @@
       "study_completion_date": "2028-11",
       "source_updated_on": "2026-05-05",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Ottawa",
       "source_url": "https://clinicaltrials.gov/study/NCT06660212"
     },
@@ -1763,7 +1763,7 @@
       "study_completion_date": "2024-12-01",
       "source_updated_on": "2024-10-30",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Lina Amr Talaat",
       "source_url": "https://clinicaltrials.gov/study/NCT06666062"
     },
@@ -1797,7 +1797,7 @@
       "study_completion_date": "2025-01-30",
       "source_updated_on": "2024-11-08",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Universidade Federal de Sao Carlos",
       "source_url": "https://clinicaltrials.gov/study/NCT06678698"
     },
@@ -1829,7 +1829,7 @@
       "study_completion_date": "2027-05",
       "source_updated_on": "2025-07-22",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Qilu Hospital of Shandong University",
       "source_url": "https://clinicaltrials.gov/study/NCT06685601"
     },
@@ -1866,7 +1866,7 @@
       "study_completion_date": "2027-06",
       "source_updated_on": "2026-08-12",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Maryland, Baltimore",
       "source_url": "https://clinicaltrials.gov/study/NCT06691269"
     },
@@ -1895,7 +1895,7 @@
       "study_completion_date": "2025-12-01",
       "source_updated_on": "2024-11-21",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Afyonkarahisar Health Sciences University",
       "source_url": "https://clinicaltrials.gov/study/NCT06692998"
     },
@@ -1927,7 +1927,7 @@
       "study_completion_date": "2025-02-01",
       "source_updated_on": "2024-11-25",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Cairo University",
       "source_url": "https://clinicaltrials.gov/study/NCT06703762"
     },
@@ -1960,7 +1960,7 @@
       "study_completion_date": "2025-02-01",
       "source_updated_on": "2024-11-25",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Cairo University",
       "source_url": "https://clinicaltrials.gov/study/NCT06703775"
     },
@@ -1994,7 +1994,7 @@
       "study_completion_date": "2030-02-13",
       "source_updated_on": "2026-03-30",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "NYU Langone Health",
       "source_url": "https://clinicaltrials.gov/study/NCT06708754"
     },
@@ -2025,7 +2025,7 @@
       "study_completion_date": "2025-11",
       "source_updated_on": "2024-12-02",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Tanta University",
       "source_url": "https://clinicaltrials.gov/study/NCT06711081"
     },
@@ -2056,7 +2056,7 @@
       "study_completion_date": "2025-07-01",
       "source_updated_on": "2025-01-03",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Beni-Suef University",
       "source_url": "https://clinicaltrials.gov/study/NCT06756386"
     },
@@ -2088,7 +2088,7 @@
       "study_completion_date": "2026-06-30",
       "source_updated_on": "2025-05-11",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Kemia Gul",
       "source_url": "https://clinicaltrials.gov/study/NCT06759454"
     },
@@ -2124,7 +2124,7 @@
       "study_completion_date": "2025-04-01",
       "source_updated_on": "2025-01-07",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Cairo University",
       "source_url": "https://clinicaltrials.gov/study/NCT06762197"
     },
@@ -2155,7 +2155,7 @@
       "study_completion_date": "2025-02-13",
       "source_updated_on": "2025-01-07",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Cairo University",
       "source_url": "https://clinicaltrials.gov/study/NCT06762574"
     },
@@ -2187,7 +2187,7 @@
       "study_completion_date": "2025-02-28",
       "source_updated_on": "2025-01-08",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Nourhan M.Aly",
       "source_url": "https://clinicaltrials.gov/study/NCT06763419"
     },
@@ -2221,7 +2221,7 @@
       "study_completion_date": "2027-01-31",
       "source_updated_on": "2025-01-14",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Barzilai Medical Center",
       "source_url": "https://clinicaltrials.gov/study/NCT06773676"
     },
@@ -2251,7 +2251,7 @@
       "study_completion_date": "2025-07-15",
       "source_updated_on": "2025-01-24",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Health Sciences Lahore",
       "source_url": "https://clinicaltrials.gov/study/NCT06790667"
     },
@@ -2283,7 +2283,7 @@
       "study_completion_date": "2028-07-31",
       "source_updated_on": "2025-07-22",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Rutgers, The State University of New Jersey",
       "source_url": "https://clinicaltrials.gov/study/NCT06797219"
     },
@@ -2313,7 +2313,7 @@
       "study_completion_date": "2029-12",
       "source_updated_on": "2026-09-10",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "St. Jude Children's Research Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT06797583"
     },
@@ -2345,7 +2345,7 @@
       "study_completion_date": "2026-02-28",
       "source_updated_on": "2025-03-25",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "The University of Texas Health Science Center, Houston",
       "source_url": "https://clinicaltrials.gov/study/NCT06819033"
     },
@@ -2379,7 +2379,7 @@
       "study_completion_date": "2028-12",
       "source_updated_on": "2026-07-28",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Institut du Cancer de Montpellier - Val d'Aurelle",
       "source_url": "https://clinicaltrials.gov/study/NCT06834685"
     },
@@ -2414,7 +2414,7 @@
       "study_completion_date": "2029-11-30",
       "source_updated_on": "2026-06-23",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Abramson Cancer Center at Penn Medicine",
       "source_url": "https://clinicaltrials.gov/study/NCT06837480"
     },
@@ -2449,7 +2449,7 @@
       "study_completion_date": "2025-07-20",
       "source_updated_on": "2025-03-12",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Universidade Federal de Sao Carlos",
       "source_url": "https://clinicaltrials.gov/study/NCT06866522"
     },
@@ -2479,7 +2479,7 @@
       "study_completion_date": "2026-05",
       "source_updated_on": "2025-04-08",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Cairo University",
       "source_url": "https://clinicaltrials.gov/study/NCT06917599"
     },
@@ -2513,7 +2513,7 @@
       "study_completion_date": "2028-07",
       "source_updated_on": "2026-01-15",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "NYU Langone Health",
       "source_url": "https://clinicaltrials.gov/study/NCT06956404"
     },
@@ -2543,7 +2543,7 @@
       "study_completion_date": "2025-09-01",
       "source_updated_on": "2025-05-14",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Cairo University",
       "source_url": "https://clinicaltrials.gov/study/NCT06971172"
     },
@@ -2575,7 +2575,7 @@
       "study_completion_date": "2027-10-30",
       "source_updated_on": "2026-07-29",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Nove de Julho",
       "source_url": "https://clinicaltrials.gov/study/NCT06984796"
     },
@@ -2612,7 +2612,7 @@
       "study_completion_date": "2025-08-01",
       "source_updated_on": "2025-05-23",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Cairo University",
       "source_url": "https://clinicaltrials.gov/study/NCT06986629"
     },
@@ -2645,7 +2645,7 @@
       "study_completion_date": "2029-04",
       "source_updated_on": "2025-05-25",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Instituto Nacional de Cancer, Brazil",
       "source_url": "https://clinicaltrials.gov/study/NCT06990165"
     },
@@ -2678,7 +2678,7 @@
       "study_completion_date": "2027-12",
       "source_updated_on": "2026-01-30",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Centre Hospitalier de Valenciennes",
       "source_url": "https://clinicaltrials.gov/study/NCT06995443"
     },
@@ -2710,7 +2710,7 @@
       "study_completion_date": "2026-12-30",
       "source_updated_on": "2025-08-22",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Dar Al Uloom University",
       "source_url": "https://clinicaltrials.gov/study/NCT07012525"
     },
@@ -2740,7 +2740,7 @@
       "study_completion_date": "2025-10-20",
       "source_updated_on": "2025-06-18",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Cairo University",
       "source_url": "https://clinicaltrials.gov/study/NCT07026617"
     },
@@ -2771,7 +2771,7 @@
       "study_completion_date": "2026-04-30",
       "source_updated_on": "2025-06-22",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Nove de Julho",
       "source_url": "https://clinicaltrials.gov/study/NCT07031505"
     },
@@ -2805,7 +2805,7 @@
       "study_completion_date": "2030-11-30",
       "source_updated_on": "2026-03-24",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Nove de Julho",
       "source_url": "https://clinicaltrials.gov/study/NCT07033039"
     },
@@ -2837,7 +2837,7 @@
       "study_completion_date": "2028-01-10",
       "source_updated_on": "2025-07-10",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Federal University of Piaui",
       "source_url": "https://clinicaltrials.gov/study/NCT07043868"
     },
@@ -2869,7 +2869,7 @@
       "study_completion_date": "2026-01-30",
       "source_updated_on": "2025-07-02",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Malaga",
       "source_url": "https://clinicaltrials.gov/study/NCT07047248"
     },
@@ -2901,7 +2901,7 @@
       "study_completion_date": "2026-02-28",
       "source_updated_on": "2025-07-02",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Superior University",
       "source_url": "https://clinicaltrials.gov/study/NCT07048626"
     },
@@ -2934,7 +2934,7 @@
       "study_completion_date": "2026-06-30",
       "source_updated_on": "2025-07-08",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Clinique Trenel",
       "source_url": "https://clinicaltrials.gov/study/NCT07055022"
     },
@@ -2967,7 +2967,7 @@
       "study_completion_date": "2025-08-31",
       "source_updated_on": "2025-07-17",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Yonsei University",
       "source_url": "https://clinicaltrials.gov/study/NCT07071493"
     },
@@ -3002,7 +3002,7 @@
       "study_completion_date": "2026-07",
       "source_updated_on": "2025-09-16",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Ankara Etlik City Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT07078877"
     },
@@ -3034,7 +3034,7 @@
       "study_completion_date": "2027-09",
       "source_updated_on": "2026-08-20",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Florida",
       "source_url": "https://clinicaltrials.gov/study/NCT07079969"
     },
@@ -3063,7 +3063,7 @@
       "study_completion_date": "2026-06-30",
       "source_updated_on": "2025-07-29",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "LTBIO Co., Ltd.",
       "source_url": "https://clinicaltrials.gov/study/NCT07091773"
     },
@@ -3098,7 +3098,7 @@
       "study_completion_date": "2027-04-30",
       "source_updated_on": "2025-11-12",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Medical University of South Carolina",
       "source_url": "https://clinicaltrials.gov/study/NCT07095556"
     },
@@ -3134,7 +3134,7 @@
       "study_completion_date": "2028-03",
       "source_updated_on": "2026-09-09",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Nove de Julho",
       "source_url": "https://clinicaltrials.gov/study/NCT07123285"
     },
@@ -3168,7 +3168,7 @@
       "study_completion_date": "2026-05-01",
       "source_updated_on": "2025-08-15",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Quiropraxia y Equilibrio",
       "source_url": "https://clinicaltrials.gov/study/NCT07125404"
     },
@@ -3202,7 +3202,7 @@
       "study_completion_date": "2026-06-30",
       "source_updated_on": "2025-08-17",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Mustafa Kemal University",
       "source_url": "https://clinicaltrials.gov/study/NCT07128134"
     },
@@ -3234,7 +3234,7 @@
       "study_completion_date": "2028-09",
       "source_updated_on": "2026-05-14",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Francisco Gonzalez-Lima, PhD",
       "source_url": "https://clinicaltrials.gov/study/NCT07133893"
     },
@@ -3267,7 +3267,7 @@
       "study_completion_date": "2026-01-10",
       "source_updated_on": "2025-08-24",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Cairo University",
       "source_url": "https://clinicaltrials.gov/study/NCT07139288"
     },
@@ -3298,7 +3298,7 @@
       "study_completion_date": "2027-09-25",
       "source_updated_on": "2026-02-04",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Beth Israel Deaconess Medical Center",
       "source_url": "https://clinicaltrials.gov/study/NCT07145489"
     },
@@ -3328,7 +3328,7 @@
       "study_completion_date": "2027-01-30",
       "source_updated_on": "2025-10-06",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Qilu Hospital of Shandong University",
       "source_url": "https://clinicaltrials.gov/study/NCT07154732"
     },
@@ -3358,7 +3358,7 @@
       "study_completion_date": "2026-02",
       "source_updated_on": "2025-09-18",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Lahore",
       "source_url": "https://clinicaltrials.gov/study/NCT07161622"
     },
@@ -3390,7 +3390,7 @@
       "study_completion_date": "2025-10-05",
       "source_updated_on": "2025-09-19",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Lahore",
       "source_url": "https://clinicaltrials.gov/study/NCT07163208"
     },
@@ -3427,7 +3427,7 @@
       "study_completion_date": "2026-11",
       "source_updated_on": "2025-11-14",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Beirut Arab University",
       "source_url": "https://clinicaltrials.gov/study/NCT07169357"
     },
@@ -3457,7 +3457,7 @@
       "study_completion_date": "2025-12-30",
       "source_updated_on": "2025-09-15",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Cairo University",
       "source_url": "https://clinicaltrials.gov/study/NCT07171788"
     },
@@ -3489,7 +3489,7 @@
       "study_completion_date": "2026-08",
       "source_updated_on": "2025-09-15",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Houston",
       "source_url": "https://clinicaltrials.gov/study/NCT07173530"
     },
@@ -3520,7 +3520,7 @@
       "study_completion_date": "2025-09-20",
       "source_updated_on": "2025-09-16",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Asia University",
       "source_url": "https://clinicaltrials.gov/study/NCT07177274"
     },
@@ -3553,7 +3553,7 @@
       "study_completion_date": "2028-10-01",
       "source_updated_on": "2026-03-19",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "The Christie NHS Foundation Trust",
       "source_url": "https://clinicaltrials.gov/study/NCT07183267"
     },
@@ -3585,7 +3585,7 @@
       "study_completion_date": "2025-12",
       "source_updated_on": "2025-09-25",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Lahore",
       "source_url": "https://clinicaltrials.gov/study/NCT07191808"
     },
@@ -3617,7 +3617,7 @@
       "study_completion_date": "2027-12",
       "source_updated_on": "2026-06-22",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Francisco Gonzalez-Lima, PhD",
       "source_url": "https://clinicaltrials.gov/study/NCT07203092"
     },
@@ -3655,7 +3655,7 @@
       "study_completion_date": "2026-12-01",
       "source_updated_on": "2025-10-03",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Cairo University",
       "source_url": "https://clinicaltrials.gov/study/NCT07205640"
     },
@@ -3690,7 +3690,7 @@
       "study_completion_date": "2026-12-31",
       "source_updated_on": "2026-02-06",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Oklahoma",
       "source_url": "https://clinicaltrials.gov/study/NCT07209683"
     },
@@ -3722,7 +3722,7 @@
       "study_completion_date": "2029-07-31",
       "source_updated_on": "2026-06-18",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "China Medical University Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT07222449"
     },
@@ -3753,7 +3753,7 @@
       "study_completion_date": "2026-10",
       "source_updated_on": "2025-11-19",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Cedars-Sinai Medical Center",
       "source_url": "https://clinicaltrials.gov/study/NCT07224607"
     },
@@ -3788,7 +3788,7 @@
       "study_completion_date": "2026-12",
       "source_updated_on": "2025-11-24",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Universidade Federal de Sao Carlos",
       "source_url": "https://clinicaltrials.gov/study/NCT07224646"
     },
@@ -3821,7 +3821,7 @@
       "study_completion_date": "2029-12-31",
       "source_updated_on": "2026-06-17",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "China Medical University Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT07232472"
     },
@@ -3853,7 +3853,7 @@
       "study_completion_date": "2027-07-10",
       "source_updated_on": "2025-12-03",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Central Lancashire",
       "source_url": "https://clinicaltrials.gov/study/NCT07260903"
     },
@@ -3883,7 +3883,7 @@
       "study_completion_date": "2026-05-25",
       "source_updated_on": "2025-12-05",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Lahore University of Biological and Applied Sciences",
       "source_url": "https://clinicaltrials.gov/study/NCT07266636"
     },
@@ -3914,7 +3914,7 @@
       "study_completion_date": "2025-12-31",
       "source_updated_on": "2025-12-09",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Pusan National University Yangsan Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT07271927"
     },
@@ -3947,7 +3947,7 @@
       "study_completion_date": "2026-12-31",
       "source_updated_on": "2026-04-28",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Universiti Sains Malaysia",
       "source_url": "https://clinicaltrials.gov/study/NCT07286474"
     },
@@ -3980,7 +3980,7 @@
       "study_completion_date": "2026-10",
       "source_updated_on": "2025-12-17",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Uskudar University",
       "source_url": "https://clinicaltrials.gov/study/NCT07287527"
     },
@@ -4013,7 +4013,7 @@
       "study_completion_date": "2027-05",
       "source_updated_on": "2025-12-18",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Brigham and Women's Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT07290413"
     },
@@ -4045,7 +4045,7 @@
       "study_completion_date": "2027-12-10",
       "source_updated_on": "2026-09-22",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Central Lancashire",
       "source_url": "https://clinicaltrials.gov/study/NCT07296068"
     },
@@ -4078,7 +4078,7 @@
       "study_completion_date": "2027-05-20",
       "source_updated_on": "2026-09-21",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Ankara Medipol University",
       "source_url": "https://clinicaltrials.gov/study/NCT07307885"
     },
@@ -4113,7 +4113,7 @@
       "study_completion_date": "2027-07-01",
       "source_updated_on": "2026-08-24",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Elixir MD Inc",
       "source_url": "https://clinicaltrials.gov/study/NCT07311889"
     },
@@ -4144,7 +4144,7 @@
       "study_completion_date": "2028-06-01",
       "source_updated_on": "2026-03-25",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Columbia University",
       "source_url": "https://clinicaltrials.gov/study/NCT07311928"
     },
@@ -4174,7 +4174,7 @@
       "study_completion_date": "2026-12-31",
       "source_updated_on": "2026-01-07",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Pusan National University Yangsan Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT07323823"
     },
@@ -4206,7 +4206,7 @@
       "study_completion_date": "2027-12-31",
       "source_updated_on": "2026-01-09",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Singapore National Eye Centre",
       "source_url": "https://clinicaltrials.gov/study/NCT07329712"
     },
@@ -4239,7 +4239,7 @@
       "study_completion_date": "2026-08",
       "source_updated_on": "2026-01-12",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Grigore T. Popa University of Medicine and Pharmacy",
       "source_url": "https://clinicaltrials.gov/study/NCT07332988"
     },
@@ -4273,7 +4273,7 @@
       "study_completion_date": "2028-12",
       "source_updated_on": "2026-01-14",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Afeka, The Tel-Aviv Academic College of Engineering",
       "source_url": "https://clinicaltrials.gov/study/NCT07338695"
     },
@@ -4305,7 +4305,7 @@
       "study_completion_date": "2027-08",
       "source_updated_on": "2026-01-28",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Universidad de Guanajuato",
       "source_url": "https://clinicaltrials.gov/study/NCT07372443"
     },
@@ -4337,7 +4337,7 @@
       "study_completion_date": "2027-03-31",
       "source_updated_on": "2026-04-13",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Dubai Health",
       "source_url": "https://clinicaltrials.gov/study/NCT07379515"
     },
@@ -4370,7 +4370,7 @@
       "study_completion_date": "2026-03-10",
       "source_updated_on": "2026-02-03",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Lu Jiang",
       "source_url": "https://clinicaltrials.gov/study/NCT07381361"
     },
@@ -4401,7 +4401,7 @@
       "study_completion_date": "2028-11",
       "source_updated_on": "2026-02-04",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Peter MacCallum Cancer Centre, Australia",
       "source_url": "https://clinicaltrials.gov/study/NCT07387978"
     },
@@ -4432,7 +4432,7 @@
       "study_completion_date": "2028-06-01",
       "source_updated_on": "2026-03-25",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Columbia University",
       "source_url": "https://clinicaltrials.gov/study/NCT07425080"
     },
@@ -4466,7 +4466,7 @@
       "study_completion_date": "2027-12-30",
       "source_updated_on": "2026-09-29",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Nove de Julho",
       "source_url": "https://clinicaltrials.gov/study/NCT07426926"
     },
@@ -4499,7 +4499,7 @@
       "study_completion_date": "2028-07",
       "source_updated_on": "2026-03-03",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Baycrest",
       "source_url": "https://clinicaltrials.gov/study/NCT07445945"
     },
@@ -4535,7 +4535,7 @@
       "study_completion_date": "2029-02-01",
       "source_updated_on": "2026-08-04",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Medical University of Gdansk",
       "source_url": "https://clinicaltrials.gov/study/NCT07446517"
     },
@@ -4566,7 +4566,7 @@
       "study_completion_date": "2027-10-01",
       "source_updated_on": "2026-03-04",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Cairo University",
       "source_url": "https://clinicaltrials.gov/study/NCT07449169"
     },
@@ -4598,7 +4598,7 @@
       "study_completion_date": "2026-12",
       "source_updated_on": "2026-04-13",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Massachusetts General Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT07450716"
     },
@@ -4632,7 +4632,7 @@
       "study_completion_date": "2026-09-28",
       "source_updated_on": "2026-04-06",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "AUSL Romagna Rimini",
       "source_url": "https://clinicaltrials.gov/study/NCT07453927"
     },
@@ -4668,7 +4668,7 @@
       "study_completion_date": "2030-12",
       "source_updated_on": "2026-03-10",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Federal University of Rio Grande do Sul",
       "source_url": "https://clinicaltrials.gov/study/NCT07460895"
     },
@@ -4702,7 +4702,7 @@
       "study_completion_date": "2027-06",
       "source_updated_on": "2026-05-11",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Hesham Nabil Ali Al-Qamhawy",
       "source_url": "https://clinicaltrials.gov/study/NCT07466641"
     },
@@ -4738,7 +4738,7 @@
       "study_completion_date": "2029-01-24",
       "source_updated_on": "2026-03-20",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Chang Gung Memorial Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT07472881"
     },
@@ -4768,7 +4768,7 @@
       "study_completion_date": "2027-08-31",
       "source_updated_on": "2026-09-24",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Brigham and Women's Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT07475858"
     },
@@ -4800,7 +4800,7 @@
       "study_completion_date": "2027-03-01",
       "source_updated_on": "2026-03-25",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Alexandria University",
       "source_url": "https://clinicaltrials.gov/study/NCT07476209"
     },
@@ -4832,7 +4832,7 @@
       "study_completion_date": "2026-04-20",
       "source_updated_on": "2026-03-19",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Cláudio da Silva Ferreira",
       "source_url": "https://clinicaltrials.gov/study/NCT07477678"
     },
@@ -4867,7 +4867,7 @@
       "study_completion_date": "2026-11-01",
       "source_updated_on": "2026-03-18",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Instituto Materno Infantil Prof. Fernando Figueira",
       "source_url": "https://clinicaltrials.gov/study/NCT07480083"
     },
@@ -4898,7 +4898,7 @@
       "study_completion_date": "2027-08-11",
       "source_updated_on": "2026-04-23",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Cynthia Kerson",
       "source_url": "https://clinicaltrials.gov/study/NCT07509177"
     },
@@ -4932,7 +4932,7 @@
       "study_completion_date": "2027-07-01",
       "source_updated_on": "2026-04-03",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Vielight Inc.",
       "source_url": "https://clinicaltrials.gov/study/NCT07510646"
     },
@@ -4965,7 +4965,7 @@
       "study_completion_date": "2026-06-10",
       "source_updated_on": "2026-04-06",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Universidade Norte do Paraná",
       "source_url": "https://clinicaltrials.gov/study/NCT07511790"
     },
@@ -4998,7 +4998,7 @@
       "study_completion_date": "2026-06-10",
       "source_updated_on": "2026-04-06",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Universidade Norte do Paraná",
       "source_url": "https://clinicaltrials.gov/study/NCT07511803"
     },
@@ -5033,7 +5033,7 @@
       "study_completion_date": "2027-05-01",
       "source_updated_on": "2026-04-09",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Umeå University",
       "source_url": "https://clinicaltrials.gov/study/NCT07520825"
     },
@@ -5065,7 +5065,7 @@
       "study_completion_date": "2026-10-20",
       "source_updated_on": "2026-04-15",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Hani M. Al-Kufi",
       "source_url": "https://clinicaltrials.gov/study/NCT07523204"
     },
@@ -5097,7 +5097,7 @@
       "study_completion_date": "2027-11-30",
       "source_updated_on": "2026-09-09",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Nove de Julho",
       "source_url": "https://clinicaltrials.gov/study/NCT07525310"
     },
@@ -5129,7 +5129,7 @@
       "study_completion_date": "2027-01-31",
       "source_updated_on": "2026-04-29",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Damascus University",
       "source_url": "https://clinicaltrials.gov/study/NCT07532161"
     },
@@ -5161,7 +5161,7 @@
       "study_completion_date": "2026-07-17",
       "source_updated_on": "2026-04-17",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Cairo University",
       "source_url": "https://clinicaltrials.gov/study/NCT07535853"
     },
@@ -5190,7 +5190,7 @@
       "study_completion_date": "2026-08-10",
       "source_updated_on": "2026-04-21",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Suez University",
       "source_url": "https://clinicaltrials.gov/study/NCT07542899"
     },
@@ -5224,7 +5224,7 @@
       "study_completion_date": "2027-03-31",
       "source_updated_on": "2026-04-30",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Taipei Veterans General Hospital, Taiwan",
       "source_url": "https://clinicaltrials.gov/study/NCT07543328"
     },
@@ -5257,7 +5257,7 @@
       "study_completion_date": "2026-09",
       "source_updated_on": "2026-06-24",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Lahore",
       "source_url": "https://clinicaltrials.gov/study/NCT07546539"
     },
@@ -5289,7 +5289,7 @@
       "study_completion_date": "2027-12-31",
       "source_updated_on": "2026-09-04",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Fondazione G.B. Bietti, IRCCS",
       "source_url": "https://clinicaltrials.gov/study/NCT07554690"
     },
@@ -5321,7 +5321,7 @@
       "study_completion_date": "2026-09-29",
       "source_updated_on": "2026-06-16",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Hitit University",
       "source_url": "https://clinicaltrials.gov/study/NCT07564713"
     },
@@ -5353,7 +5353,7 @@
       "study_completion_date": "2027-11",
       "source_updated_on": "2026-05-08",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Centro Universitário Augusto Motta",
       "source_url": "https://clinicaltrials.gov/study/NCT07576062"
     },
@@ -5384,7 +5384,7 @@
       "study_completion_date": "2026-12",
       "source_updated_on": "2026-09-02",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "CynosureLutronic",
       "source_url": "https://clinicaltrials.gov/study/NCT07588243"
     },
@@ -5413,7 +5413,7 @@
       "study_completion_date": "2028-02-02",
       "source_updated_on": "2026-05-18",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Sana'a University",
       "source_url": "https://clinicaltrials.gov/study/NCT07591948"
     },
@@ -5446,7 +5446,7 @@
       "study_completion_date": "2029-03",
       "source_updated_on": "2026-06-23",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University Hospital, Strasbourg, France",
       "source_url": "https://clinicaltrials.gov/study/NCT07602296"
     },
@@ -5483,7 +5483,7 @@
       "study_completion_date": "2026-09-30",
       "source_updated_on": "2026-08-25",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Federal University of Rio Grande do Sul",
       "source_url": "https://clinicaltrials.gov/study/NCT07602933"
     },
@@ -5513,7 +5513,7 @@
       "study_completion_date": "2027-04-23",
       "source_updated_on": "2026-05-22",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Tata Memorial Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT07605234"
     },
@@ -5546,7 +5546,7 @@
       "study_completion_date": "2026-06-24",
       "source_updated_on": "2026-06-23",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Faisalabad",
       "source_url": "https://clinicaltrials.gov/study/NCT07613489"
     },
@@ -5578,7 +5578,7 @@
       "study_completion_date": "2028-01-30",
       "source_updated_on": "2026-06-02",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Nove de Julho",
       "source_url": "https://clinicaltrials.gov/study/NCT07613671"
     },
@@ -5615,7 +5615,7 @@
       "study_completion_date": "2026-09-01",
       "source_updated_on": "2026-05-29",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Istanbul Saglik Bilimleri University",
       "source_url": "https://clinicaltrials.gov/study/NCT07615361"
     },
@@ -5648,7 +5648,7 @@
       "study_completion_date": "2026-12-30",
       "source_updated_on": "2026-06-04",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Alexandria University",
       "source_url": "https://clinicaltrials.gov/study/NCT07626164"
     },
@@ -5682,7 +5682,7 @@
       "study_completion_date": "2026-12",
       "source_updated_on": "2026-06-04",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Riphah International University",
       "source_url": "https://clinicaltrials.gov/study/NCT07626580"
     },
@@ -5713,7 +5713,7 @@
       "study_completion_date": "2027-09-30",
       "source_updated_on": "2026-06-15",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Centre Medical ISM (Integrative Systemic Medicine)",
       "source_url": "https://clinicaltrials.gov/study/NCT07637084"
     },
@@ -5746,7 +5746,7 @@
       "study_completion_date": "2026-12-01",
       "source_updated_on": "2026-06-11",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Damascus University",
       "source_url": "https://clinicaltrials.gov/study/NCT07641725"
     },
@@ -5781,7 +5781,7 @@
       "study_completion_date": "2026-12-31",
       "source_updated_on": "2026-06-16",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Oklahoma",
       "source_url": "https://clinicaltrials.gov/study/NCT07651787"
     },
@@ -5816,7 +5816,7 @@
       "study_completion_date": "2027-05-28",
       "source_updated_on": "2026-06-18",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Kufa University",
       "source_url": "https://clinicaltrials.gov/study/NCT07658235"
     },
@@ -5847,7 +5847,7 @@
       "study_completion_date": "2026-12",
       "source_updated_on": "2026-06-22",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Centre Hospitalier de Cornouaille",
       "source_url": "https://clinicaltrials.gov/study/NCT07661667"
     },
@@ -5878,7 +5878,7 @@
       "study_completion_date": "2027-04-01",
       "source_updated_on": "2026-06-24",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Kafrelsheikh University",
       "source_url": "https://clinicaltrials.gov/study/NCT07666061"
     },
@@ -5910,7 +5910,7 @@
       "study_completion_date": "2026-10",
       "source_updated_on": "2026-06-30",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Elixir MD Inc",
       "source_url": "https://clinicaltrials.gov/study/NCT07676643"
     },
@@ -5945,7 +5945,7 @@
       "study_completion_date": "2026-08-15",
       "source_updated_on": "2026-07-02",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Asia University",
       "source_url": "https://clinicaltrials.gov/study/NCT07680309"
     },
@@ -5976,7 +5976,7 @@
       "study_completion_date": "2028-12-31",
       "source_updated_on": "2026-07-02",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Jules Bordet Institute",
       "source_url": "https://clinicaltrials.gov/study/NCT07681921"
     },
@@ -6009,7 +6009,7 @@
       "study_completion_date": "2028-05-20",
       "source_updated_on": "2026-07-13",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Patricia Lordelo",
       "source_url": "https://clinicaltrials.gov/study/NCT07697768"
     },
@@ -6045,7 +6045,7 @@
       "study_completion_date": "2028-03",
       "source_updated_on": "2026-07-13",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Federal University of São Paulo",
       "source_url": "https://clinicaltrials.gov/study/NCT07699679"
     },
@@ -6078,7 +6078,7 @@
       "study_completion_date": "2028-07",
       "source_updated_on": "2026-07-28",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Hospital de Clinicas de Porto Alegre",
       "source_url": "https://clinicaltrials.gov/study/NCT07707284"
     },
@@ -6111,7 +6111,7 @@
       "study_completion_date": "2027-08-15",
       "source_updated_on": "2026-07-20",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Lahore",
       "source_url": "https://clinicaltrials.gov/study/NCT07714720"
     },
@@ -6147,7 +6147,7 @@
       "study_completion_date": "2027-07",
       "source_updated_on": "2026-08-10",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Peking University First Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT07736092"
     },
@@ -6178,7 +6178,7 @@
       "study_completion_date": "2027-12-30",
       "source_updated_on": "2026-07-31",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Kimberly Meathrel",
       "source_url": "https://clinicaltrials.gov/study/NCT07739147"
     },
@@ -6210,7 +6210,7 @@
       "study_completion_date": "2027-02-20",
       "source_updated_on": "2026-08-07",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "ROA RAAD FADHEL",
       "source_url": "https://clinicaltrials.gov/study/NCT07747350"
     },
@@ -6242,7 +6242,7 @@
       "study_completion_date": "2028-07",
       "source_updated_on": "2026-08-06",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Mohammad Burney, MD",
       "source_url": "https://clinicaltrials.gov/study/NCT07750912"
     },
@@ -6275,7 +6275,7 @@
       "study_completion_date": "2027-04-06",
       "source_updated_on": "2026-08-21",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Altinbas University",
       "source_url": "https://clinicaltrials.gov/study/NCT07751211"
     },
@@ -6308,7 +6308,7 @@
       "study_completion_date": "2027-12-01",
       "source_updated_on": "2026-08-07",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Hospital de Clinicas de Porto Alegre",
       "source_url": "https://clinicaltrials.gov/study/NCT07752602"
     },
@@ -6342,7 +6342,7 @@
       "study_completion_date": "2026-12",
       "source_updated_on": "2026-09-30",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Dokuz Eylul University",
       "source_url": "https://clinicaltrials.gov/study/NCT07753460"
     },
@@ -6372,7 +6372,7 @@
       "study_completion_date": "2027-05-05",
       "source_updated_on": "2026-08-21",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "National Health Research Institutes, Taiwan",
       "source_url": "https://clinicaltrials.gov/study/NCT07764107"
     },
@@ -6405,7 +6405,7 @@
       "study_completion_date": "2026-12-31",
       "source_updated_on": "2026-08-18",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Cairo University",
       "source_url": "https://clinicaltrials.gov/study/NCT07771218"
     },
@@ -6441,7 +6441,7 @@
       "study_completion_date": "2027-06-30",
       "source_updated_on": "2026-09-01",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Nove de Julho",
       "source_url": "https://clinicaltrials.gov/study/NCT07784231"
     },
@@ -6474,7 +6474,7 @@
       "study_completion_date": "2027-03-31",
       "source_updated_on": "2026-08-26",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Cairo University",
       "source_url": "https://clinicaltrials.gov/study/NCT07787195"
     },
@@ -6508,7 +6508,7 @@
       "study_completion_date": "2027-02-01",
       "source_updated_on": "2026-08-26",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Bursa Yuksek Ihtisas Training and Research Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT07788248"
     },
@@ -6541,7 +6541,7 @@
       "study_completion_date": "2028-12-31",
       "source_updated_on": "2026-09-24",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "National University Hospital, Singapore",
       "source_url": "https://clinicaltrials.gov/study/NCT07789821"
     },
@@ -6573,7 +6573,7 @@
       "study_completion_date": "2027-08-31",
       "source_updated_on": "2026-08-27",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "China Medical University Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT07790094"
     },
@@ -6608,7 +6608,7 @@
       "study_completion_date": "2030-05",
       "source_updated_on": "2026-08-28",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Francisco Gonzalez-Lima, PhD",
       "source_url": "https://clinicaltrials.gov/study/NCT07793604"
     },
@@ -6642,7 +6642,7 @@
       "study_completion_date": "2027-05-01",
       "source_updated_on": "2026-08-31",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Sana'a University",
       "source_url": "https://clinicaltrials.gov/study/NCT07795073"
     },
@@ -6676,7 +6676,7 @@
       "study_completion_date": "2027-03",
       "source_updated_on": "2026-09-04",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Nove de Julho",
       "source_url": "https://clinicaltrials.gov/study/NCT07798960"
     },
@@ -6707,7 +6707,7 @@
       "study_completion_date": "2030-04",
       "source_updated_on": "2026-09-02",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "SoLa Pelvic Therapy",
       "source_url": "https://clinicaltrials.gov/study/NCT07799857"
     },
@@ -6736,7 +6736,7 @@
       "study_completion_date": "2027-02",
       "source_updated_on": "2026-09-02",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Cairo University",
       "source_url": "https://clinicaltrials.gov/study/NCT07800338"
     },
@@ -6770,7 +6770,7 @@
       "study_completion_date": "2027-06",
       "source_updated_on": "2026-09-08",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "University of Nove de Julho",
       "source_url": "https://clinicaltrials.gov/study/NCT07806526"
     },
@@ -6806,7 +6806,7 @@
       "study_completion_date": "2028-10-01",
       "source_updated_on": "2026-09-08",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Chang Gung Memorial Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT07807176"
     },
@@ -6841,7 +6841,7 @@
       "study_completion_date": "2028-02",
       "source_updated_on": "2026-09-09",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Instituto Nacional de Cancer, Brazil",
       "source_url": "https://clinicaltrials.gov/study/NCT07810530"
     },
@@ -6873,7 +6873,7 @@
       "study_completion_date": "2027-07",
       "source_updated_on": "2026-09-09",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Can Tho University of Medicine and Pharmacy",
       "source_url": "https://clinicaltrials.gov/study/NCT07810699"
     },
@@ -6904,7 +6904,7 @@
       "study_completion_date": "2027-08-31",
       "source_updated_on": "2026-09-22",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "China Medical University Hospital",
       "source_url": "https://clinicaltrials.gov/study/NCT07818044"
     },
@@ -6935,7 +6935,7 @@
       "study_completion_date": "2028-12-01",
       "source_updated_on": "2026-09-17",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Ain Shams University",
       "source_url": "https://clinicaltrials.gov/study/NCT07826130"
     },
@@ -6970,7 +6970,7 @@
       "study_completion_date": "2027-04",
       "source_updated_on": "2026-09-22",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Nova Southeastern University",
       "source_url": "https://clinicaltrials.gov/study/NCT07832422"
     },
@@ -7003,7 +7003,7 @@
       "study_completion_date": "2026-12-31",
       "source_updated_on": "2026-09-22",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Jun Xu",
       "source_url": "https://clinicaltrials.gov/study/NCT07835399"
     },
@@ -7033,7 +7033,7 @@
       "study_completion_date": "2027-12-15",
       "source_updated_on": "2026-09-23",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Patricia Lordelo",
       "source_url": "https://clinicaltrials.gov/study/NCT07835815"
     },
@@ -7067,7 +7067,7 @@
       "study_completion_date": "2027-07-20",
       "source_updated_on": "2026-09-29",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Elixir MD Inc",
       "source_url": "https://clinicaltrials.gov/study/NCT07846631"
     },
@@ -7100,7 +7100,7 @@
       "study_completion_date": "2027-05-20",
       "source_updated_on": "2026-09-29",
       "source_record_last_updated_on": null,
-      "source_retrieved_on": "2026-10-02",
+      "source_retrieved_on": "2026-10-03",
       "sponsor": "Ain Shams University",
       "source_url": "https://clinicaltrials.gov/study/NCT07846891"
     }
